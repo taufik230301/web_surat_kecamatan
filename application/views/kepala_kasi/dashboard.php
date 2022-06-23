@@ -3,7 +3,7 @@
 
 <head>
 
-    <?php $this->load->view('admin/components/head.php');?>
+    <?php $this->load->view('kepala_kasi/components/head.php');?>
 
 </head>
 
@@ -13,7 +13,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <?php $this->load->view('admin/components/sidebar.php')?>
+        <?php $this->load->view('kepala_kasi/components/sidebar.php')?>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -23,13 +23,12 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <?php $this->load->view('admin/components/navbar.php')?>
+                <?php $this->load->view('kepala_kasi/components/navbar.php')?>
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                   
 
                     <!-- Content Row -->
                     <div class="row">
@@ -200,7 +199,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="<?=base_url();?>Settings/proses_settings_admin" method="POST">
+                    <form action="<?=base_url();?>Settings/proses_settings_kepala_kasi" method="POST">
                         <div class="mb-3">
                             <label for="username" class="form-label">Username</label>
                             <input type="text" class="form-control" id="username" name="username"
@@ -220,8 +219,7 @@
             </div>
         </div>
     </div>
-
-    <?php $this->load->view('admin/components/js.php');?>
+    <?php $this->load->view('kepala_kasi/components/js.php');?>
 
 </body>
 
