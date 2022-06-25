@@ -30,7 +30,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Pengajuan Izin Domisili</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Pengajuan Izin Domisili Usaha</h1>
 
                     <form>
                         <div class="form-group">
@@ -38,55 +38,57 @@
                             <input type="text" class="form-control" id="nomor_surat" name="nomor_surat" required>
                         </div>
                         <div class="form-group">
-                            <label for="nama_usaha">nama_usaha</label>
+                            <label for="nama_usaha">Nama Usaha</label>
                             <input type="text" class="form-control" id="nama_usaha" name="nama_usaha" required>
                         </div>
                         <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="text" class="form-control" id="password" name="password" required>
+                            <label for="alamat_usaha">Alamat Usaha</label>
+                            <input type="text" class="form-control" id="alamat_usaha" name="alamat_usaha" required>
                         </div>
                         <div class="form-group">
-                            <label for="nama_lengkap">Nama Lengkap</label>
-                            <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap"
+                            <label for="kegiatan_usaha">Kegiatan Usaha</label>
+                            <input type="text" class="form-control" id="kegiatan_usaha" name="kegiatan_usaha" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="berlaku_awal">Berlaku Awal</label>
+                            <input type="date" class="form-control" id="berlaku_awal" name="berlaku_awal" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="berlaku_akhir">Berlaku Akhir</label>
+                            <input type="date" class="form-control" id="berlaku_akhir" name="berlaku_akhir" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="foto_ktp">Foto KTP</label>
+                            <input type="file" class="form-control" id="foto_ktp" name="foto_ktp" required>
+                            <small id="foto_ktp" class="form-text text-muted">Format
+                                PNG/JPG/JPEG (Max
+                                2MB)</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="foto_akta_usaha">Foto Pendirian Akta Usaha</label>
+                            <input type="file" class="form-control" id="foto_akta_usaha" name="foto_akta_usaha"
                                 required>
+                            <small id="foto_akta_usaha" class="form-text text-muted">Format
+                                PNG/JPG/JPEG (Max
+                                2MB)</small>
                         </div>
                         <div class="form-group">
-                            <label for="no_kk">Nomor KK</label>
-                            <input type="text" class="form-control" id="no_kk" name="no_kk" required>
+                            <label for="foto_pengantar_lurah_setempat">Foto Pengantar Lurah Setempat</label>
+                            <input type="file" class="form-control" id="foto_pengantar_lurah_setempat"
+                                name="foto_pengantar_lurah_setempat" required>
+                            <small id="foto_pengantar_lurah_setempat" class="form-text text-muted">Format
+                                PNG/JPG/JPEG (Max
+                                2MB)</small>
                         </div>
                         <div class="form-group">
-                            <label for="no_ktp">Nomor KTP</label>
-                            <input type="text" class="form-control" id="no_ktp" name="no_ktp" required>
+                            <label for="foto_bukti_lunas_pbb">Foto Bukti Lunas PBB Tahun Bejalan</label>
+                            <input type="file" class="form-control" id="foto_bukti_lunas_pbb"
+                                name="foto_bukti_lunas_pbb" required>
+                            <small id="foto_bukti_lunas_pbb" class="form-text text-muted">Format
+                                PNG/JPG/JPEG (Max
+                                2MB)</small>
                         </div>
-                        <div class="form-group">
-                            <label for="jenis_kelamin">Jenis Kelamin</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
-                                <option value="L">Laki-Laki</option>
-                                <option value="P">Perempuan</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="agama">Agama</label>
-                            <input type="text" class="form-control" id="agama" name="agama" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="no_hp">No HP</label>
-                            <input type="text" class="form-control" id="no_hp" name="no_hp" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="alamat">Alamat</label>
-                            <input type="text" class="form-control" id="alamat" name="alamat" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="tempat_lahir">Tempat Lahir</label>
-                            <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir"
-                                required>
-                        </div>
-                        <div class="form-group">
-                            <label for="tanggal_lahir">Tanggal Lahir</label>
-                            <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir"
-                                required>
-                        </div>
+
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
 

@@ -30,60 +30,68 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Pengajuan Izin Domisili</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Pengajuan Izin Pemakaman</h1>
                     <form>
                         <div class="form-group">
-                            <label for="username">Username</label>
-                            <input type="text" class="form-control" id="username" name="username" value="" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" value="" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="text" class="form-control" id="password" name="password" value="" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="nama_lengkap">Nama Lengkap</label>
-                            <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" value=""
+                            <label for="nomor_surat">Nomor Surat</label>
+                            <input type="text" class="form-control" id="nomor_surat" name="nomor_surat" value=""
                                 required>
                         </div>
                         <div class="form-group">
-                            <label for="no_kk">Nomor KK</label>
-                            <input type="text" class="form-control" id="no_kk" name="no_kk" value="" required>
+                            <label for="tanggal_ditetapkan">Tanggal Ditetapkan</label>
+                            <input type="date" class="form-control" id="tanggal_ditetapkan" name="tanggal_ditetapkan"
+                                value="" required>
                         </div>
                         <div class="form-group">
-                            <label for="no_ktp">Nomor KTP</label>
-                            <input type="text" class="form-control" id="no_ktp" name="no_ktp" value="" required>
+                            <label for="nama_alm">Nama Almarhum</label>
+                            <input type="text" class="form-control" id="nama_alm" name="nama_alm" value="" required>
                         </div>
                         <div class="form-group">
-                            <label for="jenis_kelamin">Jenis Kelamin</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
-                                <option value="L">Laki-Laki</option>
-                                <option value="P">Perempuan</option>
-                            </select>
+                            <label for="agama_alm">Agama Almarhum</label>
+                            <input type="text" class="form-control" id="agama_alm" name="agama_alm" value="" required>
                         </div>
                         <div class="form-group">
-                            <label for="agama">Agama</label>
-                            <input type="text" class="form-control" id="agama" name="agama" value="" required>
+                            <label for="nik">Nomor Induk Kependudukan</label>
+                            <input type="text" class="form-control" id="nik" name="nik" value="" required>
                         </div>
                         <div class="form-group">
-                            <label for="no_hp">No HP</label>
-                            <input type="text" class="form-control" id="no_hp" name="no_hp" value="" required>
+                            <label for="tanggal_meninggal">Tanggal Meninggal</label>
+                            <input type="date" class="form-control" id="tanggal_meninggal" name="tanggal_meninggal"
+                                value="" required>
                         </div>
                         <div class="form-group">
-                            <label for="alamat">Alamat</label>
-                            <input type="text" class="form-control" id="alamat" name="alamat" value="" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="tempat_lahir">Tempat Lahir</label>
-                            <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" value=""
+                            <label for="tanggal_kubur">Tanggal Kubur</label>
+                            <input type="date" class="form-control" id="tanggal_kubur" name="tanggal_kubur" value=""
                                 required>
                         </div>
                         <div class="form-group">
-                            <label for="tanggal_lahir">Tanggal Lahir</label>
-                            <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir" value=""
+                            <label for="blok_petak">Blok/Peta</label>
+                            <input type="text" class="form-control" id="blok_petak" name="blok_petak" value="" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="jenis_pemakaman">Jenis Pemakaman</label>
+                            <input type="text" class="form-control" id="jenis_pemakaman" name="jenis_pemakaman" value=""
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="foto_surat_ket_lap">Foto Surat Ket. Lap kematian</label>
+                            <input type="file" class="form-control" id="foto_surat_ket_lap" name="foto_surat_ket_lap"
+                                value="" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="foto_surat_pemeriksaan_jenazah">Foto Surat keterangan Pemeriksaan
+                                Jenazah</label>
+                            <input type="file" class="form-control" id="foto_surat_pemeriksaan_jenazah"
+                                name="foto_surat_pemeriksaan_jenazah" value="" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="foto_kk_alm">Foto KK Almarhum</label>
+                            <input type="file" class="form-control" id="foto_kk_alm" name="foto_kk_alm" value=""
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="	foto_surat_rekomendasi_dinas_pupr">Foto Surat Rekomendari Dari Dinas PUPR</label>
+                            <input type="file" class="form-control" id="	foto_surat_rekomendasi_dinas_pupr" name="	foto_surat_rekomendasi_dinas_pupr" value=""
                                 required>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>

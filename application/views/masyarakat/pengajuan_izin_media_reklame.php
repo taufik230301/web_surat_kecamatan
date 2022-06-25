@@ -30,61 +30,64 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Pengajuan Izin Domisili</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Pengajuan Izin Media Reklame</h1>
 
                     <form>
                         <div class="form-group">
-                            <label for="username">Username</label>
-                            <input type="text" class="form-control" id="username" name="username" value="" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" value="" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="text" class="form-control" id="password" name="password" value="" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="nama_lengkap">Nama Lengkap</label>
-                            <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" value=""
+                            <label for="nomor_surat">Nomor Surat</label>
+                            <input type="text" class="form-control" id="nomor_surat" name="nomor_surat" value=""
                                 required>
                         </div>
                         <div class="form-group">
-                            <label for="no_kk">Nomor KK</label>
-                            <input type="text" class="form-control" id="no_kk" name="no_kk" value="" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="no_ktp">Nomor KTP</label>
-                            <input type="text" class="form-control" id="no_ktp" name="no_ktp" value="" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="jenis_kelamin">Jenis Kelamin</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
-                                <option value="L">Laki-Laki</option>
-                                <option value="P">Perempuan</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="agama">Agama</label>
-                            <input type="text" class="form-control" id="agama" name="agama" value="" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="no_hp">No HP</label>
-                            <input type="text" class="form-control" id="no_hp" name="no_hp" value="" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="alamat">Alamat</label>
-                            <input type="text" class="form-control" id="alamat" name="alamat" value="" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="tempat_lahir">Tempat Lahir</label>
-                            <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" value=""
+                            <label for="berlaku_awal">Berlaku Awal</label>
+                            <input type="date" class="form-control" id="berlaku_awal" name="berlaku_awal" value=""
                                 required>
                         </div>
                         <div class="form-group">
-                            <label for="tanggal_lahir">Tanggal Lahir</label>
-                            <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir" value=""
+                            <label for="berlaku_akhir">Berlaku Akhir</label>
+                            <input type="date" class="form-control" id="berlaku_akhir" name="berlaku_akhir" value=""
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="jenis_reklame">Jenis Reklame</label>
+                            <input type="text" class="form-control" id="jenis_reklame" name="jenis_reklame" value=""
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="merk">Merk</label>
+                            <input type="text" class="form-control" id="merk" name="merk" value="" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="jumlah">Jumlah</label>
+                            <input type="number" class="form-control" id="jumlah" name="jumlah" value="" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ukuran">Ukuran</label>
+                            <input type="number" class="form-control" id="ukuran" name="ukuran" value="" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lokasi_reklame">Lokasi Reklame</label>
+                            <input type="text" class="form-control" id="lokasi_reklame" name="lokasi_reklame" value=""
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="foto_ktp_pemohon">Foto KTP Pemohon</label>
+                            <input type="file" class="form-control" id="foto_ktp_pemohon" name="foto_ktp_pemohon"
+                                value="" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="foto_sketsa_lokasi">Foto Sketsa Lokasi Reklame</label>
+                            <input type="file" class="form-control" id="foto_sketsa_lokasi" name="foto_sketsa_lokasi"
+                                value="" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="foto_desain">Foto Desain Reklame</label>
+                            <input type="file" class="form-control" id="foto_desain" name="foto_desain" value=""
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="foto_bukti_lunas_pbb">Foto Bukti Lunas PBB Tahun Berjalan</label>
+                            <input type="file" class="form-control" id="foto_bukti_lunas_pbb" name="foto_bukti_lunas_pbb" value=""
                                 required>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
