@@ -3,7 +3,7 @@
 
 <head>
 
-    <?php $this->load->view('kepala_kasi/components/head.php');?>
+    <?php $this->load->view('masyarakat/components/head.php');?>
 
 </head>
 
@@ -13,7 +13,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <?php $this->load->view('kepala_kasi/components/sidebar.php')?>
+        <?php $this->load->view('masyarakat/components/sidebar.php')?>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -23,7 +23,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <?php $this->load->view('kepala_kasi/components/navbar.php')?>
+                <?php $this->load->view('masyarakat/components/navbar.php')?>
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
@@ -31,9 +31,6 @@
 
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">Data Izin Media Reklame</h1>
-                    <a class="btn btn-primary" href="">
-                        Cetak Laporan <i class="fas fa-print"></i>
-                    </a>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4 mt-4">
@@ -135,7 +132,7 @@
 
 
 
-    <?php $this->load->view('kepala_kasi/components/js.php');?>
+    <?php $this->load->view('masyarakat/components/js.php');?>
 
 </body>
 

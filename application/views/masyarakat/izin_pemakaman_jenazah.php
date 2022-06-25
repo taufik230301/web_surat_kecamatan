@@ -3,7 +3,7 @@
 
 <head>
 
-    <?php $this->load->view('kepala_kasi/components/head.php');?>
+    <?php $this->load->view('masyarakat/components/head.php');?>
 
 </head>
 
@@ -13,7 +13,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <?php $this->load->view('kepala_kasi/components/sidebar.php')?>
+        <?php $this->load->view('masyarakat/components/sidebar.php')?>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -23,22 +23,20 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <?php $this->load->view('kepala_kasi/components/navbar.php')?>
+                <?php $this->load->view('masyarakat/components/navbar.php')?>
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Data Izin Media Reklame</h1>
-                    <a class="btn btn-primary" href="">
-                        Cetak Laporan <i class="fas fa-print"></i>
-                    </a>
+                    <h1 class="h3 mb-2 text-gray-800">Data Izin Pemakaman Jenazah</h1>
+
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4 mt-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Izin Media Reklame</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Izin Pemakaman Jenazah</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -47,14 +45,15 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Nomor Surat</th>
-                                            <th>Berlaku Awal</th>
-                                            <th>Berlaku Akhir</th>
-                                            <th>Jenis Reklame</th>
-                                            <th>Merk</th>
-                                            <th>Jumlah</th>
-                                            <th>Ukuran</th>
-                                            <th>Lokasi Reklame</th>
-                                            <th>Nama Lengkap</th>
+                                            <th>Tanggal Ditetapkan</th>
+                                            <th>Nama Almarhum</th>
+                                            <th>Umur Almarhum</th>
+                                            <th>Agama Almarhum</th>
+                                            <th>NIK Almarhum</th>
+                                            <th>Tanggal Meninggal</th>
+                                            <th>Tanggal Dikubur</th>
+                                            <th>Blok/Petak</th>
+                                            <th>Jenis_Pemakaman</th>
                                             <th>Foto Surat</th>
                                         </tr>
                                     </thead>
@@ -71,6 +70,7 @@
                                             <td>$320,800</td>
                                             <td>$320,800</td>
                                             <td>$320,800</td>
+                                            <td>$320,800</td>
                                             <td>
                                                 <div class="table-responsive">
                                                     <div class="table table-striped table-hover ">
@@ -81,7 +81,7 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            
+
                                         </tr>
                                     </tbody>
                                 </table>
@@ -94,6 +94,8 @@
 
             </div>
             <!-- End of Main Content -->
+
+
 
 
 
@@ -135,7 +137,7 @@
 
 
 
-    <?php $this->load->view('kepala_kasi/components/js.php');?>
+    <?php $this->load->view('masyarakat/components/js.php');?>
 
 </body>
 

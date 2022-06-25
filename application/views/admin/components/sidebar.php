@@ -18,7 +18,7 @@
             <span>Dashboard</span></a>
     </li>
 
- 
+
     <!-- Nav Item - Charts -->
     <li class="nav-item">
         <a class="nav-link" href="<?=base_url();?>Masyarakat/view_admin">
@@ -33,20 +33,27 @@
             <span>Izin Domisili</span></a>
     </li>
 
-     <!-- Nav Item - Tables -->
-     <li class="nav-item">
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
         <a class="nav-link" href="<?=base_url();?>Izin_Media_Reklame/view_admin">
             <i class="fas fa-fw fa-table"></i>
             <span>Izin Media Reklame</span></a>
     </li>
 
-     <!-- Nav Item - Tables -->
-     <li class="nav-item">
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
         <a class="nav-link" href="<?=base_url();?>Izin_Pemakaman_Jenazah/view_admin">
             <i class="fas fa-fw fa-table"></i>
             <span>Izin Pemakaman</span></a>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link" href="<?=base_url();?>Settings/settings_admin">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Settings</span></a>
+    </li>
+
+   
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 
@@ -55,6 +62,6 @@
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
     </div>
 
-   
+
 
 </ul>

@@ -12,4 +12,9 @@ class Izin_Media_Reklame extends CI_Controller {
 	{
 		$this->load->view('kepala_kasi/izin_media_reklame.php');
     }
+
+    public function view_masyarakat()
+	{
+		$this->load->view('masyarakat/izin_media_reklame.php');
+    }
 }

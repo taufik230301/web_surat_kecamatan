@@ -31,9 +31,9 @@
 
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">Data Izin Pemakaman Jenazah</h1>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambah_masyarakat">
-                        Tambah Izin Pemakaman Jenazah
-                    </button>
+                    <a class="btn btn-primary" href="">
+                        Cetak Laporan <i class="fas fa-print"></i>
+                    </a>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4 mt-4">
@@ -57,7 +57,6 @@
                                             <th>Blok/Petak</th>
                                             <th>Jenis_Pemakaman</th>
                                             <th>Foto Surat</th>
-                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
 
@@ -84,24 +83,7 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td>
-                                                <div class="table-responsive">
-                                                    <div class="table table-striped table-hover ">
-                                                        <a href="" class="btn btn-primary" data-toggle="modal"
-                                                            data-target="#ubah_masyarakat">
-                                                            Edit <i class="nav-icon fas fa-edit"></i>
-                                                        </a>
 
-                                                    </div>
-                                                </div>
-                                                <div class="table-responsive">
-                                                    <div class="table table-striped table-hover ">
-                                                        <a href="" data-toggle="modal" data-target="#delete_masyarakat"
-                                                            class="btn btn-danger">Hapus <i class="fas fa-trash"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -115,179 +97,11 @@
             </div>
             <!-- End of Main Content -->
 
-            <!-- Modal Tambah Masyarakat-->
-            <div class="modal fade" id="tambah_masyarakat" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Tambah Data Masyarakat</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <form>
-                                <div class="form-group">
-                                    <label for="username">Username</label>
-                                    <input type="text" class="form-control" id="username" name="username" value=""
-                                        required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input type="email" class="form-control" id="email" name="email" value="" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="password">Password</label>
-                                    <input type="text" class="form-control" id="password" name="password" value=""
-                                        required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="nama_lengkap">Nama Lengkap</label>
-                                    <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap"
-                                        value="" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="no_kk">Nomor KK</label>
-                                    <input type="text" class="form-control" id="no_kk" name="no_kk" value="" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="no_ktp">Nomor KTP</label>
-                                    <input type="text" class="form-control" id="no_ktp" name="no_ktp" value="" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="jenis_kelamin">Jenis Kelamin</label>
-                                    <select class="form-control" id="exampleFormControlSelect1">
-                                        <option value="L">Laki-Laki</option>
-                                        <option value="P">Perempuan</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="agama">Agama</label>
-                                    <input type="text" class="form-control" id="agama" name="agama" value="" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="no_hp">No HP</label>
-                                    <input type="text" class="form-control" id="no_hp" name="no_hp" value="" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="alamat">Alamat</label>
-                                    <input type="text" class="form-control" id="alamat" name="alamat" value="" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="tempat_lahir">Tempat Lahir</label>
-                                    <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir"
-                                        value="" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="tanggal_lahir">Tanggal Lahir</label>
-                                    <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir"
-                                        value="" required>
-                                </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Modal Edit Masyarakat-->
-            <div class="modal fade" id="ubah_masyarakat" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Ubah Data Masyarakat</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <form>
-                                <div class="form-group">
-                                    <label for="username">Username</label>
-                                    <input type="text" class="form-control" id="username" name="username" value=""
-                                        required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input type="email" class="form-control" id="email" name="email" value="" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="password">Password</label>
-                                    <input type="text" class="form-control" id="password" name="password" value=""
-                                        required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="nama_lengkap">Nama Lengkap</label>
-                                    <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap"
-                                        value="" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="no_kk">Nomor KK</label>
-                                    <input type="text" class="form-control" id="no_kk" name="no_kk" value="" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="no_ktp">Nomor KTP</label>
-                                    <input type="text" class="form-control" id="no_ktp" name="no_ktp" value="" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="jenis_kelamin">Jenis Kelamin</label>
-                                    <select class="form-control" id="exampleFormControlSelect1">
-                                        <option value="L">Laki-Laki</option>
-                                        <option value="P">Perempuan</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="agama">Agama</label>
-                                    <input type="text" class="form-control" id="agama" name="agama" value="" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="no_hp">No HP</label>
-                                    <input type="text" class="form-control" id="no_hp" name="no_hp" value="" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="alamat">Alamat</label>
-                                    <input type="text" class="form-control" id="alamat" name="alamat" value="" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="tempat_lahir">Tempat Lahir</label>
-                                    <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir"
-                                        value="" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="tanggal_lahir">Tanggal Lahir</label>
-                                    <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir"
-                                        value="" required>
-                                </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Modal Delete Masyarakat-->
-            <div class="modal fade" id="delete_masyarakat" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Delete Data Masyarakat</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            ...
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+
+
 
             <!-- Modal Foto-->
             <div class="modal fade" id="foto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

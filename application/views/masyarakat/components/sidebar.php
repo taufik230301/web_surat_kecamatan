@@ -18,21 +18,48 @@
             <span>Dashboard</span></a>
     </li>
 
- 
-
-
-    <!-- Nav Item - Charts -->
     <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Charts</span></a>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+            aria-expanded="true" aria-controls="collapseUtilities">
+            <i class="fas fa-fw fa-wrench"></i>
+            <span>Pengajuan Surat</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Pengajuan</h6>
+                <a class="collapse-item" href="<?=base_url();?>Pengajuan/pengajuan_izin_domisili_masyarakat">Izin Domisili</a>
+                <a class="collapse-item" href="<?=base_url();?>Pengajuan/pengajuan_izin_media_reklame_masyarakat">Izin Media Reklame</a>
+                <a class="collapse-item" href="<?=base_url();?>Pengajuan/pengajuan_izin_pemakaman_masyarakat">Izin Pemakaman</a>
+            </div>
+        </div>
+    </li>
+
+
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
+        <a class="nav-link" href="<?=base_url();?>Izin_Domisili/view_masyarakat">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Izin Domisili</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="<?=base_url();?>Izin_Media_Reklame/view_masyarakat">
             <i class="fas fa-fw fa-table"></i>
-            <span>Tables</span></a>
+            <span>Izin Media Reklame</span></a>
+    </li>
+
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
+        <a class="nav-link" href="<?=base_url();?>Izin_Pemakaman_Jenazah/view_masyarakat">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Izin Pemakaman</span></a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="<?=base_url();?>Settings/settings_masyarakat">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Settings</span></a>
     </li>
 
     <!-- Divider -->
@@ -43,6 +70,6 @@
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
     </div>
 
-   
+
 
 </ul>
