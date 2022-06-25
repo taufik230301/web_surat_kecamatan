@@ -42,7 +42,7 @@
 
      <!-- Nav Item - Tables -->
      <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="<?=base_url();?>Izin_Pemakaman_Jenazah/view_admin">
             <i class="fas fa-fw fa-table"></i>
             <span>Izin Pemakaman</span></a>
     </li>

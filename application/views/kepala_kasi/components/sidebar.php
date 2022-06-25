@@ -18,21 +18,28 @@
             <span>Dashboard</span></a>
     </li>
 
- 
 
 
-    <!-- Nav Item - Charts -->
+
+    <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Charts</span></a>
+        <a class="nav-link" href="<?=base_url();?>Izin_Domisili/view_kepala_kasi">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Izin Domisili</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="<?=base_url();?>Izin_Media_Reklame/view_kepala_kasi">
             <i class="fas fa-fw fa-table"></i>
-            <span>Tables</span></a>
+            <span>Izin Media Reklame</span></a>
+    </li>
+
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
+        <a class="nav-link" href="<?=base_url();?>Izin_Pemakaman_Jenazah/view_kepala_kasi">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Izin Pemakaman</span></a>
     </li>
 
     <!-- Divider -->
@@ -43,6 +50,6 @@
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
     </div>
 
-   
+
 
 </ul>

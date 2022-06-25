@@ -55,7 +55,7 @@
                                             <th>Ukuran</th>
                                             <th>Lokasi Reklame</th>
                                             <th>Nama Lengkap</th>
-                                            <th>Foto</th>
+                                            <th>Foto Surat</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>

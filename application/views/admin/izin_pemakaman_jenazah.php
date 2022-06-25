@@ -3,7 +3,7 @@
 
 <head>
 
-    <?php $this->load->view('admin/components/head.php');?>
+    <?php $this->load->view('kepala_kasi/components/head.php');?>
 
 </head>
 
@@ -13,7 +13,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <?php $this->load->view('admin/components/sidebar.php')?>
+        <?php $this->load->view('kepala_kasi/components/sidebar.php')?>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -23,22 +23,22 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <?php $this->load->view('admin/components/navbar.php')?>
+                <?php $this->load->view('kepala_kasi/components/navbar.php')?>
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Data Izin Domisili</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Data Izin Pemakaman Jenazah</h1>
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambah_masyarakat">
-                        Tambah Izin Domisili
+                        Tambah Izin Pemakaman Jenazah
                     </button>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4 mt-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Izin Domisili</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Izin Pemakaman Jenazah</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -47,12 +47,15 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Nomor Surat</th>
-                                            <th>Nama Usaha</th>
-                                            <th>Alamat Usaha</th>
-                                            <th>Kegiatan Usaha</th>
-                                            <th>Awal Berlaku</th>
-                                            <th>Akhir Berlaku</th>
-                                            <th>Nama Lengkap</th>
+                                            <th>Tanggal Ditetapkan</th>
+                                            <th>Nama Almarhum</th>
+                                            <th>Umur Almarhum</th>
+                                            <th>Agama Almarhum</th>
+                                            <th>NIK Almarhum</th>
+                                            <th>Tanggal Meninggal</th>
+                                            <th>Tanggal Dikubur</th>
+                                            <th>Blok/Petak</th>
+                                            <th>Jenis_Pemakaman</th>
                                             <th>Foto Surat</th>
                                             <th>Aksi</th>
                                         </tr>
@@ -65,6 +68,9 @@
                                             <td>Edinburgh</td>
                                             <td>61</td>
                                             <td>2011/04/25</td>
+                                            <td>$320,800</td>
+                                            <td>$320,800</td>
+                                            <td>$320,800</td>
                                             <td>$320,800</td>
                                             <td>$320,800</td>
                                             <td>$320,800</td>
@@ -319,7 +325,7 @@
 
 
 
-    <?php $this->load->view('admin/components/js.php');?>
+    <?php $this->load->view('kepala_kasi/components/js.php');?>
 
 </body>
 
