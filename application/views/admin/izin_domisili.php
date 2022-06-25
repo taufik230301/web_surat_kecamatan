@@ -30,15 +30,15 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Data Masyarakat</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Data Izin Domisili</h1>
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambah_masyarakat">
-                        Tambah Masyarakat
+                        Tambah Izin Domisili
                     </button>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4 mt-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">masyarakat</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Izin Domisili</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -46,17 +46,14 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
+                                            <th>Nomor Surat</th>
+                                            <th>Nama Usaha</th>
+                                            <th>Alamat Usaha</th>
+                                            <th>Kegiatan Usaha</th>
+                                            <th>Awal Berlaku</th>
+                                            <th>Akhir Berlaku</th>
                                             <th>Nama Lengkap</th>
-                                            <th>No Kartu Keluarga</th>
-                                            <th>No KTP</th>
-                                            <th>Jenis Kelamin</th>
-                                            <th>Agama</th>
-                                            <th>No HP</th>
-                                            <th>Alamat</th>
-                                            <th>Tempat Lahir</th>
-                                            <th>Tanggal Lahir</th>
-                                            <th>Status Verifikasi</th>
-                                            <th>Tanggal Register</th>
+                                            <th>Foto</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -71,10 +68,16 @@
                                             <td>$320,800</td>
                                             <td>$320,800</td>
                                             <td>$320,800</td>
-                                            <td>$320,800</td>
-                                            <td>$320,800</td>
-                                            <td>$320,800</td>
-                                            <td>$320,800</td>
+                                            <td>
+                                                <div class="table-responsive">
+                                                    <div class="table table-striped table-hover ">
+                                                        <a href="" class="btn btn-primary" data-toggle="modal"
+                                                            data-target="#foto">
+                                                            Foto <i class="nav-icon fas fa-file-image"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </td>
                                             <td>
                                                 <div class="table-responsive">
                                                     <div class="table table-striped table-hover ">
@@ -265,6 +268,27 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Delete Data Masyarakat</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Foto-->
+            <div class="modal fade" id="foto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Foto</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>

@@ -13,7 +13,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="<?=base_url();?>Dashboard/dashboard_admin">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
@@ -21,21 +21,21 @@
  
     <!-- Nav Item - Charts -->
     <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="<?=base_url();?>Masyarakat/view_admin">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Masyarakat</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="<?=base_url();?>Izin_Domisili/view_admin">
             <i class="fas fa-fw fa-table"></i>
             <span>Izin Domisili</span></a>
     </li>
 
      <!-- Nav Item - Tables -->
      <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="<?=base_url();?>Izin_Media_Reklame/view_admin">
             <i class="fas fa-fw fa-table"></i>
             <span>Izin Media Reklame</span></a>
     </li>
