@@ -6,6 +6,7 @@
 
 <title>SB Admin 2 - Dashboard</title>
 
+<link rel="icon" type="image/png" href="<?= base_url();?>assets/favico.ico" />
 <!-- Custom fonts for this template-->
 <link href="<?=base_url();?>assets/sb_admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 <link

@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sign Up Form by Colorlib</title>
 
+    <link rel="icon" type="image/png" href="<?= base_url();?>assets/favico.ico" />
+    
     <!-- Font Icon -->
     <link rel="stylesheet"
         href="<?=base_url();?>assets/login_register/fonts/material-icon/css/material-design-iconic-font.min.css">
