@@ -13,7 +13,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="<?=base_url();?>Dashboard/dashboard_masyarakat">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
@@ -57,7 +57,7 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="<?=base_url();?>Settings/settings_masyarakat">
+        <a class="nav-link" href="<?=base_url();?>Settings/view_masyarakat">
             <i class="fas fa-fw fa-table"></i>
             <span>Settings</span></a>
     </li>

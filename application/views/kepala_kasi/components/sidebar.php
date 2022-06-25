@@ -43,7 +43,7 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="<?=base_url();?>Settings/settings_kepala_kasi">
+        <a class="nav-link" href="<?=base_url();?>Settings/view_kepala_kasi">
             <i class="fas fa-fw fa-table"></i>
             <span>Settings</span></a>
     </li>

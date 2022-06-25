@@ -48,7 +48,7 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="<?=base_url();?>Settings/settings_admin">
+        <a class="nav-link" href="<?=base_url();?>Settings/view_admin">
             <i class="fas fa-fw fa-table"></i>
             <span>Settings</span></a>
     </li>
