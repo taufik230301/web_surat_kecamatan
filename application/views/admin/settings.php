@@ -8,6 +8,33 @@
 </head>
 
 <body id="page-top">
+    <?php if ($this->session->flashdata('input')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Input!",
+        text: "Data Berhasil Ditambahkan!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+    <?php if ($this->session->flashdata('eror_input')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+    <?php if ($this->session->flashdata('password_err')){ ?>
+    <script>
+    swal({
+        title: "Error Password!",
+        text: "Ketik Ulang Password!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
 
     <!-- Page Wrapper -->
     <div id="wrapper">

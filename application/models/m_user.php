@@ -25,4 +25,17 @@ class M_user extends CI_Model
             return false;
     }
 
+    public function update_account($id_user, $username, $password)
+    {
+        $this->db->trans_start();
+
+        $this->db->query("UPDATE user SET username='$username', password='$password' WHERE id_user='$id_user'");
+ 
+        $this->db->trans_complete();
+         if($this->db->trans_status()==true)
+             return true;
+         else
+             return false;
+    }
+
 }
