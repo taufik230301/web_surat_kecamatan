@@ -31,7 +31,7 @@
 
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">Settings Akun</h1>
-                    <form>
+                    <form action="<?=base_url();?>Settings/settings_admin" method="POST">
                         <div class="form-group">
                             <label for="username">Username</label>
                             <input type="text" class="form-control" id="username" name="username" value="" required>
