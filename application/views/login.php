@@ -18,6 +18,15 @@
 </head>
 
 <body>
+    <?php if($this->session->flashdata('loggin_err_no_access')){?>
+    <script>
+    swal({
+        title: "Error!",
+        text: "Anda Belum Memiliki Akses!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
 
     <div class="main">
 
@@ -26,14 +35,14 @@
             <div class="container">
                 <div class="signin-content">
                     <div class="signin-image">
-                        <figure><img src="<?=base_url();?>assets/logo.jpeg"
-                                alt="sing up image"></figure>
+                        <figure><img src="<?=base_url();?>assets/logo.jpeg" alt="sing up image"></figure>
                         <a href="<?=base_url();?>Register/index" class="signup-image-link">Buat akun !</a>
                     </div>
 
                     <div class="signin-form">
                         <h2 class="form-title">Login</h2>
-                        <form method="POST" class="register-form" id="login-form" action="<?=base_url();?>Login/proses_login">
+                        <form method="POST" class="register-form" id="login-form"
+                            action="<?=base_url();?>Login/proses_login">
                             <div class="form-group">
                                 <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="your_name" id="your_name" placeholder="Your Name" />
