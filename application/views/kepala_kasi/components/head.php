@@ -15,3 +15,6 @@
 
 <!-- Custom styles for this template-->
 <link href="<?=base_url();?>assets/sb_admin/css/sb-admin-2.min.css" rel="stylesheet">
+
+ <!-- SweetAlert -->
+ <script src="<?= base_url() ?>node_modules/sweetalert/dist/sweetalert.min.js"></script>

@@ -18,3 +18,6 @@
 
  <!-- Custom styles for this page -->
  <link href="<?=base_url();?>assets/sb_admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+  <!-- SweetAlert -->
+  <script src="<?= base_url() ?>node_modules/sweetalert/dist/sweetalert.min.js"></script>

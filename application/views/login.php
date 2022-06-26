@@ -15,6 +15,9 @@
 
     <!-- Main css -->
     <link rel="stylesheet" href="<?=base_url();?>assets/login_register/css/style.css">
+
+     <!-- SweetAlert -->
+     <script src="<?= base_url() ?>node_modules/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
