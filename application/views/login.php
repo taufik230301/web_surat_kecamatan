@@ -16,16 +16,47 @@
     <!-- Main css -->
     <link rel="stylesheet" href="<?=base_url();?>assets/login_register/css/style.css">
 
-     <!-- SweetAlert -->
-     <script src="<?= base_url() ?>node_modules/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- SweetAlert -->
+    <script src="<?= base_url() ?>node_modules/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
+
+    <?php if ($this->session->flashdata('input')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Terdaftar!",
+        text: "Silahkan Anda Login!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
     <?php if($this->session->flashdata('loggin_err_no_access')){?>
     <script>
     swal({
         title: "Error!",
         text: "Anda Belum Memiliki Akses!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if($this->session->flashdata('loggin_err_pass')){?>
+    <script>
+    swal({
+        title: "Error!",
+        text: "Password Yang Anda Masukan Salah!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if($this->session->flashdata('loggin_err_no_user')){?>
+    <script>
+    swal({
+        title: "Error!",
+        text: "Anda Belum Terdaftar!",
         icon: "error"
     });
     </script>

@@ -16,12 +16,30 @@
     <!-- Main css -->
     <link rel="stylesheet" href="<?=base_url();?>assets/login_register/css/style.css">
 
-     <!-- SweetAlert -->
-     <script src="<?= base_url() ?>node_modules/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- SweetAlert -->
+    <script src="<?= base_url() ?>node_modules/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
+    <?php if ($this->session->flashdata('password_err')){ ?>
+    <script>
+    swal({
+        title: "Error Password!",
+        text: "Ketik Ulang Password!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
 
+    <?php if ($this->session->flashdata('eror_input')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
     <div class="main">
 
         <!-- Sign up form -->
@@ -30,10 +48,11 @@
                 <div class="signup-content">
                     <div class="signup-form">
                         <h2 class="form-title">Daftar</h2>
-                        <form method="POST" class="register-form" id="register-form">
+                        <form method="POST" class="register-form" id="register-form"
+                            action="<?=base_url();?>Register/proses_register">
                             <div class="form-group">
-                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="name" id="name" placeholder="Your Name" />
+                                <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="username" id="username" placeholder="Your Username" />
                             </div>
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
@@ -53,8 +72,7 @@
                         </form>
                     </div>
                     <div class="signup-image">
-                        <figure><img src="<?=base_url();?>assets/logo.jpeg"
-                                alt="sing up image"></figure>
+                        <figure><img src="<?=base_url();?>assets/logo.jpeg" alt="sing up image"></figure>
                         <a href="<?=base_url();?>Login/index" class="signup-image-link">Saya sudah terdaftar</a>
                     </div>
                 </div>
