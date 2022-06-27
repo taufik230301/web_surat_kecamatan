@@ -31,4 +31,35 @@ class M_izin_domisili extends CI_Model
         else
             return false;
     }
+
+    public function update_izin_domisili($nomor_surat, $nama_usaha, $alamat_usaha, 
+    $kegiatan_usaha, $berlaku_awal, $berlaku_akhir, $foto_ktp, $foto_akta_usaha, 
+    $foto_pengantar_lurah_setempat, $foto_bukti_lunas_pbb, $id_izin_domisili)
+    {
+        $this->db->trans_start();
+
+       $this->db->query("UPDATE izin_domisili 
+       SET nomor_surat='$nomor_surat', nama_usaha='$nama_usaha', alamat_usaha='$alamat_usaha', kegiatan_usaha='$kegiatan_usaha', 
+       berlaku_awal='$berlaku_awal', berlaku_akhir='$berlaku_akhir', foto_ktp='$foto_ktp', foto_akta_usaha='$foto_akta_usaha',
+        foto_pengantar_lurah_setempat='$foto_pengantar_lurah_setempat', foto_bukti_lunas_pbb='$foto_bukti_lunas_pbb' WHERE id_izin_domisili='$id_izin_domisili'");
+
+       $this->db->trans_complete();
+        if($this->db->trans_status()==true)
+            return true;
+        else
+            return false;
+    }
+
+    public function verify_izin_domisili($id_status_verifikasi_surat, $id_izin_domisili)
+    {
+        $this->db->trans_start();
+
+        $this->db->query("UPDATE izin_domisili SET id_status_verifikasi_surat='$id_status_verifikasi_surat' WHERE id_izin_domisili='$id_izin_domisili'");
+ 
+        $this->db->trans_complete();
+         if($this->db->trans_status()==true)
+             return true;
+         else
+             return false;
+    }
 }
