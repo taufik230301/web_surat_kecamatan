@@ -11,12 +11,14 @@ class Izin_Domisili extends CI_Controller {
 
 	public function view_admin()
 	{
-		$this->load->view('admin/izin_domisili.php');
+		$data['izin_domisili'] = $this->m_izin_domisili->read_all_domsisili()->result_array();
+		$this->load->view('admin/izin_domisili.php', $data);
 	}
 	
 	public function view_kepala_kasi()
 	{
-		$this->load->view('kepala_kasi/izin_domisili.php');
+		$data['izin_domisili'] = $this->m_izin_domisili->read_all_domsisili()->result_array();
+		$this->load->view('kepala_kasi/izin_domisili.php', $data);
 	}
 	
 	public function view_masyarakat()
@@ -45,7 +47,7 @@ class Izin_Domisili extends CI_Controller {
 
 		$this->load->library('upload');
 		$config['upload_path'] = './assets/izin_domisili';
-		$config['allowed_types'] = 'gif';
+		$config['allowed_types'] = 'jpg|png|jpeg|gif';
 		$config['max_size'] = '2048';  //2MB max
 		$config['max_width'] = '4480'; // pixel
 		$config['max_height'] = '4480'; // pixel
