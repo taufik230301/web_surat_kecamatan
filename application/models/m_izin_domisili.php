@@ -50,6 +50,8 @@ class M_izin_domisili extends CI_Model
             return false;
     }
 
+
+
     public function verify_izin_domisili($id_status_verifikasi_surat, $id_izin_domisili)
     {
         $this->db->trans_start();
@@ -61,5 +63,20 @@ class M_izin_domisili extends CI_Model
              return true;
          else
              return false;
+    }
+
+    public function delete_izin_domisili($id_izin_domisili)
+    {
+
+        $this->db->trans_start();
+
+        $this->db->query("DELETE FROM izin_domisili WHERE id_izin_domisili='$id_izin_domisili'");
+ 
+        $this->db->trans_complete();
+         if($this->db->trans_status()==true)
+             return true;
+         else
+             return false;
+             
     }
 }

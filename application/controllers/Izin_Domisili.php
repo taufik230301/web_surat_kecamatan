@@ -174,7 +174,7 @@ class Izin_Domisili extends CI_Controller {
 		$path = './assets/izin_domisili/';
 
 		$this->load->library('upload');
-		
+
        if($_FILES['foto_ktp']['tmp_name'] != ""){
 			
 			$config['upload_path'] = './assets/izin_domisili';
@@ -319,5 +319,31 @@ class Izin_Domisili extends CI_Controller {
 				redirect('Izin_Domisili/view_admin');
 		}
 
+	}
+
+	public function delete_izin_domisili_admin()
+	{
+		$id_izin_domisili = $this->input->post("id_izin_domisili");
+
+		$path = './assets/izin_domisili/';
+  
+		$hasil = $this->m_izin_domisili->delete_izin_domisili($id_izin_domisili);
+  
+		  if($hasil==false){
+
+					$this->session->set_flashdata('eror_delete','eror_delete');
+					redirect('Izin_Domisili/view_admin');
+
+		  }else{
+
+				@unlink($path.$this->input->post('foto_ktp_old'));
+				@unlink($path.$this->input->post('foto_akta_usaha_old'));
+				@unlink($path.$this->input->post('foto_pengantar_lurah_setempat_old'));
+				@unlink($path.$this->input->post('foto_bukti_lunas_pbb_old'));
+
+					$this->session->set_flashdata('delete','delete');
+					redirect('Izin_Domisili/view_admin');
+		  }
+		
 	}
 }

@@ -28,15 +28,7 @@
     </script>
     <?php } ?>
 
-    <?php if ($this->session->flashdata('eror_update')){ ?>
-    <script>
-    swal({
-        title: "Eror!",
-        text: "Terjadi Kesalahan Dalam Proses data!",
-        icon: "error"
-    });
-    </script>
-    <?php } ?>
+
 
     error_foto_akta_usaha
 
@@ -50,11 +42,41 @@
     </script>
     <?php } ?>
 
+    <?php if ($this->session->flashdata('eror_update')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
     <?php if ($this->session->flashdata('update')){ ?>
     <script>
     swal({
         title: "Berhasil Update!",
         text: "Data Izin Domisili Berhasil di Update!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror_delete')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('delete')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Delete!",
+        text: "Data Izin Domisili Berhasil di Delete!",
         icon: "success"
     });
     </script>
@@ -435,11 +457,11 @@
                                                                 <label for="foto_akta_usaha">Foto Pendirian Akta
                                                                     Usaha</label>
                                                                 <input type="file" class="form-control"
-                                                                    id="foto_akta_usaha" name="foto_akta_usaha"
-                                                                    >
+                                                                    id="foto_akta_usaha" name="foto_akta_usaha">
                                                                 <input type="text" class="form-control"
                                                                     id="foto_akta_usaha_old" name="foto_akta_usaha_old"
-                                                                    value="<?=$foto_akta_usaha?>" value="<?=$foto_akta_usaha?>" hidden>
+                                                                    value="<?=$foto_akta_usaha?>"
+                                                                    value="<?=$foto_akta_usaha?>" hidden>
                                                                 <small id="foto_akta_usaha_old"
                                                                     class="form-text text-muted">Format
                                                                     PNG/JPG/JPEG (Max
@@ -450,10 +472,11 @@
                                                                     Pengantar Lurah Setempat</label>
                                                                 <input type="file" class="form-control"
                                                                     id="foto_pengantar_lurah_setempat"
-                                                                    name="foto_pengantar_lurah_setempat" >
+                                                                    name="foto_pengantar_lurah_setempat">
                                                                 <input type="text" class="form-control"
                                                                     id="foto_pengantar_lurah_setempat_old"
-                                                                    name="foto_pengantar_lurah_setempat_old" value="<?=$foto_pengantar_lurah_setempat?>" hidden>
+                                                                    name="foto_pengantar_lurah_setempat_old"
+                                                                    value="<?=$foto_pengantar_lurah_setempat?>" hidden>
                                                                 <small id="foto_pengantar_lurah_setempat_old"
                                                                     class="form-text text-muted">Format
                                                                     PNG/JPG/JPEG (Max
@@ -464,10 +487,11 @@
                                                                     Tahun Bejalan</label>
                                                                 <input type="file" class="form-control"
                                                                     id="foto_bukti_lunas_pbb"
-                                                                    name="foto_bukti_lunas_pbb" >
+                                                                    name="foto_bukti_lunas_pbb">
                                                                 <input type="text" class="form-control"
                                                                     id="foto_bukti_lunas_pbb_old"
-                                                                    name="foto_bukti_lunas_pbb_old" value="<?=$foto_bukti_lunas_pbb?>" hidden>
+                                                                    name="foto_bukti_lunas_pbb_old"
+                                                                    value="<?=$foto_bukti_lunas_pbb?>" hidden>
                                                                 <small id="foto_bukti_lunas_pbb_old"
                                                                     class="form-text text-muted">Format
                                                                     PNG/JPG/JPEG (Max
@@ -476,6 +500,56 @@
 
                                                             <button type="submit"
                                                                 class="btn btn-primary">Submit</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Modal Delete Data -->
+                                        <div class="modal fade" id="delete_izin_domisili<?=$id_izin_domisili?>"
+                                            tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Delete Data
+                                                            Izin Domisili
+                                                        </h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form
+                                                            action="<?= base_url();?>Izin_Domisili/delete_izin_domisili_admin"
+                                                            method="post" enctype="multipart/form-data">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <input type="hidden" name="id_izin_domisili"
+                                                                        value="<?php echo $id_izin_domisili?>" />
+                                                                    <input type="hidden" name="foto_ktp_old"
+                                                                        value="<?=$foto_ktp?>" hidden>
+                                                                    <input type="hidden" name="foto_akta_usaha_old"
+                                                                        value="<?=$foto_akta_usaha?>" hidden>
+                                                                    <input type="hidden"
+                                                                        name="foto_pengantar_lurah_setempat_old"
+                                                                        value="<?=$foto_pengantar_lurah_setempat?>"
+                                                                        hidden>
+                                                                    <input type="hidden"
+                                                                        name="foto_bukti_lunas_pbb_old"
+                                                                        value="<?=$foto_bukti_lunas_pbb?>"
+                                                                        hidden>
+
+                                                                    <p>Apakah kamu yakin ingin menghapus data
+                                                                        ini?</i></b></p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger ripple"
+                                                                    data-dismiss="modal">Tidak</button>
+                                                                <button type="submit"
+                                                                    class="btn btn-success ripple save-category">Ya</button>
+                                                            </div>
                                                         </form>
                                                     </div>
                                                 </div>
