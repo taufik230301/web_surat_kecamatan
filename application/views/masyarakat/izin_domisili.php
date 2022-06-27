@@ -50,7 +50,9 @@
                                             <th>Awal Berlaku</th>
                                             <th>Akhir Berlaku</th>
                                             <th>Nama Pengaju</th>
+                                            <th>Status Surat</th>
                                             <th>Foto Surat</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
 
@@ -72,6 +74,7 @@
                                             $foto_akta_usaha = $i['foto_akta_usaha'];
                                             $foto_pengantar_lurah_setempat = $i['foto_pengantar_lurah_setempat'];
                                             $foto_bukti_lunas_pbb = $i['foto_bukti_lunas_pbb'];
+                                            $id_status_verifikasi_surat = $i['id_status_verifikasi_surat'];
                                             
                                             
                                           
@@ -87,11 +90,57 @@
                                             <td><?=$berlaku_akhir?></td>
                                             <td><?=$nama_lengkap?></td>
                                             <td>
+
+                                                <?php if($id_status_verifikasi_surat == 1) {?>
+                                                <div class="table-responsive">
+                                                    <div class="table table-striped table-hover ">
+                                                        <a href="" class="btn btn-warning">
+                                                            Menunggu Konfirmasi
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <?php }elseif($id_status_verifikasi_surat == 2) {?>
+                                                <div class="table-responsive">
+                                                    <div class="table table-striped table-hover ">
+                                                        <a href="" class="btn btn-success">
+                                                            Pengajuan Surat Di Terima
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <?php }elseif($id_status_verifikasi_surat == 3) {?>
+                                                <div class="table-responsive">
+                                                    <div class="table table-striped table-hover ">
+                                                        <a href="" class="btn btn-danger">
+                                                            Pengajuan Surat Ditolak
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <?php }?></td>
+                                            <td>
                                                 <div class="table-responsive">
                                                     <div class="table table-striped table-hover ">
                                                         <a href="" class="btn btn-primary" data-toggle="modal"
                                                             data-target="#foto<?=$id_izin_domisili?>">
                                                             Foto <i class="nav-icon fas fa-file-image"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="table-responsive">
+                                                    <div class="table table-striped table-hover ">
+                                                        <a href="" class="btn btn-primary" data-toggle="modal"
+                                                            data-target="#edit_izin_domisili">
+                                                            Edit <i class="nav-icon fas fa-edit"></i>
+                                                        </a>
+
+                                                    </div>
+                                                </div>
+                                                <div class="table-responsive">
+                                                    <div class="table table-striped table-hover ">
+                                                        <a href="" data-toggle="modal"
+                                                            data-target="#delete_izin_domisili"
+                                                            class="btn btn-danger">Delete <i class="fas fa-trash"></i>
                                                         </a>
                                                     </div>
                                                 </div>
