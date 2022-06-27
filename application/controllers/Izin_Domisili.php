@@ -21,7 +21,9 @@ class Izin_Domisili extends CI_Controller {
 	
 	public function view_masyarakat()
 	{
-		$this->load->view('masyarakat/izin_domisili.php');
+
+		$data['izin_domisili'] = $this->m_izin_domisili->read_all_domsisili_by_id($this->session->userdata('id_user'))->result_array();
+		$this->load->view('masyarakat/izin_domisili.php', $data);
 	}
 	
 	public function tambah_izin_domisili_masyarakat()
