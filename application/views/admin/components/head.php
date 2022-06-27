@@ -4,7 +4,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>SB Admin 2 - Dashboard</title>
+<title>Website | APP-AKCIB</title>
 
 <link rel="icon" type="image/png" href="<?= base_url();?>assets/favico.ico" />
 <!-- Custom fonts for this template-->
