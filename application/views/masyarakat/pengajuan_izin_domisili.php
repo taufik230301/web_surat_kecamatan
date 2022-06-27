@@ -9,6 +9,66 @@
 
 <body id="page-top">
 
+    <?php if ($this->session->flashdata('input')){ ?>
+    <script>
+    swal({
+        title: "Berhasil !",
+        text: "Pengajuan Berhasil Dikirim!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror_input')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('error_foto_ktp')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Format Foto Yang Anda Masukan Salah !",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('error_foto_akta_usaha')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Format Foto Yang Anda Masukan Salah !",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('error_foto_pengantar_lurah_setempat')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Format Foto Yang Anda Masukan Salah !",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('error_foto_bukti_lunas_pbb')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Format Foto Yang Anda Masukan Salah !",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -32,7 +92,8 @@
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">Pengajuan Izin Domisili Usaha</h1>
 
-                    <form>
+                    <form action="<?=base_url();?>Izin_Domisili/tambah_izin_domisili_masyarakat" method="POST"
+                        enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="nomor_surat">Nomor Surat</label>
                             <input type="text" class="form-control" id="nomor_surat" name="nomor_surat" required>

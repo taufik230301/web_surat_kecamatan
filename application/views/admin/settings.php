@@ -12,7 +12,7 @@
     <script>
     swal({
         title: "Berhasil Input!",
-        text: "Data Berhasil Ditambahkan!",
+        text: "Data Berhasil Diubah!",
         icon: "success"
     });
     </script>

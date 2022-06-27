@@ -3,6 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Settings extends CI_Controller {
 
+	public function __construct()
+	{
+		parent::__construct();
+        $this->load->model('m_user');
+	}
+
 	public function view_admin()
 	{
 		$this->load->view('admin/settings.php');
@@ -10,7 +16,7 @@ class Settings extends CI_Controller {
 	
 	public function settings_admin()
 	{
-		$id_user = $this->input->post("id_user");
+		$id_user = $this->session->userdata('id_user');
         $username = $this->input->post("username");
         $password = $this->input->post("password");
         $re_password = $this->input->post("re_password");
