@@ -99,6 +99,7 @@
                                             $foto_sketsa_lokasi = $i['foto_sketsa_lokasi'];
                                             $foto_desain = $i['foto_desain'];
                                             $foto_bukti_lunas_pbb = $i['foto_bukti_lunas_pbb'];
+                                            $id_status_verifikasi_surat = $i['id_status_verifikasi_surat'];
                                             
                                             
                                           
@@ -115,6 +116,34 @@
                                             <td><?=$ukuran?></td>
                                             <td><?=$lokasi_reklame?></td>
                                             <td><?=$nama_lengkap?></td>
+                                            <td>
+
+                                                <?php if($id_status_verifikasi_surat == 1) {?>
+                                                <div class="table-responsive">
+                                                    <div class="table table-striped table-hover ">
+                                                        <a href="" class="btn btn-warning">
+                                                            Menunggu Konfirmasi
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <?php }elseif($id_status_verifikasi_surat == 2) {?>
+                                                <div class="table-responsive">
+                                                    <div class="table table-striped table-hover ">
+                                                        <a href="" class="btn btn-success">
+                                                            Pengajuan Surat Di Terima
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <?php }elseif($id_status_verifikasi_surat == 3) {?>
+                                                <div class="table-responsive">
+                                                    <div class="table table-striped table-hover ">
+                                                        <a href="" class="btn btn-danger">
+                                                            Pengajuan Surat Ditolak
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <?php }?>
+                                            </td>
                                             <td>
                                                 <div class="table-responsive">
                                                     <div class="table table-striped table-hover ">
@@ -146,7 +175,7 @@
                                                 <div class="table-responsive">
                                                     <div class="table table-striped table-hover ">
                                                         <a href="" class="btn btn-primary" data-toggle="modal"
-                                                            data-target="#edit_izin_media_reklame">
+                                                            data-target="#edit_izin_media_reklame<?=$id_izin_penyediaan_media_reklame?>">
                                                             Edit <i class="nav-icon fas fa-edit"></i>
                                                         </a>
 
@@ -164,85 +193,107 @@
                                         </tr>
 
                                         <!-- Modal Edit Masyarakat-->
-                                        <div class="modal fade" id="ubah_masyarakat" tabindex="-1"
-                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal fade"
+                                            id="edit_izin_media_reklame<?=$id_izin_penyediaan_media_reklame?>"
+                                            tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                         <h5 class="modal-title" id="exampleModalLabel">Ubah Data
-                                                            Masyarakat</h5>
+                                                            Izin Media Reklame</h5>
                                                         <button type="button" class="close" data-dismiss="modal"
                                                             aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <form>
+                                                        <form
+                                                            action="<?=base_url();?>Izin_Media_Reklame/ubah_izin_media_reklame"
+                                                            method="POST" enctype="multipart/form-data">
+                                                            <input type="text" value="<?=$id_izin_penyediaan_media_reklame?>" name="id_izin_penyediaan_media_reklame" hidden>
                                                             <div class="form-group">
-                                                                <label for="username">Username</label>
-                                                                <input type="text" class="form-control" id="username"
-                                                                    name="username" value="" required>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="email">Email</label>
-                                                                <input type="email" class="form-control" id="email"
-                                                                    name="email" value="" required>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="password">Password</label>
-                                                                <input type="text" class="form-control" id="password"
-                                                                    name="password" value="" required>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="nama_lengkap">Nama Lengkap</label>
-                                                                <input type="text" class="form-control"
-                                                                    id="nama_lengkap" name="nama_lengkap" value=""
+                                                                <label for="nomor_surat">Nomor Surat</label>
+                                                                <input type="text" class="form-control" id="nomor_surat"
+                                                                    name="nomor_surat" value="<?=$nomor_surat?>"
                                                                     required>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="no_kk">Nomor KK</label>
-                                                                <input type="text" class="form-control" id="no_kk"
-                                                                    name="no_kk" value="" required>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="no_ktp">Nomor KTP</label>
-                                                                <input type="text" class="form-control" id="no_ktp"
-                                                                    name="no_ktp" value="" required>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="jenis_kelamin">Jenis Kelamin</label>
-                                                                <select class="form-control"
-                                                                    id="exampleFormControlSelect1">
-                                                                    <option value="L">Laki-Laki</option>
-                                                                    <option value="P">Perempuan</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="agama">Agama</label>
-                                                                <input type="text" class="form-control" id="agama"
-                                                                    name="agama" value="" required>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="no_hp">No HP</label>
-                                                                <input type="text" class="form-control" id="no_hp"
-                                                                    name="no_hp" value="" required>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="alamat">Alamat</label>
-                                                                <input type="text" class="form-control" id="alamat"
-                                                                    name="alamat" value="" required>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="tempat_lahir">Tempat Lahir</label>
-                                                                <input type="text" class="form-control"
-                                                                    id="tempat_lahir" name="tempat_lahir" value=""
-                                                                    required>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="tanggal_lahir">Tanggal Lahir</label>
+                                                                <label for="berlaku_awal">Berlaku Awal</label>
                                                                 <input type="date" class="form-control"
-                                                                    id="tanggal_lahir" name="tanggal_lahir" value=""
-                                                                    required>
+                                                                    id="berlaku_awal" name="berlaku_awal"
+                                                                    value="<?=$berlaku_awal?>" required>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="berlaku_akhir">Berlaku Akhir</label>
+                                                                <input type="date" class="form-control"
+                                                                    id="berlaku_akhir" name="berlaku_akhir"
+                                                                    value="<?=$berlaku_akhir?>" required>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="jenis_reklame">Jenis Reklame</label>
+                                                                <input type="text" class="form-control"
+                                                                    id="jenis_reklame" name="jenis_reklame"
+                                                                    value="<?=$jenis_reklame?>" required>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="merk">Merk</label>
+                                                                <input type="text" class="form-control" id="merk"
+                                                                    name="merk" value="<?=$merk?>" required>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="jumlah">Jumlah</label>
+                                                                <input type="number" class="form-control" id="jumlah"
+                                                                    name="jumlah" value="<?=$jumlah?>" required>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="ukuran">Ukuran</label>
+                                                                <input type="number" class="form-control" id="ukuran"
+                                                                    name="ukuran" value="<?=$ukuran?>" required>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="lokasi_reklame">Lokasi Reklame</label>
+                                                                <input type="text" class="form-control"
+                                                                    id="lokasi_reklame" name="lokasi_reklame"
+                                                                    value="<?=$lokasi_reklame?>" required>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="foto_ktp_pemohon">Foto KTP Pemohon</label>
+                                                                <input type="file" class="form-control"
+                                                                    id="foto_ktp_pemohon" name="foto_ktp_pemohon"
+                                                                    value="" required>
+                                                                <input type="text" class="form-control"
+                                                                    id="foto_ktp_pemohon_old"
+                                                                    name="foto_ktp_pemohon_old"
+                                                                    value="<?=$foto_ktp_pemohon?>">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="foto_sketsa_lokasi">Foto Sketsa Lokasi
+                                                                    Reklame</label>
+                                                                <input type="file" class="form-control"
+                                                                    id="foto_sketsa_lokasi" name="foto_sketsa_lokasi"
+                                                                    value="" required>
+                                                                <input type="text" class="form-control"
+                                                                    id="foto_sketsa_lokasi_old"
+                                                                    name="foto_sketsa_lokasi_old"
+                                                                    value="<?=$foto_sketsa_lokasi?>">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="foto_desain">Foto Desain Reklame</label>
+                                                                <input type="file" class="form-control" id="foto_desain"
+                                                                    name="foto_desain" value="" required>
+                                                                <input type="text" class="form-control"
+                                                                    id="foto_desain_old" name="foto_desain_old"
+                                                                    value="<?=$foto_desain?>">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="foto_bukti_lunas_pbb">Foto Bukti Lunas PBB
+                                                                    Tahun Berjalan</label>
+                                                                <input type="file" class="form-control"
+                                                                    id="foto_bukti_lunas_pbb"
+                                                                    name="foto_bukti_lunas_pbb" value="" required>
+                                                                <input type="text" class="form-control"
+                                                                    id="foto_bukti_lunas_pbb_old"
+                                                                    name="foto_bukti_lunas_pbb_old" value="<?=$foto_bukti_lunas_pbb?>">
                                                             </div>
                                                             <button type="submit"
                                                                 class="btn btn-primary">Submit</button>
