@@ -29,6 +29,24 @@ class M_izin_media_reklame extends CI_Model
 
     }
 
+    public function update_izin_media_reklame($nomor_surat, $berlaku_awal, $berlaku_akhir, $jenis_reklame, $merk, 
+    $jumlah, $ukuran, $lokasi_reklame, $foto_ktp_pemohon, $foto_sketsa_lokasi, $foto_desain, 
+    $foto_bukti_lunas_pbb, $id_izin_penyediaan_media_reklame)
+    {
+        $this->db->trans_start();
+
+        $this->db->query("UPDATE izin_penyediaan_media_reklame SET nomor_surat='$nomor_surat', berlaku_awal='$berlaku_awal', 
+        berlaku_akhir='$berlaku_akhir', jenis_reklame='$jenis_reklame', merk='$merk', jumlah='$jumlah', ukuran='$ukuran', 
+        lokasi_reklame='$lokasi_reklame', foto_ktp_pemohon='$foto_ktp_pemohon', foto_sketsa_lokasi='$foto_sketsa_lokasi',
+         foto_desain='$foto_desain', foto_bukti_lunas_pbb='$foto_bukti_lunas_pbb' WHERE id_izin_penyediaan_media_reklame='$id_izin_penyediaan_media_reklame'");
+ 
+        $this->db->trans_complete();
+         if($this->db->trans_status()==true)
+             return true;
+         else
+             return false;
+    }
+
     public function verify_izin_penyediaan_media_reklame($id_status_verifikasi_surat, $id_izin_penyediaan_media_reklame)
     {
 
@@ -42,6 +60,21 @@ class M_izin_media_reklame extends CI_Model
         else
             return false;
 
+    }
+
+    public function delete_izin_media_reklame($id_izin_media_reklame)
+    {
+
+        $this->db->trans_start();
+
+        $this->db->query("DELETE FROM izin_penyediaan_media_reklame WHERE id_izin_penyediaan_media_reklame='$id_izin_media_reklame'");
+ 
+        $this->db->trans_complete();
+         if($this->db->trans_status()==true)
+             return true;
+         else
+             return false;
+             
     }
 
 }

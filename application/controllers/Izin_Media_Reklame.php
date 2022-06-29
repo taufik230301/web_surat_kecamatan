@@ -180,7 +180,7 @@ class Izin_Media_Reklame extends CI_Controller {
 			}else{
 				
 				$this->session->set_flashdata('error_foto_ktp_pemohon','error_foto_ktp_pemohon');
-				redirect('Izin_Domisili/view_admin');
+				redirect('Izin_Media_Reklame/view_admin');
 			}
 	   }else{
 			$foto_ktp_pemohon = $this->input->post('foto_ktp_pemohon_old');
@@ -208,7 +208,7 @@ class Izin_Media_Reklame extends CI_Controller {
 				
 				
 				$this->session->set_flashdata('error_foto_sketsa_lokasi','error_foto_sketsa_lokasi');
-				redirect('Izin_Domisili/view_admin');
+				redirect('Izin_Media_Reklame/view_admin');
 			}
 		}else{
 			$foto_sketsa_lokasi = $this->input->post('foto_sketsa_lokasi_old');
@@ -233,7 +233,7 @@ class Izin_Media_Reklame extends CI_Controller {
 				@unlink($path.$foto_sketsa_lokasi_file['file_name']);
 				
 				$this->session->set_flashdata('error_foto_desain','error_foto_desain');
-				redirect('Izin_Domisili/view_admin');
+				redirect('Izin_Media_Reklame/view_admin');
 			}
 
 		}else{
@@ -261,17 +261,17 @@ class Izin_Media_Reklame extends CI_Controller {
 				@unlink($path.$foto_desain_file['file_name']);
 				
 				$this->session->set_flashdata('error_foto_bukti_lunas_pbb','error_foto_bukti_lunas_pbb');
-				redirect('Izin_Domisili/view_admin');
+				redirect('Izin_Media_Reklame/view_admin');
 			}
 
 	}else{
 		$foto_bukti_lunas_pbb = $this->input->post('foto_bukti_lunas_pbb_old');
 	}
-	$hasil = $this->m_izin_domisili->update_izin_domisili($nomor_surat, $berlaku_awal, $berlaku_akhir, $jenis_reklame, $merk, $jumlah, $ukuran, $lokasi_reklame, $foto_ktp_pemohon, $foto_sketsa_lokasi, $foto_desain, $foto_bukti_lunas_pbb, $id_izin_penyediaan_media_reklame);
+	$hasil = $this->m_izin_media_reklame->update_izin_media_reklame($nomor_surat, $berlaku_awal, $berlaku_akhir, $jenis_reklame, $merk, $jumlah, $ukuran, $lokasi_reklame, $foto_ktp_pemohon, $foto_sketsa_lokasi, $foto_desain, $foto_bukti_lunas_pbb, $id_izin_penyediaan_media_reklame);
 
 		if($hasil==false){
 				$this->session->set_flashdata('eror_update','eror_update');
-				redirect('Izin_Domisili/view_admin');
+				redirect('Izin_Media_Reklame/view_admin');
 		}else{
 
 			if($foto_ktp_pemohon != $this->input->post('foto_ktp_pemohon_old')){
@@ -293,7 +293,7 @@ class Izin_Media_Reklame extends CI_Controller {
 				
 				  
 				$this->session->set_flashdata('update','update');
-				redirect('Izin_Domisili/view_admin');
+				redirect('Izin_Media_Reklame/view_admin');
 		}
 
 
@@ -314,5 +314,31 @@ class Izin_Media_Reklame extends CI_Controller {
 				redirect('Izin_Media_Reklame/view_admin');
 		}
 
+	}
+
+	public function delete_izin_media_reklame_admin()
+	{
+		$id_izin_penyediaan_media_reklame = $this->input->post("id_izin_penyediaan_media_reklame");
+
+		$path = './assets/izin_media_reklame/';
+  
+		$hasil = $this->m_izin_media_reklame->delete_izin_media_reklame($id_izin_penyediaan_media_reklame);
+  
+		  if($hasil==false){
+
+					$this->session->set_flashdata('eror_delete','eror_delete');
+					redirect('Izin_Media_Reklame/view_admin');
+
+		  }else{
+
+				@unlink($path.$this->input->post('foto_ktp_pemohon_old'));
+				@unlink($path.$this->input->post('foto_sketsa_lokasi_old'));
+				@unlink($path.$this->input->post('foto_desain_old'));
+				@unlink($path.$this->input->post('foto_bukti_lunas_pbb_old'));
+
+					$this->session->set_flashdata('delete','delete');
+					redirect('Izin_Media_Reklame/view_admin');
+		  }
+		
 	}
 }
