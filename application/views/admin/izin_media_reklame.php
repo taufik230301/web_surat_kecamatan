@@ -8,6 +8,25 @@
 </head>
 
 <body id="page-top">
+    <?php if ($this->session->flashdata('eror_acc')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('acc')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Diverifikasi!",
+        text: "Status Pengajuan Berhasil Diubah!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -61,17 +80,41 @@
                                     </thead>
 
                                     <tbody>
+                                        <?php
+                                            $id = 0;
+                                            foreach($izin_media_reklame as $i)
+                                            :
+                                            $id++;
+                                            $id_izin_penyediaan_media_reklame = $i['id_izin_penyediaan_media_reklame'];
+                                            $nomor_surat = $i['nomor_surat'];
+                                            $berlaku_awal = $i['berlaku_awal'];
+                                            $berlaku_akhir = $i['berlaku_akhir'];
+                                            $jenis_reklame = $i['jenis_reklame'];
+                                            $merk = $i['merk'];
+                                            $jumlah = $i['jumlah'];
+                                            $ukuran = $i['ukuran'];
+                                            $lokasi_reklame = $i['lokasi_reklame'];
+                                            $nama_lengkap = $i['nama_lengkap'];
+                                            $foto_ktp_pemohon = $i['foto_ktp_pemohon'];
+                                            $foto_sketsa_lokasi = $i['foto_sketsa_lokasi'];
+                                            $foto_desain = $i['foto_desain'];
+                                            $foto_bukti_lunas_pbb = $i['foto_bukti_lunas_pbb'];
+                                            
+                                            
+                                          
+
+                                            ?>
                                         <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
-                                            <td>$320,800</td>
-                                            <td>$320,800</td>
-                                            <td>$320,800</td>
-                                            <td>$320,800</td>
+                                            <td><?=$id?></td>
+                                            <td><?=$nomor_surat?></td>
+                                            <td><?=$berlaku_awal?></td>
+                                            <td><?=$berlaku_akhir?></td>
+                                            <td><?=$jenis_reklame?></td>
+                                            <td><?=$merk?></td>
+                                            <td><?=$jumlah?></td>
+                                            <td><?=$ukuran?></td>
+                                            <td><?=$lokasi_reklame?></td>
+                                            <td><?=$nama_lengkap?></td>
                                             <td>
                                                 <div class="table-responsive">
                                                     <div class="table table-striped table-hover ">
@@ -86,7 +129,7 @@
                                                 <div class="table-responsive">
                                                     <div class="table table-striped table-hover ">
                                                         <a href="" class="btn btn-primary" data-toggle="modal"
-                                                            data-target="#setuju_izin_media_reklame">
+                                                            data-target="#setuju<?=$id_izin_penyediaan_media_reklame?>">
                                                             Setuju <i class="nav-icon fas fa-check"></i>
                                                         </a>
 
@@ -95,7 +138,7 @@
                                                 <div class="table-responsive">
                                                     <div class="table table-striped table-hover ">
                                                         <a href="" data-toggle="modal"
-                                                            data-target="#tolak_izin_media_reklame"
+                                                            data-target="#tidak_setuju<?=$id_izin_penyediaan_media_reklame?>"
                                                             class="btn btn-danger">Tolak <i class="fas fa-times"></i>
                                                         </a>
                                                     </div>
@@ -238,7 +281,7 @@
                                         <!-- Modal Foto-->
                                         <div class="modal fade" id="foto" tabindex="-1"
                                             aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog">
+                                            <div class="modal-dialog modal-xl">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                         <h5 class="modal-title" id="exampleModalLabel">Foto</h5>
@@ -248,7 +291,56 @@
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        ...
+                                                        <div class="col">
+
+                                                            <h2>Foto KTP Pemohon</h2>
+                                                            <div class="row">
+
+                                                                <a href="<?=base_url();?>assets/izin_media_reklame/<?=$foto_ktp_pemohon?>"
+                                                                    target="_blank">
+                                                                    <img src="<?=base_url();?>assets/izin_media_reklame/<?=$foto_ktp_pemohon?>"
+                                                                        width="100%" alt="">
+                                                                </a>
+
+                                                            </div>
+
+                                                            <br>
+                                                            <h2>Foto Sketsa Lokasi Reklame</h2>
+                                                            <div class="row">
+
+                                                                <a href="<?=base_url();?>assets/izin_media_reklame/<?=$foto_sketsa_lokasi?>"
+                                                                    target="_blank">
+                                                                    <img src="<?=base_url();?>assets/izin_media_reklame/<?=$foto_sketsa_lokasi?>"
+                                                                        width="100%" alt="">
+                                                                </a>
+
+                                                            </div>
+
+                                                            <br>
+                                                            <h2>Foto Desain Reklame</h2>
+                                                            <div class="row">
+
+                                                                <a href="<?=base_url();?>assets/izin_media_reklame/<?=$foto_desain?>"
+                                                                    target="_blank">
+                                                                    <img src="<?=base_url();?>assets/izin_media_reklame/<?=$foto_desain?>"
+                                                                        width="100%" alt="">
+                                                                </a>
+
+                                                            </div>
+
+                                                            <br>
+                                                            <h2>Foto Bukti Lunas PBB Tahun Berjalan</h2>
+                                                            <div class="row">
+
+                                                                <a href="<?=base_url();?>assets/izin_media_reklame/<?=$foto_bukti_lunas_pbb?>"
+                                                                    target="_blank">
+                                                                    <img src="<?=base_url();?>assets/izin_media_reklame/<?=$foto_bukti_lunas_pbb?>"
+                                                                        width="100%" alt="">
+                                                                </a>
+
+                                                            </div>
+
+                                                        </div>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary"
@@ -259,6 +351,92 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <!-- Modal Setuju Izin Media Reklame -->
+                                        <div class="modal fade" id="setuju<?= $id_izin_penyediaan_media_reklame ?>"
+                                            tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Setujui Data
+                                                            Izin Media Reklame
+                                                        </h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+
+                                                    <div class="modal-body">
+                                                        <form
+                                                            action="<?php echo base_url()?>Izin_Media_Reklame/acc_izin_media_reklame/2"
+                                                            method="post" enctype="multipart/form-data">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <input type="hidden"
+                                                                        name="id_izin_penyediaan_media_reklame"
+                                                                        value="<?php echo $id_izin_penyediaan_media_reklame?>" />
+
+                                                                    <p>Apakah kamu yakin ingin Menyetujui Izin Media
+                                                                        Reklame
+                                                                        ini?</i></b></p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger ripple"
+                                                                    data-dismiss="modal">Tidak</button>
+                                                                <button type="submit"
+                                                                    class="btn btn-success ripple save-category">Ya</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <!-- Modal Tidak Setuju Izin Media Reklame -->
+                                        <div class="modal fade"
+                                            id="tidak_setuju<?= $id_izin_penyediaan_media_reklame ?>" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Tolak Data
+                                                            Izin Media Reklame
+                                                        </h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+
+                                                    <div class="modal-body">
+                                                        <form
+                                                            action="<?php echo base_url()?>Izin_Media_Reklame/acc_izin_media_reklame/3"
+                                                            method="post" enctype="multipart/form-data">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <input type="hidden"
+                                                                        name="id_izin_penyediaan_media_reklame"
+                                                                        value="<?php echo $id_izin_penyediaan_media_reklame?>" />
+
+                                                                    <p>Apakah kamu yakin ingin Menolak Izin Domisili
+                                                                        Usaha
+                                                                        ini?</i></b></p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger ripple"
+                                                                    data-dismiss="modal">Tidak</button>
+                                                                <button type="submit"
+                                                                    class="btn btn-success ripple save-category">Ya</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <?php endforeach;?>
                                     </tbody>
                                 </table>
                             </div>

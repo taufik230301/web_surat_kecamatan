@@ -30,8 +30,6 @@
 
 
 
-    error_foto_akta_usaha
-
     <?php if ($this->session->flashdata('error_foto_akta_usaha')){ ?>
     <script>
     swal({
@@ -190,7 +188,8 @@
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <?php }?></td>
+                                                <?php }?>
+                                            </td>
                                             <td>
                                                 <div class="table-responsive">
                                                     <div class="table table-striped table-hover ">
@@ -535,10 +534,8 @@
                                                                         name="foto_pengantar_lurah_setempat_old"
                                                                         value="<?=$foto_pengantar_lurah_setempat?>"
                                                                         hidden>
-                                                                    <input type="hidden"
-                                                                        name="foto_bukti_lunas_pbb_old"
-                                                                        value="<?=$foto_bukti_lunas_pbb?>"
-                                                                        hidden>
+                                                                    <input type="hidden" name="foto_bukti_lunas_pbb_old"
+                                                                        value="<?=$foto_bukti_lunas_pbb?>" hidden>
 
                                                                     <p>Apakah kamu yakin ingin menghapus data
                                                                         ini?</i></b></p>

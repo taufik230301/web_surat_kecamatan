@@ -8,6 +8,25 @@
 </head>
 
 <body id="page-top">
+    <?php if ($this->session->flashdata('input')){ ?>
+    <script>
+    swal({
+        title: "Berhasil !",
+        text: "Pengajuan Berhasil Dikirim!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror_input')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -32,7 +51,7 @@
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">Pengajuan Izin Media Reklame</h1>
 
-                    <form>
+                    <form action="<?=base_url();?>Izin_Media_Reklame/tambah_izin_media_reklame" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="nomor_surat">Nomor Surat</label>
                             <input type="text" class="form-control" id="nomor_surat" name="nomor_surat" value=""
@@ -87,8 +106,8 @@
                         </div>
                         <div class="form-group">
                             <label for="foto_bukti_lunas_pbb">Foto Bukti Lunas PBB Tahun Berjalan</label>
-                            <input type="file" class="form-control" id="foto_bukti_lunas_pbb" name="foto_bukti_lunas_pbb" value=""
-                                required>
+                            <input type="file" class="form-control" id="foto_bukti_lunas_pbb"
+                                name="foto_bukti_lunas_pbb" value="" required>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>

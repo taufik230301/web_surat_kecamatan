@@ -346,4 +346,6 @@ class Izin_Domisili extends CI_Controller {
 		  }
 		
 	}
+
+	
 }
