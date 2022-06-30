@@ -326,4 +326,30 @@ class Izin_Pemakaman_Jenazah extends CI_Controller {
 				redirect('Izin_Pemakaman_Jenazah/view_admin');
 		}
 	}
+
+	public function delete_izin_pemakaman_jenazah()
+	{
+
+		$id_izin_pemakaman_jenazah = $this->input->post('id_izin_pemakaman_jenazah');
+
+		$path = './assets/izin_pemakaman_jenazah/';
+  
+		$hasil = $this->m_izin_pemakaman_jenazah->delete_izin_pemakaman_jenazah($id_izin_pemakaman_jenazah);
+  
+		  if($hasil==false){
+
+					$this->session->set_flashdata('eror_delete','eror_delete');
+					redirect('Izin_Pemakaman_Jenazah/view_admin');
+
+		  }else{
+
+				@unlink($path.$this->input->post('foto_surat_ket_lap_old'));
+				@unlink($path.$this->input->post('foto_surat_pemeriksaan_jenazah_old'));
+				@unlink($path.$this->input->post('foto_kk_alm_old'));
+				@unlink($path.$this->input->post('foto_surat_rekomendasi_dinas_pupr_old'));
+
+					$this->session->set_flashdata('delete','delete');
+					redirect('Izin_Pemakaman_Jenazah/view_admin');
+		  }
+	}
 }

@@ -264,7 +264,7 @@
                                                 <div class="table-responsive">
                                                     <div class="table table-striped table-hover ">
                                                         <a href="" data-toggle="modal"
-                                                            data-target="#delete_izin_pemakaman_jenazah"
+                                                            data-target="#delete_izin_pemakaman_jenazah<?=$id_izin_pemakaman_jenazah?>"
                                                             class="btn btn-danger">Delete <i class="fas fa-trash"></i>
                                                         </a>
                                                     </div>
@@ -402,26 +402,48 @@
                                         </div>
 
                                         <!-- Modal Delete Masyarakat-->
-                                        <div class="modal fade" id="delete_masyarakat" tabindex="-1"
-                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal fade"
+                                            id="delete_izin_pemakaman_jenazah<?=$id_izin_pemakaman_jenazah?>"
+                                            tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLabel">Delete Data
-                                                            Masyarakat</h5>
+                                                        <h5 class="modal-title" id="exampleModalLabel">Delete Izin
+                                                            Pemakaman Jenazah</h5>
                                                         <button type="button" class="close" data-dismiss="modal"
                                                             aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        ...
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary"
-                                                            data-dismiss="modal">Close</button>
-                                                        <button type="button" class="btn btn-primary">Save
-                                                            changes</button>
+                                                        <form
+                                                            action="<?= base_url();?>Izin_Pemakaman_Jenazah/delete_izin_pemakaman_jenazah"
+                                                            method="post" enctype="multipart/form-data">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <input type="hidden"
+                                                                        name="id_izin_pemakaman_jenazah"
+                                                                        value="<?php echo $id_izin_pemakaman_jenazah?>" />
+                                                                    <input type="hidden" name="foto_surat_ket_lap_old"
+                                                                        value="<?=$foto_surat_ket_lap?>" hidden>
+                                                                    <input type="hidden" name="foto_surat_pemeriksaan_jenazah_old"
+                                                                        value="<?=$foto_surat_pemeriksaan_jenazah?>" hidden>
+                                                                    <input type="hidden" name="foto_kk_alm_old"
+                                                                        value="<?=$foto_kk_alm?>" hidden>
+                                                                    <input type="hidden" name="foto_surat_rekomendasi_dinas_pupr_old"
+                                                                        value="<?=$foto_surat_rekomendasi_dinas_pupr?>" hidden>
+
+                                                                    <p>Apakah kamu yakin ingin menghapus data
+                                                                        ini?</i></b></p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger ripple"
+                                                                    data-dismiss="modal">Tidak</button>
+                                                                <button type="submit"
+                                                                    class="btn btn-success ripple save-category">Ya</button>
+                                                            </div>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>

@@ -63,4 +63,18 @@ class M_izin_pemakaman_jenazah extends CI_Model
         else
             return false;
     }
+
+    public function delete_izin_pemakaman_jenazah($id_izin_pemakaman_jenazah)
+    {
+        $this->db->trans_start();
+ 
+        $this->db->query(" DELETE FROM izin_pemakaman_jenazah
+         WHERE id_izin_pemakaman_jenazah='$id_izin_pemakaman_jenazah'");
+ 
+        $this->db->trans_complete();
+         if($this->db->trans_status()==true)
+             return true;
+         else
+             return false;
+    }
 }
