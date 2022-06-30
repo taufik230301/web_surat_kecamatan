@@ -13,7 +13,7 @@ class Pengajuan extends CI_Controller {
 		$this->load->view('masyarakat/pengajuan_izin_media_reklame.php');
     }
 
-    public function pengajuan_izin_pemakaman_masyarakat()
+    public function pengajuan_izin_pemakaman_jenazah_masyarakat()
 	{
 		$this->load->view('masyarakat/pengajuan_izin_pemakaman.php');
     }

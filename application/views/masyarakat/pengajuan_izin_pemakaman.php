@@ -8,6 +8,65 @@
 </head>
 
 <body id="page-top">
+    <?php if ($this->session->flashdata('input')){ ?>
+    <script>
+    swal({
+        title: "Berhasil !",
+        text: "Pengajuan Berhasil Dikirim!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror_input')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('error_foto_surat_ket_lap')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('error_foto_surat_pemeriksaan_jenazah')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('error_foto_kk_alm')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('error_foto_surat_rekomendasi_dinas_pupr')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -31,68 +90,71 @@
 
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">Pengajuan Izin Pemakaman</h1>
-                    <form>
+                    <form action="<?=base_url();?>Izin_Pemakaman_Jenazah/tambah_izin_pemakaman_jenazah" method="POST"
+                        enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="nomor_surat">Nomor Surat</label>
-                            <input type="text" class="form-control" id="nomor_surat" name="nomor_surat" value=""
-                                required>
+                            <input type="text" class="form-control" id="nomor_surat" name="nomor_surat" required>
                         </div>
                         <div class="form-group">
                             <label for="tanggal_ditetapkan">Tanggal Ditetapkan</label>
                             <input type="date" class="form-control" id="tanggal_ditetapkan" name="tanggal_ditetapkan"
-                                value="" required>
+                                required>
                         </div>
                         <div class="form-group">
                             <label for="nama_alm">Nama Almarhum</label>
-                            <input type="text" class="form-control" id="nama_alm" name="nama_alm" value="" required>
+                            <input type="text" class="form-control" id="nama_alm" name="nama_alm" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="umur_alm">Umur Almarhum</label>
+                            <input type="text" class="form-control" id="umur_alm" name="umur_alm" required>
                         </div>
                         <div class="form-group">
                             <label for="agama_alm">Agama Almarhum</label>
-                            <input type="text" class="form-control" id="agama_alm" name="agama_alm" value="" required>
+                            <input type="text" class="form-control" id="agama_alm" name="agama_alm" required>
                         </div>
                         <div class="form-group">
-                            <label for="nik">Nomor Induk Kependudukan</label>
-                            <input type="text" class="form-control" id="nik" name="nik" value="" required>
+                            <label for="nik_alm">Nomor Induk Kependudukan</label>
+                            <input type="text" class="form-control" id="nik_alm" name="nik_alm" required>
                         </div>
                         <div class="form-group">
                             <label for="tanggal_meninggal">Tanggal Meninggal</label>
                             <input type="date" class="form-control" id="tanggal_meninggal" name="tanggal_meninggal"
-                                value="" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="tanggal_kubur">Tanggal Kubur</label>
-                            <input type="date" class="form-control" id="tanggal_kubur" name="tanggal_kubur" value=""
                                 required>
                         </div>
                         <div class="form-group">
+                            <label for="tanggal_kubur">Tanggal Kubur</label>
+                            <input type="date" class="form-control" id="tanggal_kubur" name="tanggal_kubur" required>
+                        </div>
+                        <div class="form-group">
                             <label for="blok_petak">Blok/Peta</label>
-                            <input type="text" class="form-control" id="blok_petak" name="blok_petak" value="" required>
+                            <input type="text" class="form-control" id="blok_petak" name="blok_petak" required>
                         </div>
                         <div class="form-group">
                             <label for="jenis_pemakaman">Jenis Pemakaman</label>
-                            <input type="text" class="form-control" id="jenis_pemakaman" name="jenis_pemakaman" value=""
+                            <input type="text" class="form-control" id="jenis_pemakaman" name="jenis_pemakaman"
                                 required>
                         </div>
                         <div class="form-group">
                             <label for="foto_surat_ket_lap">Foto Surat Ket. Lap kematian</label>
                             <input type="file" class="form-control" id="foto_surat_ket_lap" name="foto_surat_ket_lap"
-                                value="" required>
+                                required>
                         </div>
                         <div class="form-group">
                             <label for="foto_surat_pemeriksaan_jenazah">Foto Surat keterangan Pemeriksaan
                                 Jenazah</label>
                             <input type="file" class="form-control" id="foto_surat_pemeriksaan_jenazah"
-                                name="foto_surat_pemeriksaan_jenazah" value="" required>
+                                name="foto_surat_pemeriksaan_jenazah" required>
                         </div>
                         <div class="form-group">
                             <label for="foto_kk_alm">Foto KK Almarhum</label>
-                            <input type="file" class="form-control" id="foto_kk_alm" name="foto_kk_alm" value=""
-                                required>
+                            <input type="file" class="form-control" id="foto_kk_alm" name="foto_kk_alm" required>
                         </div>
                         <div class="form-group">
-                            <label for="	foto_surat_rekomendasi_dinas_pupr">Foto Surat Rekomendari Dari Dinas PUPR</label>
-                            <input type="file" class="form-control" id="	foto_surat_rekomendasi_dinas_pupr" name="	foto_surat_rekomendasi_dinas_pupr" value=""
-                                required>
+                            <label for="foto_surat_rekomendasi_dinas_pupr">Foto Surat Rekomendari Dari Dinas
+                                PUPR</label>
+                            <input type="file" class="form-control" id="foto_surat_rekomendasi_dinas_pupr"
+                                name="foto_surat_rekomendasi_dinas_pupr" required>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>

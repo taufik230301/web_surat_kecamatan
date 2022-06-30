@@ -29,7 +29,7 @@
                 <h6 class="collapse-header">Pengajuan</h6>
                 <a class="collapse-item" href="<?=base_url();?>Pengajuan/pengajuan_izin_domisili_masyarakat">Izin Domisili</a>
                 <a class="collapse-item" href="<?=base_url();?>Pengajuan/pengajuan_izin_media_reklame_masyarakat">Izin Media Reklame</a>
-                <a class="collapse-item" href="<?=base_url();?>Pengajuan/pengajuan_izin_pemakaman_masyarakat">Izin Pemakaman</a>
+                <a class="collapse-item" href="<?=base_url();?>Pengajuan/pengajuan_izin_pemakaman_jenazah_masyarakat">Izin Pemakaman</a>
             </div>
         </div>
     </li>
