@@ -12,7 +12,8 @@ class Izin_Pemakaman_Jenazah extends CI_Controller {
 
 	public function view_admin()
 	{
-		$this->load->view('admin/izin_pemakaman_jenazah.php');
+		$data['izin_pemakaman_jenazah'] = $this->m_izin_pemakaman_jenazah->read_all_pemakaman_jenazah()->result_array();
+		$this->load->view('admin/izin_pemakaman_jenazah.php', $data);
 	}
 	
 	public function view_kepala_kasi()
@@ -22,6 +23,7 @@ class Izin_Pemakaman_Jenazah extends CI_Controller {
 	
 	public function view_masyarakat()
 	{
+		
 		$this->load->view('masyarakat/izin_pemakaman_jenazah.php');
     }
 
@@ -143,6 +145,23 @@ class Izin_Pemakaman_Jenazah extends CI_Controller {
 		}
 
 		
+
+	}
+
+	public function acc_izin_pemakaman_jenazah($id_status_verifikasi_surat)
+	{
+
+		$id_izin_pemakaman_jenazah = $this->input->post('id_izin_pemakaman_jenazah');
+
+		$hasil = $this->m_izin_pemakaman_jenazah->verify_izin_pemakaman_jenazah($id_status_verifikasi_surat, $id_izin_pemakaman_jenazah);
+
+		if($hasil==false){
+				$this->session->set_flashdata('eror_acc','eror_acc');
+				redirect('Izin_Pemakaman_Jenazah/view_admin');
+		}else{
+				$this->session->set_flashdata('acc','acc');
+				redirect('Izin_Pemakaman_Jenazah/view_admin');
+		}
 
 	}
 }
