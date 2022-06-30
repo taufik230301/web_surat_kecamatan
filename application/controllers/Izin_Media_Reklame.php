@@ -17,7 +17,8 @@ class Izin_Media_Reklame extends CI_Controller {
 
     public function view_kepala_kasi()
 	{
-		$this->load->view('kepala_kasi/izin_media_reklame.php');
+		$data['izin_media_reklame'] = $this->m_izin_media_reklame->read_all_izin_media_reklame()->result_array();
+		$this->load->view('kepala_kasi/izin_media_reklame.php', $data);
     }
 
     public function view_masyarakat()
