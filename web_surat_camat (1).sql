@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 26, 2022 at 05:34 AM
+-- Generation Time: Jun 30, 2022 at 05:17 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.13
 
@@ -69,6 +69,14 @@ CREATE TABLE `izin_pemakaman_jenazah` (
   `id_status_verifikasi_surat` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `izin_pemakaman_jenazah`
+--
+
+INSERT INTO `izin_pemakaman_jenazah` (`id_izin_pemakaman_jenazah`, `nomor_surat`, `tanggal_ditetapkan`, `nama_alm`, `umur_alm`, `agama_alm`, `nik_alm`, `tanggal_meninggal`, `tanggal_kubur`, `blok_petak`, `jenis_pemakaman`, `foto_surat_ket_lap`, `foto_surat_pemeriksaan_jenazah`, `foto_kk_alm`, `foto_surat_rekomendasi_dinas_pupr`, `id_user`, `id_status_verifikasi_surat`) VALUES
+(1, '07', '1201-02-12', 'has', '12', 'Islam', '129801728102', '2001-12-12', '2001-12-12', '2', 'Petak', '1cdba4976f95dd7b3de01cc182e4aef5_foto_surat_ket_lap.png', '1cdba4976f95dd7b3de01cc182e4aef5_foto_surat_pemeriksaan_jenazah.png', '1cdba4976f95dd7b3de01cc182e4aef5_foto_kk_alm.png', '1cdba4976f95dd7b3de01cc182e4aef5_foto_surat_rekomendasi_dinas_pupr.png', '03ed736bda1fd97b831e335c47d530ae', 3),
+(2, '01', '2022-06-19', 'has', '12', 'Islam', '129801728102', '2001-12-12', '2001-12-12', '2', 'Petak', '077842af2843be3aaf63b60dde6641b2_foto_surat_ket_lap.png', '077842af2843be3aaf63b60dde6641b2_foto_surat_pemeriksaan_jenazah.png', '077842af2843be3aaf63b60dde6641b2_foto_kk_alm.png', '077842af2843be3aaf63b60dde6641b2_foto_surat_rekomendasi_dinas_pupr.png', '03ed736bda1fd97b831e335c47d530ae', 2);
+
 -- --------------------------------------------------------
 
 --
@@ -92,6 +100,13 @@ CREATE TABLE `izin_penyediaan_media_reklame` (
   `id_user` varchar(255) NOT NULL,
   `id_status_verifikasi_surat` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `izin_penyediaan_media_reklame`
+--
+
+INSERT INTO `izin_penyediaan_media_reklame` (`id_izin_penyediaan_media_reklame`, `nomor_surat`, `berlaku_awal`, `berlaku_akhir`, `jenis_reklame`, `merk`, `jumlah`, `ukuran`, `lokasi_reklame`, `foto_ktp_pemohon`, `foto_sketsa_lokasi`, `foto_desain`, `foto_bukti_lunas_pbb`, `id_user`, `id_status_verifikasi_surat`) VALUES
+(3, '127128', '2001-12-12', '2001-12-12', 'haj', 'ha', 10000, 200, '12', '6304e9fb27f5b1684ce5717468111d45_foto_ktp_pemohon.png', '6304e9fb27f5b1684ce5717468111d45_foto_sketsa_lokasi.png', '6304e9fb27f5b1684ce5717468111d45_foto_desain.png', '6304e9fb27f5b1684ce5717468111d45_foto_bukti_lunas_pbb.png', '03ed736bda1fd97b831e335c47d530ae', 1);
 
 -- --------------------------------------------------------
 
@@ -154,7 +169,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `username`, `email`, `password`, `id_user_level`, `id_user_detail`) VALUES
-('03ed736bda1fd97b831e335c47d530ae', 'Taufiiqulhakim', 'taufiiqul.hakim@binus.ac.id', '', 3, '03ed736bda1fd97b831e335c47d530ae');
+('03ed736bda1fd97b831e335c47d530ae', 'Taufiiqulhakim', 'taufiiqul.hakim@binus.ac.id', '123', 3, '03ed736bda1fd97b831e335c47d530ae'),
+('08cff63853947a0ba365163449a04cfc', 'admin', 'admin@gmail.com', '123', 1, '08cff63853947a0ba365163449a04cfc');
 
 -- --------------------------------------------------------
 
@@ -182,7 +198,8 @@ CREATE TABLE `user_detail` (
 --
 
 INSERT INTO `user_detail` (`id_user_detail`, `nama_lengkap`, `no_kk`, `no_ktp`, `jenis_kelamin`, `agama`, `no_hp`, `alamat`, `tempat_lahir`, `tanggal_lahir`, `id_status_verifikasi`, `tanggal_registered`) VALUES
-('03ed736bda1fd97b831e335c47d530ae', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2022-06-26');
+('03ed736bda1fd97b831e335c47d530ae', 'taufik', '12818278171', '1271827182', 'L', 'Islam', '0812716271212', 'Jl. Sekip', 'Palembang', '2022-06-13', 1, '2022-06-26'),
+('08cff63853947a0ba365163449a04cfc', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, '2022-06-29');
 
 -- --------------------------------------------------------
 
@@ -264,19 +281,19 @@ ALTER TABLE `user_level`
 -- AUTO_INCREMENT for table `izin_domisili`
 --
 ALTER TABLE `izin_domisili`
-  MODIFY `id_izin_domisili` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_izin_domisili` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `izin_pemakaman_jenazah`
 --
 ALTER TABLE `izin_pemakaman_jenazah`
-  MODIFY `id_izin_pemakaman_jenazah` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_izin_pemakaman_jenazah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `izin_penyediaan_media_reklame`
 --
 ALTER TABLE `izin_penyediaan_media_reklame`
-  MODIFY `id_izin_penyediaan_media_reklame` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_izin_penyediaan_media_reklame` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `status_verifikasi`
