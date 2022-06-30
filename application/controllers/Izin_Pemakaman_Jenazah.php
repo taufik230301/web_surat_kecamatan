@@ -164,4 +164,166 @@ class Izin_Pemakaman_Jenazah extends CI_Controller {
 		}
 
 	}
+
+	public function ubah_izin_pemakaman_jenazah()
+	{
+		$id_izin_pemakaman_jenazah = $this->input->post('id_izin_pemakaman_jenazah');
+
+		$nomor_surat = $this->input->post('nomor_surat');
+		$tanggal_ditetapkan = $this->input->post('tanggal_ditetapkan');
+		$nama_alm = $this->input->post('nama_alm');
+		$umur_alm = $this->input->post('umur_alm');
+		$agama_alm = $this->input->post('agama_alm');
+		$nik_alm = $this->input->post('nik_alm');
+		$tanggal_meninggal = $this->input->post('tanggal_meninggal');
+		$tanggal_kubur = $this->input->post('tanggal_kubur');
+		$blok_petak = $this->input->post('blok_petak');
+		$jenis_pemakaman = $this->input->post('jenis_pemakaman');
+
+		$foto_name = md5($nomor_surat.$nama_alm.$agama_alm.$blok_petak.rand(1, 9999));
+
+		$path = './assets/izin_pemakaman_jenazah/';
+
+		$this->load->library('upload');
+
+		
+		if($_FILES['foto_surat_ket_lap']['tmp_name'] != ""){
+			
+			$config['upload_path'] = './assets/izin_pemakaman_jenazah';
+			$config['allowed_types'] = 'jpg|png|jpeg|gif';
+			$config['max_size'] = '2048';  //2MB max
+			$config['max_width'] = '4480'; // pixel
+			$config['max_height'] = '4480'; // pixel
+			$config['file_name'] = $foto_name.'_foto_surat_ket_lap';
+			$this->upload->initialize($config);
+			$foto_surat_ket_lap_upload = $this->upload->do_upload('foto_surat_ket_lap');
+
+			
+			
+
+			if($foto_surat_ket_lap_upload){
+				$foto_surat_ket_lap_file = $this->upload->data();
+				$foto_surat_ket_lap = $foto_surat_ket_lap_file['file_name'];
+			}else{
+				
+				$this->session->set_flashdata('error_foto_surat_ket_lap','error_foto_surat_ket_lap');
+				redirect('Izin_Pemakaman_Jenazah/view_admin');
+			}
+	   }else{
+			$foto_surat_ket_lap = $this->input->post('foto_surat_ket_lap_old');
+	   }
+	  
+		
+
+	   
+       if($_FILES['foto_surat_pemeriksaan_jenazah']['tmp_name'] != ""){
+			$config['upload_path'] = './assets/izin_pemakaman_jenazah';
+			$config['allowed_types'] = 'jpg|png|jpeg|gif';
+			$config['max_size'] = '2048';  //2MB max
+			$config['max_width'] = '4480'; // pixel
+			$config['max_height'] = '4480'; // pixel
+			$config['file_name'] = $foto_name.'_foto_surat_pemeriksaan_jenazah';
+			$this->upload->initialize($config);
+			$foto_surat_pemeriksaan_jenazah_upload = $this->upload->do_upload('foto_surat_pemeriksaan_jenazah');
+			
+			if($foto_surat_pemeriksaan_jenazah_upload){
+				$foto_surat_pemeriksaan_jenazah_file = $this->upload->data();
+				$foto_surat_pemeriksaan_jenazah = $foto_surat_pemeriksaan_jenazah_file['file_name'];
+			}else{
+				
+				@unlink($path.$foto_surat_ket_lap_file['file_name']);
+				
+				
+				$this->session->set_flashdata('error_foto_surat_pemeriksaan_jenazah','error_foto_surat_pemeriksaan_jenazah');
+				redirect('Izin_Pemakaman_Jenazah/view_admin');
+			}
+		}else{
+			$foto_surat_pemeriksaan_jenazah = $this->input->post('foto_surat_pemeriksaan_jenazah_old');
+		}
+
+		if($_FILES['foto_kk_alm']['tmp_name'] != ""){
+			$config['upload_path'] = './assets/izin_pemakaman_jenazah';
+			$config['allowed_types'] = 'jpg|png|jpeg|gif';
+			$config['max_size'] = '2048';  //2MB max
+			$config['max_width'] = '4480'; // pixel
+			$config['max_height'] = '4480'; // pixel
+			$config['file_name'] = $foto_name.'_foto_kk_alm';
+			$this->upload->initialize($config);
+			$foto_kk_alm_upload = $this->upload->do_upload('foto_kk_alm');
+			
+			if($foto_kk_alm_upload){
+				$foto_kk_alm_file = $this->upload->data();
+				$foto_kk_alm = $foto_kk_alm_file['file_name'];
+			}else{
+				
+				@unlink($path.$foto_surat_ket_lap_file['file_name']);
+				@unlink($path.$foto_surat_pemeriksaan_jenazah_file['file_name']);
+				
+				$this->session->set_flashdata('error_foto_kk_alm','error_foto_kk_alm');
+				redirect('Izin_Pemakaman_Jenazah/view_admin');
+			}
+
+		}else{
+			$foto_kk_alm = $this->input->post('foto_kk_alm_old');
+		}
+
+
+	if($_FILES['foto_surat_rekomendasi_dinas_pupr']['tmp_name'] != ""){
+			$config['upload_path'] = './assets/izin_pemakaman_jenazah';
+			$config['allowed_types'] = 'jpg|png|jpeg|gif';
+			$config['max_size'] = '2048';  //2MB max
+			$config['max_width'] = '4480'; // pixel
+			$config['max_height'] = '4480'; // pixel
+			$config['file_name'] = $foto_name.'_foto_surat_rekomendasi_dinas_pupr';
+			$this->upload->initialize($config);
+			$foto_surat_rekomendasi_dinas_pupr_upload = $this->upload->do_upload('foto_surat_rekomendasi_dinas_pupr');
+			
+			if($foto_surat_rekomendasi_dinas_pupr_upload){
+				$foto_surat_rekomendasi_dinas_pupr_file = $this->upload->data();
+				$foto_surat_rekomendasi_dinas_pupr = $foto_surat_rekomendasi_dinas_pupr_file['file_name'];
+			}else{
+				
+				@unlink($path.$foto_surat_ket_lap_file['file_name']);
+				@unlink($path.$foto_surat_pemeriksaan_jenazah_file['file_name']);
+				@unlink($path.$foto_kk_alm_file['file_name']);
+				
+				$this->session->set_flashdata('error_foto_surat_rekomendasi_dinas_pupr','error_foto_surat_rekomendasi_dinas_pupr');
+				redirect('Izin_Pemakaman_Jenazah/view_admin');
+			}
+
+	}else{
+		$foto_surat_rekomendasi_dinas_pupr = $this->input->post('foto_surat_rekomendasi_dinas_pupr_old');
+	}
+
+	
+
+	$hasil = $this->m_izin_pemakaman_jenazah->update_izin_pemakaman_jenazah($nomor_surat, $tanggal_ditetapkan, $nama_alm, $umur_alm, $agama_alm, $nik_alm, $tanggal_meninggal, $tanggal_kubur, $blok_petak, $jenis_pemakaman, $foto_surat_ket_lap, $foto_surat_pemeriksaan_jenazah, $foto_kk_alm, $foto_surat_rekomendasi_dinas_pupr, $id_izin_pemakaman_jenazah);
+
+		if($hasil==false){
+				$this->session->set_flashdata('eror_update','eror_update');
+				redirect('Izin_Pemakaman_Jenazah/view_admin');
+		}else{
+
+			if($foto_surat_ket_lap != $this->input->post('foto_surat_ket_lap_old')){
+				@unlink($path.$this->input->post('foto_surat_ket_lap_old'));
+			}
+				
+			if($foto_surat_pemeriksaan_jenazah != $this->input->post('foto_surat_pemeriksaan_jenazah_old')){
+				@unlink($path.$this->input->post('foto_surat_pemeriksaan_jenazah_old'));
+			}
+				  
+			if($foto_kk_alm != $this->input->post('foto_kk_alm_old')){
+				@unlink($path.$this->input->post('foto_kk_alm_old'));
+			}
+              	
+			if($foto_surat_rekomendasi_dinas_pupr != $this->input->post('foto_surat_rekomendasi_dinas_pupr_old')){
+				@unlink($path.$this->input->post('foto_surat_rekomendasi_dinas_pupr_old'));
+			}
+
+				
+				  
+				$this->session->set_flashdata('update','update');
+				redirect('Izin_Pemakaman_Jenazah/view_admin');
+		}
+	}
 }
