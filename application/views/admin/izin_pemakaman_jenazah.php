@@ -197,7 +197,6 @@
                                             <td><?=$blok_petak?></td>
                                             <td><?=$jenis_pemakaman?></td>
                                             <td>
-
                                                 <?php if($id_status_verifikasi_surat == 1) {?>
                                                 <div class="table-responsive">
                                                     <div class="table table-striped table-hover ">
@@ -228,7 +227,7 @@
                                                 <div class="table-responsive">
                                                     <div class="table table-striped table-hover ">
                                                         <a href="" class="btn btn-primary" data-toggle="modal"
-                                                            data-target="#foto">
+                                                            data-target="#foto<?=$id_izin_pemakaman_jenazah?>">
                                                             Foto <i class="nav-icon fas fa-file-image"></i>
                                                         </a>
                                                     </div>
@@ -450,7 +449,7 @@
                                         </div>
 
                                         <!-- Modal Foto-->
-                                        <div class="modal fade" id="foto" tabindex="-1"
+                                        <div class="modal fade" id="foto<?=$id_izin_pemakaman_jenazah?>" tabindex="-1"
                                             aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog modal-xl">
                                                 <div class="modal-content">

@@ -54,11 +54,39 @@
                                             <th>Tanggal Dikubur</th>
                                             <th>Blok/Petak</th>
                                             <th>Jenis_Pemakaman</th>
+                                            <th>Status Surat</th>
                                             <th>Foto Surat</th>
                                         </tr>
                                     </thead>
 
                                     <tbody>
+                                        <?php
+                                            $id = 0;
+                                            foreach($izin_pemakaman_jenazah as $i)
+                                            :
+                                            $id++;
+                                            $id_izin_pemakaman_jenazah = $i['id_izin_pemakaman_jenazah'];
+                                            $nomor_surat = $i['nomor_surat'];
+                                            $tanggal_ditetapkan = $i['tanggal_ditetapkan'];
+                                            $nama_alm = $i['nama_alm'];
+                                            $umur_alm = $i['umur_alm'];
+                                            $agama_alm = $i['agama_alm'];
+                                            $nik_alm = $i['nik_alm'];
+                                            $tanggal_meninggal = $i['tanggal_meninggal'];
+                                            $tanggal_kubur = $i['tanggal_kubur'];
+                                            $blok_petak = $i['blok_petak'];
+                                            $jenis_pemakaman = $i['jenis_pemakaman'];
+                                            $foto_surat_ket_lap = $i['foto_surat_ket_lap'];
+                                            $foto_surat_pemeriksaan_jenazah = $i['foto_surat_pemeriksaan_jenazah'];
+                                            $foto_kk_alm = $i['foto_kk_alm'];
+                                            $foto_surat_rekomendasi_dinas_pupr = $i['foto_surat_rekomendasi_dinas_pupr'];
+                                            $id_status_verifikasi_surat = $i['id_status_verifikasi_surat'];
+                                            
+                                            
+                                            
+                                          
+
+                                            ?>
                                         <tr>
                                             <td>Tiger Nixon</td>
                                             <td>System Architect</td>
@@ -72,10 +100,38 @@
                                             <td>$320,800</td>
                                             <td>$320,800</td>
                                             <td>
+
+                                                <?php if($id_status_verifikasi_surat == 1) {?>
+                                                <div class="table-responsive">
+                                                    <div class="table table-striped table-hover ">
+                                                        <a href="" class="btn btn-warning">
+                                                            Menunggu Konfirmasi
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <?php }elseif($id_status_verifikasi_surat == 2) {?>
+                                                <div class="table-responsive">
+                                                    <div class="table table-striped table-hover ">
+                                                        <a href="" class="btn btn-success">
+                                                            Pengajuan Surat Di Terima
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <?php }elseif($id_status_verifikasi_surat == 3) {?>
+                                                <div class="table-responsive">
+                                                    <div class="table table-striped table-hover ">
+                                                        <a href="" class="btn btn-danger">
+                                                            Pengajuan Surat Ditolak
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <?php }?>
+                                            </td>
+                                            <td>
                                                 <div class="table-responsive">
                                                     <div class="table table-striped table-hover ">
                                                         <a href="" class="btn btn-primary" data-toggle="modal"
-                                                            data-target="#foto">
+                                                            data-target="#foto<?=$id_izin_pemakaman_jenazah?>">
                                                             Foto <i class="nav-icon fas fa-file-image"></i>
                                                         </a>
                                                     </div>
@@ -83,6 +139,7 @@
                                             </td>
 
                                         </tr>
+                                        <?php endforeach;?>
                                     </tbody>
                                 </table>
                             </div>
@@ -102,8 +159,9 @@
 
 
             <!-- Modal Foto-->
-            <div class="modal fade" id="foto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
+            <div class="modal fade" id="foto<?=$id_izin_pemakaman_jenazah?>" tabindex="-1"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Foto</h5>
@@ -112,7 +170,58 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            ...
+                            <div class="col">
+
+                                <h2>Foto Surat Ket. Lap kematian</h2>
+                                <div class="row">
+
+                                    <a href="<?=base_url();?>assets/izin_pemakaman_jenazah/<?=$foto_surat_ket_lap?>"
+                                        target="_blank">
+                                        <img src="<?=base_url();?>assets/izin_pemakaman_jenazah/<?=$foto_surat_ket_lap?>"
+                                            width="100%" alt="">
+                                    </a>
+
+                                </div>
+
+                                <br>
+                                <h2>Foto Surat keterangan Pemeriksaan
+                                    Jenazah</h2>
+                                <div class="row">
+
+                                    <a href="<?=base_url();?>assets/izin_pemakaman_jenazah/<?=$foto_surat_pemeriksaan_jenazah?>"
+                                        target="_blank">
+                                        <img src="<?=base_url();?>assets/izin_pemakaman_jenazah/<?=$foto_surat_pemeriksaan_jenazah?>"
+                                            width="100%" alt="">
+                                    </a>
+
+                                </div>
+
+                                <br>
+                                <h2>Foto KK Almarhum</h2>
+                                <div class="row">
+
+                                    <a href="<?=base_url();?>assets/izin_pemakaman_jenazah/<?=$foto_kk_alm?>"
+                                        target="_blank">
+                                        <img src="<?=base_url();?>assets/izin_pemakaman_jenazah/<?=$foto_kk_alm?>"
+                                            width="100%" alt="">
+                                    </a>
+
+                                </div>
+
+                                <br>
+                                <h2>Foto Surat Rekomendari Dari Dinas
+                                    PUPR</h2>
+                                <div class="row">
+
+                                    <a href="<?=base_url();?>assets/izin_pemakaman_jenazah/<?=$foto_surat_rekomendasi_dinas_pupr?>"
+                                        target="_blank">
+                                        <img src="<?=base_url();?>assets/izin_pemakaman_jenazah/<?=$foto_surat_rekomendasi_dinas_pupr?>"
+                                            width="100%" alt="">
+                                    </a>
+
+                                </div>
+
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

@@ -19,13 +19,14 @@ class Izin_Pemakaman_Jenazah extends CI_Controller {
 	public function view_kepala_kasi()
 	{
 		$data['izin_pemakaman_jenazah'] = $this->m_izin_pemakaman_jenazah->read_all_pemakaman_jenazah()->result_array();
+		
 		$this->load->view('kepala_kasi/izin_pemakaman_jenazah.php', $data);
 	}
 	
 	public function view_masyarakat()
 	{
-		
-		$this->load->view('masyarakat/izin_pemakaman_jenazah.php');
+		$data['izin_pemakaman_jenazah'] = $this->m_izin_pemakaman_jenazah->read_all_pemakaman_jenazah_by_id($this->session->userdata('id_user'))->result_array();
+		$this->load->view('masyarakat/izin_pemakaman_jenazah.php', $data);
     }
 
 	public function tambah_izin_pemakaman_jenazah()

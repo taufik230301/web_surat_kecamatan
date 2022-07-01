@@ -52,34 +52,89 @@
                                             <th>Ukuran</th>
                                             <th>Lokasi Reklame</th>
                                             <th>Nama Lengkap</th>
+                                            <th>Status Surat</th>
                                             <th>Foto Surat</th>
                                         </tr>
                                     </thead>
 
                                     <tbody>
+                                        <?php
+                                            $id = 0;
+                                            foreach($izin_media_reklame as $i)
+                                            :
+                                            $id++;
+                                            $id_izin_penyediaan_media_reklame = $i['id_izin_penyediaan_media_reklame'];
+                                            $nomor_surat = $i['nomor_surat'];
+                                            $berlaku_awal = $i['berlaku_awal'];
+                                            $berlaku_akhir = $i['berlaku_akhir'];
+                                            $jenis_reklame = $i['jenis_reklame'];
+                                            $merk = $i['merk'];
+                                            $jumlah = $i['jumlah'];
+                                            $ukuran = $i['ukuran'];
+                                            $lokasi_reklame = $i['lokasi_reklame'];
+                                            $nama_lengkap = $i['nama_lengkap'];
+                                            $foto_ktp_pemohon = $i['foto_ktp_pemohon'];
+                                            $foto_sketsa_lokasi = $i['foto_sketsa_lokasi'];
+                                            $foto_desain = $i['foto_desain'];
+                                            $foto_bukti_lunas_pbb = $i['foto_bukti_lunas_pbb'];
+                                            $id_status_verifikasi_surat = $i['id_status_verifikasi_surat'];
+                                            
+                                            
+                                          
+
+                                            ?>
                                         <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
-                                            <td>$320,800</td>
-                                            <td>$320,800</td>
-                                            <td>$320,800</td>
-                                            <td>$320,800</td>
+                                            <td><?=$id?></td>
+                                            <td><?=$nomor_surat?></td>
+                                            <td><?=$berlaku_awal?></td>
+                                            <td><?=$berlaku_akhir?></td>
+                                            <td><?=$jenis_reklame?></td>
+                                            <td><?=$merk?></td>
+                                            <td><?=$jumlah?></td>
+                                            <td><?=$ukuran?></td>
+                                            <td><?=$lokasi_reklame?></td>
+                                            <td><?=$nama_lengkap?></td>
+                                            <td>
+
+                                                <?php if($id_status_verifikasi_surat == 1) {?>
+                                                <div class="table-responsive">
+                                                    <div class="table table-striped table-hover ">
+                                                        <a href="" class="btn btn-warning">
+                                                            Menunggu Konfirmasi
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <?php }elseif($id_status_verifikasi_surat == 2) {?>
+                                                <div class="table-responsive">
+                                                    <div class="table table-striped table-hover ">
+                                                        <a href="" class="btn btn-success">
+                                                            Pengajuan Surat Di Terima
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <?php }elseif($id_status_verifikasi_surat == 3) {?>
+                                                <div class="table-responsive">
+                                                    <div class="table table-striped table-hover ">
+                                                        <a href="" class="btn btn-danger">
+                                                            Pengajuan Surat Ditolak
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <?php }?>
+                                            </td>
                                             <td>
                                                 <div class="table-responsive">
                                                     <div class="table table-striped table-hover ">
                                                         <a href="" class="btn btn-primary" data-toggle="modal"
-                                                            data-target="#foto">
+                                                            data-target="#foto<?=$id_izin_penyediaan_media_reklame?>">
                                                             Foto <i class="nav-icon fas fa-file-image"></i>
                                                         </a>
                                                     </div>
                                                 </div>
                                             </td>
-                                            
+
                                         </tr>
+                                        <?php endforeach;?>
                                     </tbody>
                                 </table>
                             </div>
@@ -97,8 +152,8 @@
 
 
             <!-- Modal Foto-->
-            <div class="modal fade" id="foto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
+            <div class="modal fade" id="foto<?=$id_izin_penyediaan_media_reklame?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Foto</h5>
@@ -107,11 +162,61 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            ...
+                            <div class="col">
+
+                                <h2>Foto KTP Pemohon</h2>
+                                <div class="row">
+
+                                    <a href="<?=base_url();?>assets/izin_media_reklame/<?=$foto_ktp_pemohon?>"
+                                        target="_blank">
+                                        <img src="<?=base_url();?>assets/izin_media_reklame/<?=$foto_ktp_pemohon?>"
+                                            width="100%" alt="">
+                                    </a>
+
+                                </div>
+
+                                <br>
+                                <h2>Foto Sketsa Lokasi Reklame</h2>
+                                <div class="row">
+
+                                    <a href="<?=base_url();?>assets/izin_media_reklame/<?=$foto_sketsa_lokasi?>"
+                                        target="_blank">
+                                        <img src="<?=base_url();?>assets/izin_media_reklame/<?=$foto_sketsa_lokasi?>"
+                                            width="100%" alt="">
+                                    </a>
+
+                                </div>
+
+                                <br>
+                                <h2>Foto Desain Reklame</h2>
+                                <div class="row">
+
+                                    <a href="<?=base_url();?>assets/izin_media_reklame/<?=$foto_desain?>"
+                                        target="_blank">
+                                        <img src="<?=base_url();?>assets/izin_media_reklame/<?=$foto_desain?>"
+                                            width="100%" alt="">
+                                    </a>
+
+                                </div>
+
+                                <br>
+                                <h2>Foto Bukti Lunas PBB Tahun Berjalan</h2>
+                                <div class="row">
+
+                                    <a href="<?=base_url();?>assets/izin_media_reklame/<?=$foto_bukti_lunas_pbb?>"
+                                        target="_blank">
+                                        <img src="<?=base_url();?>assets/izin_media_reklame/<?=$foto_bukti_lunas_pbb?>"
+                                            width="100%" alt="">
+                                    </a>
+
+                                </div>
+
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-primary">Save
+                                changes</button>
                         </div>
                     </div>
                 </div>

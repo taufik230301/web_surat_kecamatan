@@ -52,7 +52,6 @@
                                             <th>Nama Pengaju</th>
                                             <th>Status Surat</th>
                                             <th>Foto Surat</th>
-                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
 
@@ -126,25 +125,7 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td>
-                                                <div class="table-responsive">
-                                                    <div class="table table-striped table-hover ">
-                                                        <a href="" class="btn btn-primary" data-toggle="modal"
-                                                            data-target="#edit_izin_domisili">
-                                                            Edit <i class="nav-icon fas fa-edit"></i>
-                                                        </a>
-
-                                                    </div>
-                                                </div>
-                                                <div class="table-responsive">
-                                                    <div class="table table-striped table-hover ">
-                                                        <a href="" data-toggle="modal"
-                                                            data-target="#delete_izin_domisili"
-                                                            class="btn btn-danger">Delete <i class="fas fa-trash"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </td>
+                                            
 
                                         </tr>
 

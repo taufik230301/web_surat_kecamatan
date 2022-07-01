@@ -11,7 +11,7 @@ class M_izin_pemakaman_jenazah extends CI_Model
 
     public function read_all_pemakaman_jenazah_by_id($id_user)
     {
-        $hasil=$this->db->query("SELECT * FROM izin_pemakaman_jenazah JOIN user_detail ON user_detail.id_user_detail = izin_pemakaman_jenazah.id_user WHERE user.detail.id_user_detail='$id_user'");
+        $hasil=$this->db->query("SELECT * FROM izin_pemakaman_jenazah JOIN user_detail ON user_detail.id_user_detail = izin_pemakaman_jenazah.id_user WHERE user_detail.id_user_detail='$id_user'");
         return $hasil;
     }
 
