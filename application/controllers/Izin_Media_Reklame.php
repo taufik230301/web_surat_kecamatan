@@ -11,8 +11,16 @@ class Izin_Media_Reklame extends CI_Controller {
 
 	public function view_admin()
 	{
-		$data['izin_media_reklame'] = $this->m_izin_media_reklame->read_all_izin_media_reklame()->result_array();
-		$this->load->view('admin/izin_media_reklame.php', $data);
+		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
+
+			$data['izin_media_reklame'] = $this->m_izin_media_reklame->read_all_izin_media_reklame()->result_array();
+			$this->load->view('admin/izin_media_reklame.php', $data);
+		}else{
+
+			$this->session->set_flashdata('loggin_err','loggin_err');
+			redirect('Login/index');
+
+		}
     }
 
     public function view_kepala_kasi()
@@ -23,8 +31,17 @@ class Izin_Media_Reklame extends CI_Controller {
 
     public function view_masyarakat()
 	{	
-		$data['izin_media_reklame'] = $this->m_izin_media_reklame->read_all_izin_media_reklame_by_id($this->session->userdata('id_user'))->result_array();
-		$this->load->view('masyarakat/izin_media_reklame.php', $data);
+		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 3) {
+
+			$data['izin_media_reklame'] = $this->m_izin_media_reklame->read_all_izin_media_reklame_by_id($this->session->userdata('id_user'))->result_array();
+			$this->load->view('masyarakat/izin_media_reklame.php', $data);
+			
+		}else{
+
+			$this->session->set_flashdata('loggin_err','loggin_err');
+			redirect('Login/index');
+
+		}
 	}
 	
 	public function tambah_izin_media_reklame()

@@ -134,6 +134,79 @@
                                             </td>
 
                                         </tr>
+                                        <!-- Modal Foto-->
+                                        <div class="modal fade" id="foto<?=$id_izin_penyediaan_media_reklame?>"
+                                            tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-xl">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Foto</h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="col">
+
+                                                            <h2>Foto KTP Pemohon</h2>
+                                                            <div class="row">
+
+                                                                <a href="<?=base_url();?>assets/izin_media_reklame/<?=$foto_ktp_pemohon?>"
+                                                                    target="_blank">
+                                                                    <img src="<?=base_url();?>assets/izin_media_reklame/<?=$foto_ktp_pemohon?>"
+                                                                        width="100%" alt="">
+                                                                </a>
+
+                                                            </div>
+
+                                                            <br>
+                                                            <h2>Foto Sketsa Lokasi Reklame</h2>
+                                                            <div class="row">
+
+                                                                <a href="<?=base_url();?>assets/izin_media_reklame/<?=$foto_sketsa_lokasi?>"
+                                                                    target="_blank">
+                                                                    <img src="<?=base_url();?>assets/izin_media_reklame/<?=$foto_sketsa_lokasi?>"
+                                                                        width="100%" alt="">
+                                                                </a>
+
+                                                            </div>
+
+                                                            <br>
+                                                            <h2>Foto Desain Reklame</h2>
+                                                            <div class="row">
+
+                                                                <a href="<?=base_url();?>assets/izin_media_reklame/<?=$foto_desain?>"
+                                                                    target="_blank">
+                                                                    <img src="<?=base_url();?>assets/izin_media_reklame/<?=$foto_desain?>"
+                                                                        width="100%" alt="">
+                                                                </a>
+
+                                                            </div>
+
+                                                            <br>
+                                                            <h2>Foto Bukti Lunas PBB Tahun Berjalan</h2>
+                                                            <div class="row">
+
+                                                                <a href="<?=base_url();?>assets/izin_media_reklame/<?=$foto_bukti_lunas_pbb?>"
+                                                                    target="_blank">
+                                                                    <img src="<?=base_url();?>assets/izin_media_reklame/<?=$foto_bukti_lunas_pbb?>"
+                                                                        width="100%" alt="">
+                                                                </a>
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-primary">Save
+                                                            changes</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <?php endforeach;?>
                                     </tbody>
                                 </table>
@@ -151,76 +224,7 @@
 
 
 
-            <!-- Modal Foto-->
-            <div class="modal fade" id="foto<?=$id_izin_penyediaan_media_reklame?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-xl">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Foto</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="col">
 
-                                <h2>Foto KTP Pemohon</h2>
-                                <div class="row">
-
-                                    <a href="<?=base_url();?>assets/izin_media_reklame/<?=$foto_ktp_pemohon?>"
-                                        target="_blank">
-                                        <img src="<?=base_url();?>assets/izin_media_reklame/<?=$foto_ktp_pemohon?>"
-                                            width="100%" alt="">
-                                    </a>
-
-                                </div>
-
-                                <br>
-                                <h2>Foto Sketsa Lokasi Reklame</h2>
-                                <div class="row">
-
-                                    <a href="<?=base_url();?>assets/izin_media_reklame/<?=$foto_sketsa_lokasi?>"
-                                        target="_blank">
-                                        <img src="<?=base_url();?>assets/izin_media_reklame/<?=$foto_sketsa_lokasi?>"
-                                            width="100%" alt="">
-                                    </a>
-
-                                </div>
-
-                                <br>
-                                <h2>Foto Desain Reklame</h2>
-                                <div class="row">
-
-                                    <a href="<?=base_url();?>assets/izin_media_reklame/<?=$foto_desain?>"
-                                        target="_blank">
-                                        <img src="<?=base_url();?>assets/izin_media_reklame/<?=$foto_desain?>"
-                                            width="100%" alt="">
-                                    </a>
-
-                                </div>
-
-                                <br>
-                                <h2>Foto Bukti Lunas PBB Tahun Berjalan</h2>
-                                <div class="row">
-
-                                    <a href="<?=base_url();?>assets/izin_media_reklame/<?=$foto_bukti_lunas_pbb?>"
-                                        target="_blank">
-                                        <img src="<?=base_url();?>assets/izin_media_reklame/<?=$foto_bukti_lunas_pbb?>"
-                                            width="100%" alt="">
-                                    </a>
-
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save
-                                changes</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
 
 

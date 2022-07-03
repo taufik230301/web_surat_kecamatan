@@ -12,8 +12,18 @@ class Izin_Pemakaman_Jenazah extends CI_Controller {
 
 	public function view_admin()
 	{
-		$data['izin_pemakaman_jenazah'] = $this->m_izin_pemakaman_jenazah->read_all_pemakaman_jenazah()->result_array();
-		$this->load->view('admin/izin_pemakaman_jenazah.php', $data);
+
+		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
+
+			$data['izin_pemakaman_jenazah'] = $this->m_izin_pemakaman_jenazah->read_all_pemakaman_jenazah()->result_array();
+			$this->load->view('admin/izin_pemakaman_jenazah.php', $data);
+
+		}else{
+
+			$this->session->set_flashdata('loggin_err','loggin_err');
+			redirect('Login/index');
+
+		}
 	}
 	
 	public function view_kepala_kasi()
@@ -25,8 +35,17 @@ class Izin_Pemakaman_Jenazah extends CI_Controller {
 	
 	public function view_masyarakat()
 	{
-		$data['izin_pemakaman_jenazah'] = $this->m_izin_pemakaman_jenazah->read_all_pemakaman_jenazah_by_id($this->session->userdata('id_user'))->result_array();
-		$this->load->view('masyarakat/izin_pemakaman_jenazah.php', $data);
+		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 3) {
+
+			$data['izin_pemakaman_jenazah'] = $this->m_izin_pemakaman_jenazah->read_all_pemakaman_jenazah_by_id($this->session->userdata('id_user'))->result_array();
+			$this->load->view('masyarakat/izin_pemakaman_jenazah.php', $data);
+			
+		}else{
+
+			$this->session->set_flashdata('loggin_err','loggin_err');
+			redirect('Login/index');
+
+		}
     }
 
 	public function tambah_izin_pemakaman_jenazah()

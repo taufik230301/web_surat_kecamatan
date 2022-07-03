@@ -11,8 +11,18 @@ class Izin_Domisili extends CI_Controller {
 
 	public function view_admin()
 	{
-		$data['izin_domisili'] = $this->m_izin_domisili->read_all_domsisili()->result_array();
-		$this->load->view('admin/izin_domisili.php', $data);
+
+		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
+
+			$data['izin_domisili'] = $this->m_izin_domisili->read_all_domsisili()->result_array();
+			$this->load->view('admin/izin_domisili.php', $data);
+		
+		}else{
+
+			$this->session->set_flashdata('loggin_err','loggin_err');
+			redirect('Login/index');
+
+		}
 	}
 
 	public function acc_izin_domisili_admin($id_status_verifikasi_surat)
@@ -40,9 +50,17 @@ class Izin_Domisili extends CI_Controller {
 	
 	public function view_masyarakat()
 	{
+		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 3) {
 
-		$data['izin_domisili'] = $this->m_izin_domisili->read_all_domsisili_by_id($this->session->userdata('id_user'))->result_array();
-		$this->load->view('masyarakat/izin_domisili.php', $data);
+			$data['izin_domisili'] = $this->m_izin_domisili->read_all_domsisili_by_id($this->session->userdata('id_user'))->result_array();
+			$this->load->view('masyarakat/izin_domisili.php', $data);
+		
+		}else{
+
+			$this->session->set_flashdata('loggin_err','loggin_err');
+			redirect('Login/index');
+
+		}
 	}
 	
 	public function tambah_izin_domisili_masyarakat()

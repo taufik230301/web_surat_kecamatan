@@ -62,6 +62,16 @@
     </script>
     <?php } ?>
 
+    <?php if($this->session->flashdata('loggin_err')){?>
+    <script>
+    swal({
+        title: "Error!",
+        text: "Sesi Anda Habis Silahkan Login!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
     <div class="main">
 
         <!-- Sing in  Form -->

@@ -10,10 +10,18 @@ class Masyarakat extends CI_Controller {
 
 	public function view_admin()
 	{
+		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
 
-		$data['masyarakat'] = $this->m_user->read_all_masyarakat()->result_array();
-		
-		$this->load->view('admin/masyarakat.php', $data);
+			$data['masyarakat'] = $this->m_user->read_all_masyarakat()->result_array();
+			
+			$this->load->view('admin/masyarakat.php', $data);
+
+		}else{
+
+			$this->session->set_flashdata('loggin_err','loggin_err');
+			redirect('Login/index');
+
+		}
 	}
 	
 	public function tambah_masyarakat_admin()
