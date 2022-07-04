@@ -235,6 +235,23 @@
                                                         </a>
                                                     </div>
                                                 </div>
+                                                <?php if($id_status_verifikasi_surat == 2) {?>
+                                                <div class="table-responsive">
+                                                    <div class="table table-striped table-hover ">
+                                                        <a href="" class="btn btn-success">
+                                                            Cetak
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <?php }else {?>
+                                                <div class="table-responsive">
+                                                    <div class="table table-striped table-hover ">
+                                                        <a href="" class="btn btn-danger">
+                                                            Belum dapat mencetak
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <?php }?>
                                             </td>
                                         </tr>
                                         <!-- Modal Foto-->
