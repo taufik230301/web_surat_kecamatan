@@ -128,7 +128,7 @@
 
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">Data Izin Media Reklame</h1>
-                   
+
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4 mt-4">
@@ -266,6 +266,23 @@
                                                         </a>
                                                     </div>
                                                 </div>
+                                                <?php if($id_status_verifikasi_surat == 2) {?>
+                                                <div class="table-responsive">
+                                                    <div class="table table-striped table-hover ">
+                                                        <a href="<?=base_url();?>Cetak/surat_izin_media_reklame/<?=$id_izin_penyediaan_media_reklame?>" class="btn btn-success">
+                                                            Cetak
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <?php }else {?>
+                                                <div class="table-responsive">
+                                                    <div class="table table-striped table-hover ">
+                                                        <a href="" class="btn btn-danger">
+                                                            Belum dapat mencetak
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <?php }?>
                                             </td>
                                         </tr>
 
@@ -408,17 +425,12 @@
                                                                         value="<?php echo $id_izin_penyediaan_media_reklame?>" />
                                                                     <input type="hidden" name="foto_ktp_pemohon_old"
                                                                         value="<?=$foto_ktp_pemohon?>" hidden>
-                                                                    <input type="hidden"
-                                                                        name="foto_sketsa_lokasi_old"
+                                                                    <input type="hidden" name="foto_sketsa_lokasi_old"
                                                                         value="<?=$foto_sketsa_lokasi?>" hidden>
-                                                                    <input type="hidden"
-                                                                        name="foto_desain_old"
-                                                                        value="<?=$foto_desain?>"
-                                                                        hidden>
-                                                                    <input type="hidden"
-                                                                        name="foto_bukti_lunas_pbb_old"
-                                                                        value="<?=$foto_bukti_lunas_pbb?>"
-                                                                        hidden>
+                                                                    <input type="hidden" name="foto_desain_old"
+                                                                        value="<?=$foto_desain?>" hidden>
+                                                                    <input type="hidden" name="foto_bukti_lunas_pbb_old"
+                                                                        value="<?=$foto_bukti_lunas_pbb?>" hidden>
 
                                                                     <p>Apakah kamu yakin ingin menghapus data
                                                                         ini?</i></b></p>

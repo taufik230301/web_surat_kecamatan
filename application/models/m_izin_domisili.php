@@ -2,6 +2,12 @@
 
 class M_izin_domisili extends CI_Model
 {
+
+    public function read_surat_izin_domisili_by_id($id_izin_domisili)
+    {
+        $hasil=$this->db->query("SELECT * FROM izin_domisili JOIN user_detail ON user_detail.id_user_detail = izin_domisili.id_user WHERE izin_domisili.id_izin_domisili='$id_izin_domisili'");
+        return $hasil;
+    }
     public function read_all_domsisili_by_id($id_user)
     {
         $hasil=$this->db->query("SELECT * FROM izin_domisili JOIN user_detail ON user_detail.id_user_detail = izin_domisili.id_user WHERE user_detail.id_user_detail='$id_user'");

@@ -24,3 +24,4 @@
 
 <!-- Page level custom scripts -->
 <script src="<?=base_url();?>assets/sb_admin/js/demo/datatables-demo.js"></script>
+

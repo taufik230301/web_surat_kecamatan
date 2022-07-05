@@ -5,11 +5,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Surat Izin Media Reklame</title>
 </head>
 
 <body>
-    <table cellpadding="0" cellspacing="0" style="width:529.9pt; margin-left:1.4pt; border-collapse:collapse; margin-top:-30px;">
+    <?php
+function tgl_indo($tanggal){
+	$bulan = array (
+		1 =>   'Januari',
+		'Februari',
+		'Maret',
+		'April',
+		'Mei',
+		'Juni',
+		'Juli',
+		'Agustus',
+		'September',
+		'Oktober',
+		'November',
+		'Desember'
+	);
+	$pecahkan = explode('-', $tanggal);
+ 
+	return $pecahkan[2] . ' ' . $bulan[ (int)$pecahkan[1] ] . ' ' . $pecahkan[0];
+}
+?>
+    <?php
+                                            $id = 0;
+                                            foreach($surat as $i)
+                                            :
+                                            $id++;
+                                            $id_izin_penyediaan_media_reklame = $i['id_izin_penyediaan_media_reklame'];
+                                            $nomor_surat = $i['nomor_surat'];
+                                            $berlaku_awal = $i['berlaku_awal'];
+                                            $berlaku_akhir = $i['berlaku_akhir'];
+                                            $jenis_reklame = $i['jenis_reklame'];
+                                            $merk = $i['merk'];
+                                            $jumlah = $i['jumlah'];
+                                            $ukuran = $i['ukuran'];
+                                            $lokasi_reklame = $i['lokasi_reklame'];
+                                            $nama_lengkap = $i['nama_lengkap'];
+                                            $alamat = $i['alamat'];
+                                            $foto_ktp_pemohon = $i['foto_ktp_pemohon'];
+                                            $foto_sketsa_lokasi = $i['foto_sketsa_lokasi'];
+                                            $foto_desain = $i['foto_desain'];
+                                            $foto_bukti_lunas_pbb = $i['foto_bukti_lunas_pbb'];
+                                            $id_status_verifikasi_surat = $i['id_status_verifikasi_surat'];
+                                            
+                                            
+                                          
+
+                                            ?>
+    <table cellpadding="0" cellspacing="0"
+        style="width:529.9pt; margin-left:1.4pt; border-collapse:collapse; margin-top:-30px;">
         <tbody>
             <tr style="height:120.95pt;">
                 <td colspan="18" style="width:527.1pt; padding-right:1.4pt; padding-left:1.4pt; vertical-align:top;">
@@ -19,12 +67,12 @@
                                 src="https://myfiles.space/user_files/124457_b80c96004754aa79/1656860832_surat-izin-penyediaan-media-reklame/1656860832_surat-izin-penyediaan-media-reklame-1.jpeg"
                                 width="86" height="110"
                                 alt="Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Lambang Kota Palembang"
-                                style="margin: 0 0 0 auto; text-align: right; display: block; "></span> KOTA
+                                style="margin: 0 0 0 auto; text-align: right; display: block; "></span>PEMERINTAH KOTA
                         PALEMBANG&nbsp;&nbsp;
                     </h1>
                     <h3
                         style="margin-top:2pt; margin-bottom:0pt; text-indent:36pt; text-align:center; page-break-inside:avoid; page-break-after:avoid; font-size:20pt;">
-                        <span style="font-family:Cambria; font-weight:normal;"> ILIR BARAT SATU</span>
+                        <span style="font-family:Cambria; font-weight:normal;">KECAMATAN ILIR BARAT SATU</span>
                     </h3>
                     <p style="margin-top:0pt; margin-bottom:0pt; text-indent:36pt; text-align:center;"><strong>Jalan
                             Padang Selasa Kelurahan Bukitlama Telpon (0711) - 350572</strong></p>
@@ -41,28 +89,31 @@
             </tr>
             <tr style="height:8.5pt;">
                 <td colspan="18" style="width:527.1pt; padding-right:1.4pt; padding-left:1.4pt; vertical-align:top;">
-                    <p style="margin-top:0pt; margin-bottom:0pt; text-align:center; font-size:14pt; margin-top:-10px;"><strong><span
-                                style="font-family:Arial;">SURAT IZIN WALIKOTA PALEMBANG</span></strong></p>
+                    <p style="margin-top:0pt; margin-bottom:0pt; text-align:center; font-size:14pt; margin-top:-10px;">
+                        <strong><span style="font-family:Arial;">SURAT IZIN WALIKOTA PALEMBANG</span></strong>
+                    </p>
                 </td>
             </tr>
             <tr style="height:8.5pt;">
                 <td colspan="18" style="width:527.1pt; padding-right:1.4pt; padding-left:1.4pt; vertical-align:top;">
-                    <p style="margin-top:0pt; margin-bottom:0pt; margin-top:-30px;"><span style="font-family:Arial;">&nbsp;</span></p>
+                    <p style="margin-top:0pt; margin-bottom:0pt; margin-top:-30px;"><span
+                            style="font-family:Arial;">&nbsp;</span></p>
                 </td>
             </tr>
             <tr style="height:8.5pt;">
                 <td colspan="18" style="width:527.1pt; padding-right:1.4pt; padding-left:1.4pt; vertical-align:top;">
                     <p style="margin-top:0pt; margin-bottom:0pt; text-align:center;"><strong><span
-                                style="font-family:Arial; margin-top:-30px;">NOMOR: 650/IPRK/001/IB.I/2021</span></strong></p>
+                                style="font-family:Arial; margin-top:-30px;">NOMOR:
+                                <?=$nomor_surat?></span></strong></p>
                 </td>
             </tr>
-           
+
             <tr style="height:8.5pt;">
                 <td colspan="18" style="width:527.1pt; padding-right:1.4pt; padding-left:1.4pt; vertical-align:top;">
                     <p style="margin-top:0pt; margin-bottom:0pt; text-align:center;"><strong><span
                                 style="font-family:Arial;">TENTANG</span></strong></p>
                     <p style="margin-top:0pt; margin-bottom:0pt; text-align:center;"><strong><span
-                                style="font-family:Arial;">IZIN REKLAME INSIDENTIL</span></strong></p>
+                                style="font-family:Arial;">IZIN PENYELENGGARAAN REKLAME INSIDENTIL</span></strong></p>
                 </td>
             </tr>
             <tr style="height:8.5pt;">
@@ -300,10 +351,9 @@
                 <td colspan="7" style="width:430.95pt; padding-right:1.4pt; padding-left:1.4pt; vertical-align:top;">
                     <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:8pt;"><span
                             style="font-family:Arial;">Surat Izin Penyelenggaraan Reklame dari
-                            Sdr/i&nbsp;</span><strong><span style="font-family:Arial;">TOMI
-                                KURNIAWAN</span></strong><span
+                            Sdr/i&nbsp;</span><strong><span style="font-family:Arial;"><?=$nama_lengkap?></span></strong><span
                             style="font-family:Arial;">&nbsp;tanggal&nbsp;</span><strong><span
-                                style="font-family:Arial;">01 Desember 2021</span></strong><span
+                                style="font-family:Arial;"><?=tgl_indo($berlaku_awal)?></span></strong><span
                             style="font-family:Arial;">;</span></p>
                 </td>
             </tr>
@@ -344,8 +394,10 @@
             </tr>
             <tr style="height:8.5pt;">
                 <td colspan="18" style="width:527.1pt; padding-right:1.4pt; padding-left:1.4pt; vertical-align:top;">
-                    <p style="margin-top:0pt; margin-bottom:0pt; text-align:center; line-height:12pt; margin-top:-20px;"><strong><span
-                                style="font-family:Arial; font-size:11pt;">MENGIZINKAN :</span></strong></p>
+                    <p
+                        style="margin-top:0pt; margin-bottom:0pt; text-align:center; line-height:12pt; margin-top:-20px;">
+                        <strong><span style="font-family:Arial; font-size:11pt;">MENGIZINKAN :</span></strong>
+                    </p>
                 </td>
             </tr>
             <tr style="height:8.5pt;">
@@ -366,7 +418,7 @@
                 </td>
                 <td colspan="5" style="width:406.7pt; padding-right:1.4pt; padding-left:1.4pt; vertical-align:top;">
                     <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:9pt;"><span
-                            style="font-family:Arial;">&nbsp;</span></p>
+                            style="font-family:Arial;"><?=$nama_lengkap?></span></p>
                 </td>
             </tr>
             <tr style="height:8.5pt;">
@@ -386,7 +438,7 @@
                 </td>
                 <td colspan="5" style="width:406.7pt; padding-right:1.4pt; padding-left:1.4pt; vertical-align:top;">
                     <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:9pt;"><span
-                            style="font-family:Arial;">&nbsp;</span></p>
+                            style="font-family:Arial;"><?=$alamat?></span></p>
                 </td>
             </tr>
             <tr style="height:8.5pt; margin-top:10px;">
@@ -421,7 +473,7 @@
                 </td>
                 <td colspan="3" style="width:344.4pt; padding-right:1.4pt; padding-left:1.4pt; vertical-align:top;">
                     <p style="margin-top:0pt; margin-bottom:0pt; font-size:9pt;"><span
-                            style="font-family:Arial;">&nbsp;</span></p>
+                            style="font-family:Arial;"><?=$jenis_reklame?></span></p>
                 </td>
             </tr>
             <tr style="height:8.5pt;">
@@ -442,7 +494,7 @@
                 </td>
                 <td colspan="3" style="width:344.4pt; padding-right:1.4pt; padding-left:1.4pt; vertical-align:top;">
                     <p style="margin-top:0pt; margin-bottom:0pt; font-size:9pt;"><span
-                            style="font-family:Arial;">&nbsp;</span></p>
+                            style="font-family:Arial;"><?=$merk?></span></p>
                 </td>
             </tr>
             <tr style="height:8.5pt;">
@@ -463,7 +515,7 @@
                 </td>
                 <td colspan="3" style="width:344.4pt; padding-right:1.4pt; padding-left:1.4pt; vertical-align:top;">
                     <p style="margin-top:0pt; margin-bottom:0pt; font-size:9pt;"><span
-                            style="font-family:Arial;">&nbsp;</span></p>
+                            style="font-family:Arial;"><?=$jumlah?></span></p>
                 </td>
             </tr>
             <tr style="height:8.5pt;">
@@ -484,7 +536,7 @@
                 </td>
                 <td colspan="3" style="width:344.4pt; padding-right:1.4pt; padding-left:1.4pt; vertical-align:top;">
                     <p style="margin-top:0pt; margin-bottom:0pt; font-size:9pt;"><span
-                            style="font-family:Arial;">&nbsp;</span></p>
+                            style="font-family:Arial;"><?=$ukuran?></span></p>
                 </td>
             </tr>
             <tr style="height:8.5pt;">
@@ -505,7 +557,7 @@
                 </td>
                 <td colspan="3" style="width:344.4pt; padding-right:1.4pt; padding-left:1.4pt; vertical-align:top;">
                     <p style="margin-top:0pt; margin-bottom:0pt; font-size:9pt;"><span
-                            style="font-family:Arial;">&nbsp;</span></p>
+                            style="font-family:Arial;"><?=$lokasi_reklame?></span></p>
                 </td>
             </tr>
             <tr style="height:8.5pt;">
@@ -526,7 +578,7 @@
                 </td>
                 <td colspan="3" style="width:344.4pt; padding-right:1.4pt; padding-left:1.4pt; vertical-align:top;">
                     <p style="margin-top:0pt; margin-bottom:0pt; font-size:9pt;"><span
-                            style="font-family:Arial;">&nbsp;</span></p>
+                            style="font-family:Arial;"><?=tgl_indo($berlaku_akhir)?></span></p>
                 </td>
             </tr>
             <tr style="height:8.5pt;">
@@ -594,8 +646,7 @@
                     <p style="margin-top:0pt; margin-bottom:0pt; font-size:9pt;"><span
                             style="font-family:Arial;">Ditetapkan di Palembang</span></p>
                     <p style="margin-top:0pt; margin-bottom:0pt; font-size:9pt;"><span style="font-family:Arial;">pada
-                            tanggal,&nbsp;</span><strong><span style="font-family:Arial;">01 Desember
-                                2021</span></strong></p>
+                            tanggal,&nbsp;</span><strong><span style="font-family:Arial;"><?=tgl_indo($berlaku_awal)?></span></strong></p>
                 </td>
             </tr>
             <tr style="height:8.5pt;">
@@ -1452,6 +1503,7 @@
         </tbody>
     </table>
     <p style="margin-top:0pt; margin-bottom:0pt; font-size:10pt;"><span style="font-family:Arial;">&nbsp;</span></p>
+    <?php endforeach;?>
 </body>
 
 <!-- <body>

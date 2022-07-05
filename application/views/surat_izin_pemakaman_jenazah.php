@@ -5,10 +5,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Surat Izin Pemakaman Jenazah</title>
 </head>
 
 <body>
+    <?php
+function tgl_indo($tanggal){
+	$bulan = array (
+		1 =>   'Januari',
+		'Februari',
+		'Maret',
+		'April',
+		'Mei',
+		'Juni',
+		'Juli',
+		'Agustus',
+		'September',
+		'Oktober',
+		'November',
+		'Desember'
+	);
+	$pecahkan = explode('-', $tanggal);
+ 
+	return $pecahkan[2] . ' ' . $bulan[ (int)$pecahkan[1] ] . ' ' . $pecahkan[0];
+}
+?>
+    <?php
+                                            $id = 0;
+                                            foreach($surat as $i)
+                                            :
+                                            $id++;
+                                            $id_izin_pemakaman_jenazah = $i['id_izin_pemakaman_jenazah'];
+                                            $nomor_surat = $i['nomor_surat'];
+                                            $tanggal_ditetapkan = $i['tanggal_ditetapkan'];
+                                            $nama_alm = $i['nama_alm'];
+                                            $nama_lengkap = $i['nama_lengkap'];
+                                            $alamat = $i['alamat'];
+                                            $umur_alm = $i['umur_alm'];
+                                            $agama_alm = $i['agama_alm'];
+                                            $nik_alm = $i['nik_alm'];
+                                            $tanggal_meninggal = $i['tanggal_meninggal'];
+                                            $tanggal_kubur = $i['tanggal_kubur'];
+                                            $blok_petak = $i['blok_petak'];
+                                            $jenis_pemakaman = $i['jenis_pemakaman'];
+                                            $foto_surat_ket_lap = $i['foto_surat_ket_lap'];
+                                            $foto_surat_pemeriksaan_jenazah = $i['foto_surat_pemeriksaan_jenazah'];
+                                            $foto_kk_alm = $i['foto_kk_alm'];
+                                            $foto_surat_rekomendasi_dinas_pupr = $i['foto_surat_rekomendasi_dinas_pupr'];
+                                            $id_status_verifikasi_surat = $i['id_status_verifikasi_surat'];
+                                            
+                                            
+                                            
+                                          
+
+                                            ?>
     <div>
 
         <div style="text-align:center;">
@@ -25,16 +75,17 @@
                                         src="https://myfiles.space/user_files/124457_b80c96004754aa79/1656860832_surat-izin-penyediaan-media-reklame/1656860832_surat-izin-penyediaan-media-reklame-1.jpeg"
                                         width="86" height="110"
                                         alt="Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Lambang Kota Palembang"
-                                        style="margin-left:-30px; text-align: right; display: block; "></span> KOTA
+                                        style="margin-left:-30px; text-align: right; display: block; "></span>PEMERINTAH KOTA
                                 PALEMBANG&nbsp;&nbsp;
                             </h1>
                             <h3
                                 style="margin-top:2pt; margin-bottom:0pt; text-indent:36pt; text-align:center; page-break-inside:avoid; page-break-after:avoid; font-size:20pt;">
-                                <span style="font-family:Cambria; font-weight:normal;"> ILIR BARAT SATU</span>
+                                <span style="font-family:Cambria; font-weight:normal;">KECAMATAN ILIR BARAT SATU</span>
                             </h3>
                             <p style="margin-top:0pt; margin-bottom:0pt; text-indent:36pt; text-align:center;">
                                 <strong>Jalan
-                                    Padang Selasa Kelurahan Bukitlama Telpon (0711) - 350572</strong></p>
+                                    Padang Selasa Kelurahan Bukitlama Telpon (0711) - 350572</strong>
+                            </p>
                             <p style="margin-top:0pt; margin-bottom:0pt; text-align:center;"><strong>P A L E M B A N
                                     G</strong>
                             </p>
@@ -70,7 +121,7 @@
                             <p style="margin-top:0pt; margin-bottom:0pt; text-align:center; font-size:11pt;">
                                 <strong><span style="font-family:Arial;">Nomor :&nbsp;</span></strong><strong><span
                                         style="font-family:Arial;">&nbsp;</span></strong><strong><span
-                                        style="font-family:Arial;">469/IJ.B/410/IB.SATU/2022</span></strong>
+                                        style="font-family:Arial;"><?=$nomor_surat?></span></strong>
                             </p>
                         </td>
                     </tr>
@@ -124,8 +175,8 @@
                         <td colspan="7"
                             style="width:419.7pt; padding-right:2.85pt; padding-left:2.85pt; vertical-align:top;">
                             <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:8pt;"><span
-                                    style="font-family:Arial;">Undang-undang Nomor 28  1959 tentang Pembentukan
-                                    Pemerintahan Daerah  II dan Kotapraja di Sumatra selatan (Lembaran Negara RI
+                                    style="font-family:Arial;">Undang-undang Nomor 28 1959 tentang Pembentukan
+                                    Pemerintahan Daerah II dan Kotapraja di Sumatra selatan (Lembaran Negara RI
                                     Tahun 1959 Nomor 73, Tambahan lembaran Negara RI Nomor 1821);</span></p>
                         </td>
                     </tr>
@@ -139,8 +190,8 @@
                         <td colspan="7"
                             style="width:419.7pt; padding-right:2.85pt; padding-left:2.85pt; vertical-align:top;">
                             <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:8pt;"><span
-                                    style="font-family:Arial;">Undang-Undang Nomor 26 Tahun 2007  Penataan Ruang
-                                    (Lembaran Negara Republik Indonesia Tahun 2007  130, Tambahan Lembaran Negara
+                                    style="font-family:Arial;">Undang-Undang Nomor 26 Tahun 2007 Penataan Ruang
+                                    (Lembaran Negara Republik Indonesia Tahun 2007 130, Tambahan Lembaran Negara
                                     Republik Indonesia Nomor 5049);</span></p>
                         </td>
                     </tr>
@@ -168,9 +219,9 @@
                                         width="409" height="544"
                                         alt="Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Palembang logo"
                                         style="margin: 0 0 0 auto; text-align: right; display: block; "></span><span
-                                    style="font-family:Arial;">Undang-Undang Nomor 28 Tahun 2009 Tentang Pajak 
-                                    dan Retribusi Daerah (Lembaran  Republik Indonesia Tahun 2009 Nomor 48,
-                                     Lembaran Negara Republik Indonesia Nomor 3725);</span></p>
+                                    style="font-family:Arial;">Undang-Undang Nomor 28 Tahun 2009 Tentang Pajak
+                                    dan Retribusi Daerah (Lembaran Republik Indonesia Tahun 2009 Nomor 48,
+                                    Lembaran Negara Republik Indonesia Nomor 3725);</span></p>
                         </td>
                     </tr>
                     <tr style="height:8.5pt;">
@@ -193,7 +244,7 @@
                             style="width:419.7pt; padding-right:2.85pt; padding-left:2.85pt; vertical-align:top;">
                             <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:8pt;"><span
                                     style="font-family:Arial;">Peraturan Pemerintah Nomor 9 Tahun 1987 tentang
-                                    Pemyediaan dan Penggunaan Tanah Untuk  Pemakaman;</span></p>
+                                    Pemyediaan dan Penggunaan Tanah Untuk Pemakaman;</span></p>
                         </td>
                     </tr>
                     <tr style="height:8.5pt;">
@@ -216,8 +267,8 @@
                             style="width:419.7pt; padding-right:2.85pt; padding-left:2.85pt; vertical-align:top;">
                             <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:8pt;"><span
                                     style="font-family:Arial;">Peraturan Pemerintah Nomor 26 Tahun 2008 tentang Rencana
-                                    Tata Ruang Wilayah Nasional (Lembaran  Republik   2008 Nomor 48,
-                                    Tambahan Lembaran   Indonesia Nomor 4833);</span></p>
+                                    Tata Ruang Wilayah Nasional (Lembaran Republik 2008 Nomor 48,
+                                    Tambahan Lembaran Indonesia Nomor 4833);</span></p>
                         </td>
                     </tr>
                     <tr style="height:8.5pt;">
@@ -239,9 +290,9 @@
                         <td colspan="7"
                             style="width:419.7pt; padding-right:2.85pt; padding-left:2.85pt; vertical-align:top;">
                             <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:8pt;"><span
-                                    style="font-family:Arial;">Peraturan Presiden RI Nomor 36  2005 tentang
-                                    Pengadaan Tanah Bagi Pelaksanaan Kepentingan Umum, Sebagaimana  diubah dengan
-                                    Peraturan Presiden RI Nomor 65  2006;</span></p>
+                                    style="font-family:Arial;">Peraturan Presiden RI Nomor 36 2005 tentang
+                                    Pengadaan Tanah Bagi Pelaksanaan Kepentingan Umum, Sebagaimana diubah dengan
+                                    Peraturan Presiden RI Nomor 65 2006;</span></p>
                         </td>
                     </tr>
                     <tr style="height:8.5pt;">
@@ -296,19 +347,19 @@
                             style="width:419.7pt; padding-right:2.85pt; padding-left:2.85pt; vertical-align:top;">
                             <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:8pt;"><span
                                     style="font-family:Arial;">Peraturan Daerah Kota Palembang Nomor 5 Tahun 2011
-                                    tentang Pembinaan dan Retribusi Pemakaman dan/atau Pengabuan  (Lembaran
-                                      Palembang Tahun 2 Nomor 5  C);</span></p>
+                                    tentang Pembinaan dan Retribusi Pemakaman dan/atau Pengabuan (Lembaran
+                                    Palembang Tahun 2 Nomor 5 C);</span></p>
                             <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:8pt;"><span
-                                    style="font-family:Arial;">Peraturan Walikota  Nomor 79 Tahun 2011 
-                                    Pedoman  Standar Operasional Prosedur Administrasi Pemerintah di
+                                    style="font-family:Arial;">Peraturan Walikota Nomor 79 Tahun 2011
+                                    Pedoman Standar Operasional Prosedur Administrasi Pemerintah di
                                     Lingkungan Pemerintah Kota Palembang;</span></p>
                             <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:8pt;"><span
-                                    style="font-family:Arial;">Peraturan Walikota Palembang Nomor 54 Tahun 2015 
-                                     sebagian Kewenangan Pemerintahan dari Walikota kepada Camat,  17
+                                    style="font-family:Arial;">Peraturan Walikota Palembang Nomor 54 Tahun 2015
+                                    sebagian Kewenangan Pemerintahan dari Walikota kepada Camat, 17
                                     November 2015;</span></p>
                             <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:8pt;"><span
-                                    style="font-family:Arial;">   Nomor 57 Tahun 2015 Tentang
-                                       Kecamatan dalam Penyelenggaraan Pelayanan Administrasi 
+                                    style="font-family:Arial;"> Nomor 57 Tahun 2015 Tentang
+                                    Kecamatan dalam Penyelenggaraan Pelayanan Administrasi
                                     Kecamatan, tanggal 18 November 2015;</span></p>
                             <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:8pt;"><span
                                     style="font-family:Arial;">Peraturan Walikota Palembang Nomor 58 Tahun 2015 Tentang
@@ -358,10 +409,11 @@
                             style="width:408.3pt; padding-right:2.85pt; padding-left:2.85pt; vertical-align:top;">
                             <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:8pt;"><span
                                     style="font-family:Arial;">Surat Permohonan Ijin Penggunaan Tanah Makam (IPTM) dari
-                                    Sdr/i&nbsp;</span><strong><span style="font-family:Arial;">HJ.
-                                        MARIANA</span></strong><span style="font-family:Arial;">&nbsp;&nbsp;</span><span
+                                    Sdr/i&nbsp;</span><strong><span
+                                        style="font-family:Arial;"><?=$nama_lengkap?></span></strong><span
+                                    style="font-family:Arial;">&nbsp;&nbsp;</span><span
                                     style="font-family:Arial;">tanggal&nbsp;</span><strong><span
-                                        style="font-family:Arial;">27 MEI 2022</span></strong><span
+                                        style="font-family:Arial;"><?=tgl_indo($tanggal_ditetapkan)?></span></strong><span
                                     style="font-family:Arial;">;&nbsp;</span></p>
                         </td>
                     </tr>
@@ -386,7 +438,7 @@
                         <td colspan="6"
                             style="width:408.3pt; padding-right:2.85pt; padding-left:2.85pt; vertical-align:top;">
                             <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:8pt;"><span
-                                    style="font-family:Arial;">Surat  DPRKP KOTA PALEMBANG;</span></p>
+                                    style="font-family:Arial;">Surat DPRKP KOTA PALEMBANG;</span></p>
                         </td>
                     </tr>
                     <tr style="height:8.5pt;">
@@ -411,7 +463,7 @@
                             style="width:408.3pt; padding-right:2.85pt; padding-left:2.85pt; vertical-align:top;">
                             <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:8pt;"><span
                                     style="font-family:Arial;">Bahwa berdasarkan pertimbangan sebagaimana tersebut
-                                    diatas kepada pemohon dapat diberikan Surat Ijin Penggunaan   (IPTM) yang
+                                    diatas kepada pemohon dapat diberikan Surat Ijin Penggunaan (IPTM) yang
                                     ditetapkan dengan Surat Ijin Walikota Palembang.</span></p>
                         </td>
                     </tr>
@@ -460,7 +512,7 @@
                         <td colspan="4"
                             style="width:381.1pt; padding-right:1.4pt; padding-left:1.4pt; vertical-align:top;">
                             <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:9pt;"><span
-                                    style="font-family:Arial;">&nbsp;</span></p>
+                                    style="font-family:Arial;">&nbsp;<?=$nama_lengkap?></span></p>
                         </td>
                     </tr>
                     <tr style="height:8.5pt;">
@@ -485,8 +537,7 @@
                         <td colspan="4"
                             style="width:381.1pt; padding-right:1.4pt; padding-left:1.4pt; vertical-align:top;">
                             <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:9pt;"><span
-                                    style="font-family:Arial;">JL. PUTRI KEMBANG DADAR II NO. 50 RT. 052 RW.
-                                    016</span><span style="font-family:Arial;">&nbsp;&nbsp;</span><span
+                                    style="font-family:Arial;"><?=$alamat?></span><span style="font-family:Arial;">&nbsp;&nbsp;</span><span
                                     style="font-family:Arial;">KELURAHAN BUKIT LAMA</span><span
                                     style="font-family:Arial;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                             </p>
@@ -513,7 +564,7 @@
                             style="width:431.55pt; padding-right:2.85pt; padding-left:2.85pt; vertical-align:top;">
                             <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:9pt;"><span
                                     style="font-family:Arial;">Memakamkan jenazah / kerangka berlokasi di TPU PUNCAK
-                                    SEKUNING  Palembang, yang bertindak untuk dan atas nama :</span></p>
+                                    SEKUNING Palembang, yang bertindak untuk dan atas nama :</span></p>
                         </td>
                     </tr>
                     <tr style="height:8.5pt;">
@@ -541,7 +592,7 @@
                         </td>
                         <td colspan="2" style="width:310.65pt; vertical-align:top;">
                             <p style="margin-top:0pt; margin-bottom:0pt; font-size:9pt;"><span
-                                    style="font-family:Arial;">&nbsp;</span></p>
+                                    style="font-family:Arial;"><?=$nama_alm?></span></p>
                         </td>
                     </tr>
                     <tr style="height:8.5pt;">
@@ -573,7 +624,7 @@
                         </td>
                         <td colspan="2" style="width:310.65pt; vertical-align:top;">
                             <p style="margin-top:0pt; margin-bottom:0pt; font-size:9pt;"><span
-                                    style="font-family:Arial;">&nbsp;</span></p>
+                                    style="font-family:Arial;"><?=$umur_alm?></span></p>
                         </td>
                     </tr>
                     <tr style="height:10.7pt;">
@@ -605,7 +656,7 @@
                         </td>
                         <td colspan="2" style="width:310.65pt; vertical-align:top;">
                             <p style="margin-top:0pt; margin-bottom:0pt; font-size:9pt;"><span
-                                    style="font-family:Arial;">&nbsp;</span></p>
+                                    style="font-family:Arial;"><?=$agama_alm?></span></p>
                         </td>
                     </tr>
                     <tr style="height:10pt;">
@@ -637,7 +688,7 @@
                         </td>
                         <td colspan="2" style="width:310.65pt; vertical-align:top;">
                             <p style="margin-top:0pt; margin-bottom:0pt; font-size:9pt;"><span
-                                    style="font-family:Arial;">&nbsp;</span></p>
+                                    style="font-family:Arial;"><?=$nik_alm?></span></p>
                         </td>
                     </tr>
                     <tr style="height:8.5pt;">
@@ -669,7 +720,7 @@
                         </td>
                         <td colspan="2" style="width:310.65pt; vertical-align:top;">
                             <p style="margin-top:0pt; margin-bottom:0pt; font-size:9pt;"><span
-                                    style="font-family:Arial;">&nbsp;</span></p>
+                                    style="font-family:Arial;"><?=tgl_indo($tanggal_meninggal)?></span></p>
                         </td>
                     </tr>
                     <tr style="height:8.5pt;">
@@ -693,7 +744,7 @@
                         <td colspan="3"
                             style="width:89.15pt; padding-right:2.85pt; padding-left:2.85pt; vertical-align:top;">
                             <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:9pt;"><span
-                                    style="font-family:Arial;"> Kubur</span></p>
+                                    style="font-family:Arial;">TanggalKubur</span></p>
                         </td>
                         <td style="width:5.7pt; padding-right:1.4pt; padding-left:1.4pt; vertical-align:top;">
                             <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:9pt;"><span
@@ -701,7 +752,7 @@
                         </td>
                         <td colspan="2" style="width:310.65pt; vertical-align:top;">
                             <p style="margin-top:0pt; margin-bottom:0pt; font-size:9pt;"><span
-                                    style="font-family:Arial;">&nbsp;</span></p>
+                                    style="font-family:Arial;"><?=tgl_indo($tanggal_kubur)?></span></p>
                         </td>
                     </tr>
                     <tr style="height:8.5pt;">
@@ -729,7 +780,7 @@
                         </td>
                         <td colspan="2" style="width:310.65pt; vertical-align:top;">
                             <p style="margin-top:0pt; margin-bottom:0pt; font-size:9pt;"><span
-                                    style="font-family:Arial;">-</span></p>
+                                    style="font-family:Arial;"><?=$blok_petak?></span></p>
                         </td>
                     </tr>
                     <tr style="height:8.5pt;">
@@ -757,7 +808,7 @@
                         </td>
                         <td colspan="2" style="width:310.65pt; vertical-align:top;">
                             <p style="margin-top:0pt; margin-bottom:0pt; font-size:9pt;"><span
-                                    style="font-family:Arial;">&nbsp;</span></p>
+                                    style="font-family:Arial;"><?=$jenis_pemakaman?></span></p>
                         </td>
                     </tr>
                     <tr style="height:8.5pt;">
@@ -771,7 +822,7 @@
                         <td colspan="11"
                             style="width:493.95pt; padding-right:2.85pt; padding-left:2.85pt; vertical-align:top;">
                             <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:9pt;"><span
-                                    style="font-family:Arial;">Surat Ijin Penggunaan Tanah Makam ini  sejak
+                                    style="font-family:Arial;">Surat Ijin Penggunaan Tanah Makam ini sejak
                                     tanggal ditetapkan, dengan ketentuan sebagai berikut :</span></p>
                         </td>
                     </tr>
@@ -796,10 +847,10 @@
                         <td colspan="10"
                             style="width:482.15pt; padding-right:2.85pt; padding-left:2.85pt; vertical-align:middle;">
                             <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:9pt;"><span
-                                    style="font-family:Arial;">Permohonan perpanjangan  harus diajukan 3 (Tiga)
-                                    Bulan sebelum habis masa berlakunya izin, dan untuk tanah   tidak didaftar
-                                    kembali lewat  waktu 3 (Tiga) Tahun, maka Ijin dinyatakan tidak  lagi
-                                     makam dapat dibongkar untuk digunakan pemakaman baru, atau kepentingan
+                                    style="font-family:Arial;">Permohonan perpanjangan harus diajukan 3 (Tiga)
+                                    Bulan sebelum habis masa berlakunya izin, dan untuk tanah tidak didaftar
+                                    kembali lewat waktu 3 (Tiga) Tahun, maka Ijin dinyatakan tidak lagi
+                                    makam dapat dibongkar untuk digunakan pemakaman baru, atau kepentingan
                                     lain;</span></p>
                         </td>
                     </tr>
@@ -811,8 +862,8 @@
                         <td colspan="10"
                             style="width:482.15pt; padding-right:2.85pt; padding-left:2.85pt; vertical-align:middle;">
                             <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:9pt;"><span
-                                    style="font-family:Arial;">Segera melapor ke Kecamatan Ilir  I, 
-                                     ijin pindah alamat;</span></p>
+                                    style="font-family:Arial;">Segera melapor ke Kecamatan Ilir I,
+                                    ijin pindah alamat;</span></p>
                         </td>
                     </tr>
                     <tr style="height:8.5pt;">
@@ -824,7 +875,7 @@
                             style="width:482.15pt; padding-right:2.85pt; padding-left:2.85pt; vertical-align:middle;">
                             <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:9pt;"><span
                                     style="font-family:Arial;">Pemegang Ijin wajib mematuhi segala peraturan yang
-                                    berlaku  Bidang Pemakaman  Palembang.</span></p>
+                                    berlaku Bidang Pemakaman Palembang.</span></p>
                         </td>
                     </tr>
                     <tr style="height:8.5pt;">
@@ -846,8 +897,7 @@
                                     style="font-family:Arial;">Ditetapkan di Palembang</span></p>
                             <p style="margin-top:0pt; margin-bottom:0pt; font-size:9pt;"><span
                                     style="font-family:Arial;">pada tanggal,&nbsp;</span><span
-                                    style="font-family:Arial;">&nbsp;</span><strong><span style="font-family:Arial;">27
-                                         2022</span></strong><span style="font-family:Arial;">&nbsp;</span></p>
+                                    style="font-family:Arial;">&nbsp;</span><strong><span style="font-family:Arial;"><?=tgl_indo($tanggal_ditetapkan)?></span></strong><span style="font-family:Arial;">&nbsp;</span></p>
                         </td>
                     </tr>
                     <tr style="height:8.5pt;">
@@ -862,7 +912,7 @@
                             </p>
                             <p
                                 style="margin-top:0pt; margin-left:252pt; margin-bottom:0pt; text-align:center; font-size:10pt;">
-                                <strong><span style="font-family:Arial;">CAMAT   SATU,</span></strong>
+                                <strong><span style="font-family:Arial;">CAMAT SATU,</span></strong>
                             </p>
                             <p
                                 style="margin-top:0pt; margin-left:252pt; margin-bottom:0pt; text-align:center; font-size:10pt;">
@@ -917,6 +967,7 @@
         </div>
         <p style="margin-top:0pt; margin-bottom:0pt;">&nbsp;</p>
     </div>
+    <?php endforeach;?>
 </body>
 
 <!-- <body>

@@ -55,6 +55,7 @@
                                             <th>Blok/Petak</th>
                                             <th>Jenis_Pemakaman</th>
                                             <th>Status Surat</th>
+                                            <th>Cetak</th>
                                             <th>Foto Surat</th>
                                         </tr>
                                     </thead>
@@ -88,17 +89,17 @@
 
                                             ?>
                                         <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
-                                            <td>$320,800</td>
-                                            <td>$320,800</td>
-                                            <td>$320,800</td>
-                                            <td>$320,800</td>
-                                            <td>$320,800</td>
+                                            <td><?=$id?></td>
+                                            <td><?=$nomor_surat?></td>
+                                            <td><?=$tanggal_ditetapkan?></td>
+                                            <td><?=$nama_alm?></td>
+                                            <td><?=$umur_alm?></td>
+                                            <td><?=$agama_alm?></td>
+                                            <td><?=$nik_alm?></td>
+                                            <td><?=$tanggal_meninggal?></td>
+                                            <td><?=$tanggal_kubur?></td>
+                                            <td><?=$blok_petak?></td>
+                                            <td><?=$jenis_pemakaman?></td>
                                             <td>
 
                                                 <?php if($id_status_verifikasi_surat == 1) {?>
@@ -122,6 +123,26 @@
                                                     <div class="table table-striped table-hover ">
                                                         <a href="" class="btn btn-danger">
                                                             Pengajuan Surat Ditolak
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <?php }?>
+                                            </td>
+                                            <td>
+                                                <?php if($id_status_verifikasi_surat == 2) {?>
+                                                <div class="table-responsive">
+                                                    <div class="table table-striped table-hover ">
+                                                        <a href="<?=base_url();?>Cetak/surat_izin_pemakaman_jenazah/<?=$id_izin_pemakaman_jenazah?>"
+                                                            class="btn btn-success">
+                                                            Cetak
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <?php }else {?>
+                                                <div class="table-responsive">
+                                                    <div class="table table-striped table-hover ">
+                                                        <a href="" class="btn btn-danger">
+                                                            Belum dapat mencetak
                                                         </a>
                                                     </div>
                                                 </div>

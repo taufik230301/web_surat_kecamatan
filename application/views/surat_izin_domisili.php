@@ -5,10 +5,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Surat Izin Domisili</title>
 </head>
 
 <body>
+<?php
+function tgl_indo($tanggal){
+	$bulan = array (
+		1 =>   'Januari',
+		'Februari',
+		'Maret',
+		'April',
+		'Mei',
+		'Juni',
+		'Juli',
+		'Agustus',
+		'September',
+		'Oktober',
+		'November',
+		'Desember'
+	);
+	$pecahkan = explode('-', $tanggal);
+ 
+	return $pecahkan[2] . ' ' . $bulan[ (int)$pecahkan[1] ] . ' ' . $pecahkan[0];
+}
+?>
+    <?php
+                                            $id = 0;
+                                            foreach($surat as $i)
+                                            :
+                                            $id++;
+                                            $id_izin_domisili = $i['id_izin_domisili'];
+                                            $id_user = $i['id_user'];
+                                            $nomor_surat = $i['nomor_surat'];
+                                            $nama_usaha = $i['nama_usaha'];
+                                            $tanggal_lahir = $i['tanggal_lahir'];
+                                            $tempat_lahir = $i['tempat_lahir'];
+                                            $alamat_usaha = $i['alamat_usaha'];
+                                            $alamat = $i['alamat'];
+                                            $kegiatan_usaha = $i['kegiatan_usaha'];
+                                            $berlaku_awal = $i['berlaku_awal'];
+                                            $berlaku_akhir = $i['berlaku_akhir'];
+                                            $nama_lengkap = $i['nama_lengkap'];
+                                            $foto_ktp = $i['foto_ktp'];
+                                            $foto_akta_usaha = $i['foto_akta_usaha'];
+                                            $foto_pengantar_lurah_setempat = $i['foto_pengantar_lurah_setempat'];
+                                            $foto_bukti_lunas_pbb = $i['foto_bukti_lunas_pbb'];
+                                            $id_status_verifikasi_surat = $i['id_status_verifikasi_surat'];
+                                            
+                                            
+                                          
+
+                                            ?>
     <table
         style="height: 92px; margin-left: auto; margin-right: auto; width: 200px; border: none; background-color: white;">
         <tr>
@@ -36,7 +84,7 @@
     </p>
     <p style="text-align: center;"><strong><u>SURAT KETERAN</u></strong><strong><u>GAN DOMISILI PERUSAHAAN</u></strong>
     </p>
-    <p style="text-align: center; ">Nomor : 005/SKDP/IB.SATU/2022</p>
+    <p style="text-align: center; ">Nomor : <?=$nomor_surat?></p>
     <p style="text-align: center;">&nbsp;</p>
     <p style="margin-bottom:-10px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Nama&nbsp; &nbsp; &nbsp; &nbsp;
         &nbsp;
@@ -47,7 +95,7 @@
         &nbsp; &nbsp; &nbsp;&nbsp; : Camat Ilir Barat Satu Kota Palembang</p>
     <p style="margin-bottom:-10px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
         &nbsp;Berdasarkan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        : Surat Pengantar Lurah Demang-Lebardaun Kecamatan
+        : Surat Pengantar Lurah Demang-Lebar daun Kecamatan
         Ilir&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
     <p style="margin-bottom:-10px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
@@ -59,13 +107,13 @@
         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;Tanggal 11 Januari 2022</p>
     <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Dengan ini menerangkan bahwa :</p>
     <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Nama / NIK&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; :
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : &nbsp; <?=$nama_lengkap?>
     </p>
     <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Tempat / Tanggal Lahir&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-        &nbsp; :&nbsp;&nbsp;&nbsp;</p>
+        &nbsp; :&nbsp; <?=$tempat_lahir?> / <?=tgl_indo($tanggal_lahir)?></p>
     <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Alamat Pemilik Usaha&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
         &nbsp;
-        &nbsp; :</p>
+        &nbsp; : &nbsp; <?=$alamat?></p>
     <p>&nbsp;</p>
     <p style="margin-bottom:-10px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Memang benar yang bersangkutan pada
         saat
@@ -76,18 +124,18 @@
         ini :</p>
     <p style="margin-bottom:-10px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Nama
         Usaha&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        :</p>
+        :&nbsp; <?=$nama_usaha?></p>
 
     <p style="margin-bottom:-10px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Alamat
-        Usaha&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :</p>
+        Usaha&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        :&nbsp; <?=$alamat_usaha?></p>
     <p style="margin-bottom:-10px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Kegiatan
         Usaha&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-         :</p>
+        :&nbsp;<?=$kegiatan_usaha?></p>
     <p style="margin-bottom:-10px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Demikian Surat Keterangan ini dibuat
         dengan sebenarnya untuk dipergunakan sebagaimana</p>
     <p style="margin-bottom:-10px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;mestinya.</p>
-    <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<strong>Masa Berlaku : 17 Januari 2022 s/d 17
-            Januari 2023</strong></p>
+    <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<strong>Masa Berlaku : <?=tgl_indo($berlaku_awal)?> s/d <?=tgl_indo($berlaku_akhir)?></strong></p>
     <p style="margin-bottom:-10px;">&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -96,7 +144,7 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;Palembang, 17 Januari 2022</p>
+        &nbsp;&nbsp;Palembang, <?=tgl_indo($berlaku_akhir)?></p>
     <p style="margin-bottom:-10px;">&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong><strong>CAMAT
@@ -135,6 +183,7 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </strong><strong>NIP. 19</strong><strong>830609200112</strong><strong>100</strong><strong>3</strong>
     </p>
+    <?php endforeach; ?>
 </body>
 
 </html>

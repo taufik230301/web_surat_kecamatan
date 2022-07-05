@@ -268,6 +268,23 @@
                                                         </a>
                                                     </div>
                                                 </div>
+                                                <?php if($id_status_verifikasi_surat == 2) {?>
+                                                <div class="table-responsive">
+                                                    <div class="table table-striped table-hover ">
+                                                        <a href="<?=base_url();?>Cetak/surat_izin_pemakaman_jenazah/<?=id_izin_pemakaman_jenazah?>" class="btn btn-success">
+                                                            Cetak
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <?php }else {?>
+                                                <div class="table-responsive">
+                                                    <div class="table table-striped table-hover ">
+                                                        <a href="" class="btn btn-danger">
+                                                            Belum dapat mencetak
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <?php }?>
                                             </td>
                                         </tr>
 
@@ -425,12 +442,16 @@
                                                                         value="<?php echo $id_izin_pemakaman_jenazah?>" />
                                                                     <input type="hidden" name="foto_surat_ket_lap_old"
                                                                         value="<?=$foto_surat_ket_lap?>" hidden>
-                                                                    <input type="hidden" name="foto_surat_pemeriksaan_jenazah_old"
-                                                                        value="<?=$foto_surat_pemeriksaan_jenazah?>" hidden>
+                                                                    <input type="hidden"
+                                                                        name="foto_surat_pemeriksaan_jenazah_old"
+                                                                        value="<?=$foto_surat_pemeriksaan_jenazah?>"
+                                                                        hidden>
                                                                     <input type="hidden" name="foto_kk_alm_old"
                                                                         value="<?=$foto_kk_alm?>" hidden>
-                                                                    <input type="hidden" name="foto_surat_rekomendasi_dinas_pupr_old"
-                                                                        value="<?=$foto_surat_rekomendasi_dinas_pupr?>" hidden>
+                                                                    <input type="hidden"
+                                                                        name="foto_surat_rekomendasi_dinas_pupr_old"
+                                                                        value="<?=$foto_surat_rekomendasi_dinas_pupr?>"
+                                                                        hidden>
 
                                                                     <p>Apakah kamu yakin ingin menghapus data
                                                                         ini?</i></b></p>
