@@ -56,6 +56,7 @@
                                             <th>Lokasi Reklame</th>
                                             <th>Nama Lengkap</th>
                                             <th>Status Surat</th>
+                                            <th>Cetak</th>
                                             <th>Foto Surat</th>
                                         </tr>
                                     </thead>
@@ -120,6 +121,26 @@
                                                     <div class="table table-striped table-hover ">
                                                         <a href="" class="btn btn-danger">
                                                             Pengajuan Surat Ditolak
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <?php }?>
+                                            </td>
+                                            <td>
+                                                <?php if($id_status_verifikasi_surat == 2) {?>
+                                                <div class="table-responsive">
+                                                    <div class="table table-striped table-hover ">
+                                                        <a href="<?=base_url();?>Cetak/surat_izin_media_reklame/<?=$id_izin_penyediaan_media_reklame?>"
+                                                            target="_blank" class="btn btn-success">
+                                                            Cetak
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <?php }else {?>
+                                                <div class="table-responsive">
+                                                    <div class="table table-striped table-hover ">
+                                                        <a href="" class="btn btn-danger">
+                                                            Belum dapat mencetak
                                                         </a>
                                                     </div>
                                                 </div>

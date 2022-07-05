@@ -57,6 +57,7 @@
                                             <th>Blok/Petak</th>
                                             <th>Jenis_Pemakaman</th>
                                             <th>Status Surat</th>
+                                            <th>Cetak</th>
                                             <th>Foto Surat</th>
                                         </tr>
                                     </thead>
@@ -129,6 +130,26 @@
                                                 <?php }?>
                                             </td>
                                             <td>
+                                                <?php if($id_status_verifikasi_surat == 2) {?>
+                                                <div class="table-responsive">
+                                                    <div class="table table-striped table-hover ">
+                                                        <a href="<?=base_url();?>Cetak/surat_izin_pemakaman_jenazah/<?=$id_izin_pemakaman_jenazah?>"
+                                                            class="btn btn-success" target="_blank">
+                                                            Cetak
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <?php }else {?>
+                                                <div class="table-responsive">
+                                                    <div class="table table-striped table-hover ">
+                                                        <a href="" class="btn btn-danger">
+                                                            Belum dapat mencetak
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <?php }?>
+                                            </td>
+                                            <td>
                                                 <div class="table-responsive">
                                                     <div class="table table-striped table-hover ">
                                                         <a href="" class="btn btn-primary" data-toggle="modal"
@@ -138,10 +159,10 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            
+
                                         </tr>
 
-                                      
+
 
                                         <!-- Modal Foto-->
                                         <div class="modal fade" id="foto<?=$id_izin_pemakaman_jenazah?>" tabindex="-1"
@@ -238,7 +259,7 @@
 
 
 
-          
+
 
 
         </div>
