@@ -60,7 +60,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Surat Izin Penyediaan Reklame</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">215,000</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$izin_media_reklame['total_surat'];?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-envelope fa-2x text-gray-300"></i>
@@ -80,7 +80,7 @@
                                                 <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                     Surat
                                                     Izin Pemakaman</div>
-                                                <div class="h5 mb-0 font-weight-bold text-gray-800">215,000</div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$izin_pemakaman_jenazah['total_surat'];?></div>
                                             </div>
                                         </div>
                                         <div class="col-auto">
@@ -99,7 +99,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                                 Surat Menunggu Konfirmasi</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$izin_domisili_wait_confirmed['total_surat']+$izin_media_reklame_wait_confirmed['total_surat']+$izin_pemakaman_jenazah_wait_confirmed['total_surat']?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-hourglass fa-2x text-gray-300"></i>
@@ -117,7 +117,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
                                                 Surat Ditolak</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$izin_domisili_not_confirmed['total_surat']+$izin_media_reklame_not_confirmed['total_surat']+$izin_pemakaman_jenazah_not_confirmed['total_surat']?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-times fa-2x text-gray-300"></i>
@@ -135,7 +135,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Surat Diterima</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?=$izin_domisili_confirmed['total_surat']+$izin_media_reklame_confirmed['total_surat']+$izin_pemakaman_jenazah_confirmed['total_surat']?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-check fa-2x text-gray-300"></i>

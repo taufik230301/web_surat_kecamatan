@@ -2,12 +2,31 @@
 
 class M_izin_pemakaman_jenazah extends CI_Model
 {
+
+    public function count_surat_izin_pemakaman_jenazah_wait_confirmed()
+    {
+        $hasil=$this->db->query("SELECT COUNT(id_izin_pemakaman_jenazah) as total_surat FROM izin_pemakaman_jenazah WHERE id_status_verifikasi_surat=1");
+        return $hasil;
+    }
+
+    public function count_surat_izin_pemakaman_jenazah_confirmed()
+    {
+        $hasil=$this->db->query("SELECT COUNT(id_izin_pemakaman_jenazah) as total_surat FROM izin_pemakaman_jenazah WHERE id_status_verifikasi_surat=2");
+        return $hasil;
+    }
+
+
+    public function count_surat_izin_pemakaman_jenazah_not_confirmed()
+    {
+        $hasil=$this->db->query("SELECT COUNT(id_izin_pemakaman_jenazah) as total_surat FROM izin_pemakaman_jenazah WHERE id_status_verifikasi_surat=3");
+        return $hasil;
+    }
+
     public function count_surat_izin_pemakaman_jenazah()
     {
         $hasil=$this->db->query("SELECT COUNT(id_izin_pemakaman_jenazah) as total_surat FROM izin_pemakaman_jenazah");
         return $hasil;
     }
-
 
     public function read_all_pemakaman_jenazah()
     {

@@ -3,6 +3,24 @@
 class M_izin_domisili extends CI_Model
 {
 
+    public function count_surat_izin_domisili_wait_confirmed()
+    {
+        $hasil=$this->db->query("SELECT COUNT(id_izin_domisili) as total_surat FROM izin_domisili WHERE id_status_verifikasi_surat= 1");
+        return $hasil;
+    }
+
+    public function count_surat_izin_domisili_confirmed()
+    {
+        $hasil=$this->db->query("SELECT COUNT(id_izin_domisili) as total_surat FROM izin_domisili WHERE id_status_verifikasi_surat= 2");
+        return $hasil;
+    }
+
+    public function count_surat_izin_domisili_not_confirmed()
+    {
+        $hasil=$this->db->query("SELECT COUNT(id_izin_domisili) as total_surat FROM izin_domisili WHERE id_status_verifikasi_surat= 3");
+        return $hasil;
+    }
+
     public function count_surat_izin_domisili()
     {
         $hasil=$this->db->query("SELECT COUNT(id_izin_domisili) as total_surat FROM izin_domisili");

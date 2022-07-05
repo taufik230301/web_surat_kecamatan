@@ -269,7 +269,7 @@
                                                 <?php if($id_status_verifikasi_surat == 2) {?>
                                                 <div class="table-responsive">
                                                     <div class="table table-striped table-hover ">
-                                                        <a href="<?=base_url();?>Cetak/surat_izin_media_reklame/<?=$id_izin_penyediaan_media_reklame?>" class="btn btn-success">
+                                                        <a href="<?=base_url();?>Cetak/surat_izin_media_reklame/<?=$id_izin_penyediaan_media_reklame?>" target="_blank" class="btn btn-success">
                                                             Cetak
                                                         </a>
                                                     </div>

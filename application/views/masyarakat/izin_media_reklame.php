@@ -128,7 +128,7 @@
                                                 <div class="table-responsive">
                                                     <div class="table table-striped table-hover ">
                                                         <a href="<?=base_url();?>Cetak/surat_izin_media_reklame/<?=$id_izin_penyediaan_media_reklame?>"
-                                                            class="btn btn-success">
+                                                            class="btn btn-success" target="_blank">
                                                             Cetak
                                                         </a>
                                                     </div>

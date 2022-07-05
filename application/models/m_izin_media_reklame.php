@@ -3,6 +3,24 @@
 class M_izin_media_reklame extends CI_Model
 {
 
+    public function count_surat_izin_media_reklame_wait_confirmed()
+    {
+        $hasil=$this->db->query("SELECT COUNT(id_izin_penyediaan_media_reklame) as total_surat FROM izin_penyediaan_media_reklame WHERE id_status_verifikasi_surat=1");
+        return $hasil;
+    }
+
+    public function count_surat_izin_media_reklame_confirmed()
+    {
+        $hasil=$this->db->query("SELECT COUNT(id_izin_penyediaan_media_reklame) as total_surat FROM izin_penyediaan_media_reklame WHERE id_status_verifikasi_surat=2");
+        return $hasil;
+    }
+
+    public function count_surat_izin_media_reklame_not_confirmed()
+    {
+        $hasil=$this->db->query("SELECT COUNT(id_izin_penyediaan_media_reklame) as total_surat FROM izin_penyediaan_media_reklame WHERE id_status_verifikasi_surat=3");
+        return $hasil;
+    }
+
     public function count_surat_izin_media_reklame()
     {
         $hasil=$this->db->query("SELECT COUNT(id_izin_penyediaan_media_reklame) as total_surat FROM izin_penyediaan_media_reklame");

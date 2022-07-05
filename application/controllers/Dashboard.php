@@ -16,9 +16,17 @@ class Dashboard extends CI_Controller {
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
 
 			$data['izin_domisili'] = $this->m_izin_domisili->count_surat_izin_domisili()->row_array();
+			$data['izin_domisili_wait_confirmed'] = $this->m_izin_domisili->count_surat_izin_domisili_wait_confirmed()->row_array();
+			$data['izin_domisili_not_confirmed'] = $this->m_izin_domisili->count_surat_izin_domisili_not_confirmed()->row_array();
+			$data['izin_domisili_confirmed'] = $this->m_izin_domisili->count_surat_izin_domisili_confirmed()->row_array();
 			$data['izin_media_reklame'] = $this->m_izin_media_reklame->count_surat_izin_media_reklame()->row_array();
+			$data['izin_media_reklame_wait_confirmed'] = $this->m_izin_media_reklame->count_surat_izin_media_reklame_wait_confirmed()->row_array();
+			$data['izin_media_reklame_not_confirmed'] = $this->m_izin_media_reklame->count_surat_izin_media_reklame_not_confirmed()->row_array();
+			$data['izin_media_reklame_confirmed'] = $this->m_izin_media_reklame->count_surat_izin_media_reklame_confirmed()->row_array();
 			$data['izin_pemakaman_jenazah'] = $this->m_izin_pemakaman_jenazah->count_surat_izin_pemakaman_jenazah()->row_array();
-			
+			$data['izin_pemakaman_jenazah_wait_confirmed'] = $this->m_izin_pemakaman_jenazah->count_surat_izin_pemakaman_jenazah_wait_confirmed()->row_array();
+			$data['izin_pemakaman_jenazah_not_confirmed'] = $this->m_izin_pemakaman_jenazah->count_surat_izin_pemakaman_jenazah_not_confirmed()->row_array();
+			$data['izin_pemakaman_jenazah_confirmed'] = $this->m_izin_pemakaman_jenazah->count_surat_izin_pemakaman_jenazah_confirmed()->row_array();
 
 			$this->load->view('admin/dashboard.php', $data);
 
@@ -32,7 +40,30 @@ class Dashboard extends CI_Controller {
     
     public function dashboard_kepala_kasi()
 	{
-		$this->load->view('kepala_kasi/dashboard.php');
+
+	if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 2) {
+			
+			$data['izin_domisili'] = $this->m_izin_domisili->count_surat_izin_domisili()->row_array();
+			$data['izin_domisili_wait_confirmed'] = $this->m_izin_domisili->count_surat_izin_domisili_wait_confirmed()->row_array();
+			$data['izin_domisili_not_confirmed'] = $this->m_izin_domisili->count_surat_izin_domisili_not_confirmed()->row_array();
+			$data['izin_domisili_confirmed'] = $this->m_izin_domisili->count_surat_izin_domisili_confirmed()->row_array();
+			$data['izin_media_reklame'] = $this->m_izin_media_reklame->count_surat_izin_media_reklame()->row_array();
+			$data['izin_media_reklame_wait_confirmed'] = $this->m_izin_media_reklame->count_surat_izin_media_reklame_wait_confirmed()->row_array();
+			$data['izin_media_reklame_not_confirmed'] = $this->m_izin_media_reklame->count_surat_izin_media_reklame_not_confirmed()->row_array();
+			$data['izin_media_reklame_confirmed'] = $this->m_izin_media_reklame->count_surat_izin_media_reklame_confirmed()->row_array();
+			$data['izin_pemakaman_jenazah'] = $this->m_izin_pemakaman_jenazah->count_surat_izin_pemakaman_jenazah()->row_array();
+			$data['izin_pemakaman_jenazah_wait_confirmed'] = $this->m_izin_pemakaman_jenazah->count_surat_izin_pemakaman_jenazah_wait_confirmed()->row_array();
+			$data['izin_pemakaman_jenazah_not_confirmed'] = $this->m_izin_pemakaman_jenazah->count_surat_izin_pemakaman_jenazah_not_confirmed()->row_array();
+			$data['izin_pemakaman_jenazah_confirmed'] = $this->m_izin_pemakaman_jenazah->count_surat_izin_pemakaman_jenazah_confirmed()->row_array();
+
+		$this->load->view('kepala_kasi/dashboard.php', $data);
+
+	}else{
+
+		$this->session->set_flashdata('loggin_err','loggin_err');
+		redirect('Login/index');
+
+	}
     }
     
     public function dashboard_masyarakat()

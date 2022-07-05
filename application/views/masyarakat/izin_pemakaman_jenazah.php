@@ -133,7 +133,7 @@
                                                 <div class="table-responsive">
                                                     <div class="table table-striped table-hover ">
                                                         <a href="<?=base_url();?>Cetak/surat_izin_pemakaman_jenazah/<?=$id_izin_pemakaman_jenazah?>"
-                                                            class="btn btn-success">
+                                                            class="btn btn-success" target="_blank">
                                                             Cetak
                                                         </a>
                                                     </div>
