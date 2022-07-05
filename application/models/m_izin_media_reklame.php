@@ -3,6 +3,11 @@
 class M_izin_media_reklame extends CI_Model
 {
 
+    public function count_surat_izin_media_reklame()
+    {
+        $hasil=$this->db->query("SELECT COUNT(id_izin_penyediaan_media_reklame) as total_surat FROM izin_penyediaan_media_reklame");
+        return $hasil;
+    }
 
     public function read_surat_izin_media_reklame_by_id($id_izin_media_reklame)
     {
