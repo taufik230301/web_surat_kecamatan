@@ -160,6 +160,82 @@
                                             </td>
 
                                         </tr>
+
+                                        <!-- Modal Foto-->
+                                        <div class="modal fade" id="foto<?=$id_izin_pemakaman_jenazah?>" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-xl">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Foto</h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="col">
+
+                                                            <h2>Foto Surat Ket. Lap kematian</h2>
+                                                            <div class="row">
+
+                                                                <a href="<?=base_url();?>assets/izin_pemakaman_jenazah/<?=$foto_surat_ket_lap?>"
+                                                                    target="_blank">
+                                                                    <img src="<?=base_url();?>assets/izin_pemakaman_jenazah/<?=$foto_surat_ket_lap?>"
+                                                                        width="100%" alt="">
+                                                                </a>
+
+                                                            </div>
+
+                                                            <br>
+                                                            <h2>Foto Surat keterangan Pemeriksaan
+                                                                Jenazah</h2>
+                                                            <div class="row">
+
+                                                                <a href="<?=base_url();?>assets/izin_pemakaman_jenazah/<?=$foto_surat_pemeriksaan_jenazah?>"
+                                                                    target="_blank">
+                                                                    <img src="<?=base_url();?>assets/izin_pemakaman_jenazah/<?=$foto_surat_pemeriksaan_jenazah?>"
+                                                                        width="100%" alt="">
+                                                                </a>
+
+                                                            </div>
+
+                                                            <br>
+                                                            <h2>Foto KK Almarhum</h2>
+                                                            <div class="row">
+
+                                                                <a href="<?=base_url();?>assets/izin_pemakaman_jenazah/<?=$foto_kk_alm?>"
+                                                                    target="_blank">
+                                                                    <img src="<?=base_url();?>assets/izin_pemakaman_jenazah/<?=$foto_kk_alm?>"
+                                                                        width="100%" alt="">
+                                                                </a>
+
+                                                            </div>
+
+                                                            <br>
+                                                            <h2>Foto Surat Rekomendari Dari Dinas
+                                                                PUPR</h2>
+                                                            <div class="row">
+
+                                                                <a href="<?=base_url();?>assets/izin_pemakaman_jenazah/<?=$foto_surat_rekomendasi_dinas_pupr?>"
+                                                                    target="_blank">
+                                                                    <img src="<?=base_url();?>assets/izin_pemakaman_jenazah/<?=$foto_surat_rekomendasi_dinas_pupr?>"
+                                                                        width="100%" alt="">
+                                                                </a>
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-primary">Save
+                                                            changes</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <?php endforeach;?>
                                     </tbody>
                                 </table>
@@ -179,78 +255,6 @@
 
 
 
-            <!-- Modal Foto-->
-            <div class="modal fade" id="foto<?=$id_izin_pemakaman_jenazah?>" tabindex="-1"
-                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-xl">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Foto</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="col">
-
-                                <h2>Foto Surat Ket. Lap kematian</h2>
-                                <div class="row">
-
-                                    <a href="<?=base_url();?>assets/izin_pemakaman_jenazah/<?=$foto_surat_ket_lap?>"
-                                        target="_blank">
-                                        <img src="<?=base_url();?>assets/izin_pemakaman_jenazah/<?=$foto_surat_ket_lap?>"
-                                            width="100%" alt="">
-                                    </a>
-
-                                </div>
-
-                                <br>
-                                <h2>Foto Surat keterangan Pemeriksaan
-                                    Jenazah</h2>
-                                <div class="row">
-
-                                    <a href="<?=base_url();?>assets/izin_pemakaman_jenazah/<?=$foto_surat_pemeriksaan_jenazah?>"
-                                        target="_blank">
-                                        <img src="<?=base_url();?>assets/izin_pemakaman_jenazah/<?=$foto_surat_pemeriksaan_jenazah?>"
-                                            width="100%" alt="">
-                                    </a>
-
-                                </div>
-
-                                <br>
-                                <h2>Foto KK Almarhum</h2>
-                                <div class="row">
-
-                                    <a href="<?=base_url();?>assets/izin_pemakaman_jenazah/<?=$foto_kk_alm?>"
-                                        target="_blank">
-                                        <img src="<?=base_url();?>assets/izin_pemakaman_jenazah/<?=$foto_kk_alm?>"
-                                            width="100%" alt="">
-                                    </a>
-
-                                </div>
-
-                                <br>
-                                <h2>Foto Surat Rekomendari Dari Dinas
-                                    PUPR</h2>
-                                <div class="row">
-
-                                    <a href="<?=base_url();?>assets/izin_pemakaman_jenazah/<?=$foto_surat_rekomendasi_dinas_pupr?>"
-                                        target="_blank">
-                                        <img src="<?=base_url();?>assets/izin_pemakaman_jenazah/<?=$foto_surat_rekomendasi_dinas_pupr?>"
-                                            width="100%" alt="">
-                                    </a>
-
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
 
 

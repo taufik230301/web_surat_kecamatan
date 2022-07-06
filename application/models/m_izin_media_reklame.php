@@ -27,6 +27,30 @@ class M_izin_media_reklame extends CI_Model
         return $hasil;
     }
 
+    public function count_surat_izin_media_reklame_wait_confirmed_by_id_user($id_user)
+    {
+        $hasil=$this->db->query("SELECT COUNT(id_izin_penyediaan_media_reklame) as total_surat FROM izin_penyediaan_media_reklame JOIN user_detail ON user_detail.id_user_detail = izin_penyediaan_media_reklame.id_user WHERE id_status_verifikasi_surat=1 AND id_user_detail='$id_user'");
+        return $hasil;
+    }
+
+    public function count_surat_izin_media_reklame_confirmed_by_id_user($id_user)
+    {
+        $hasil=$this->db->query("SELECT COUNT(id_izin_penyediaan_media_reklame) as total_surat FROM izin_penyediaan_media_reklame JOIN user_detail ON user_detail.id_user_detail = izin_penyediaan_media_reklame.id_user WHERE id_status_verifikasi_surat=2 AND id_user_detail='$id_user'");
+        return $hasil;
+    }
+
+    public function count_surat_izin_media_reklame_not_confirmed_by_id_user($id_user)
+    {
+        $hasil=$this->db->query("SELECT COUNT(id_izin_penyediaan_media_reklame) as total_surat FROM izin_penyediaan_media_reklame JOIN user_detail ON user_detail.id_user_detail = izin_penyediaan_media_reklame.id_user WHERE id_status_verifikasi_surat=3 AND id_user_detail='$id_user'");
+        return $hasil;
+    }
+
+    public function count_surat_izin_media_reklame_by_id_user($id_user)
+    {
+        $hasil=$this->db->query("SELECT COUNT(id_izin_penyediaan_media_reklame) as total_surat FROM izin_penyediaan_media_reklame JOIN user_detail ON user_detail.id_user_detail = izin_penyediaan_media_reklame.id_user WHERE id_user_detail='$id_user'");
+        return $hasil;
+    }
+
     public function read_surat_izin_media_reklame_by_id($id_izin_media_reklame)
     {
         $hasil=$this->db->query("SELECT * FROM izin_penyediaan_media_reklame JOIN user_detail ON user_detail.id_user_detail = izin_penyediaan_media_reklame.id_user WHERE izin_penyediaan_media_reklame.id_izin_penyediaan_media_reklame='$id_izin_media_reklame'");

@@ -36,6 +36,7 @@ class Izin_Media_Reklame extends CI_Controller {
 
 			$data['izin_media_reklame'] = $this->m_izin_media_reklame->read_all_izin_media_reklame_by_id($this->session->userdata('id_user'))->result_array();
 			$data['masyarakat_data'] = $this->m_user->read_all_masyarakat_by_id_user($this->session->userdata('id_user'))->row_array();
+
 			$this->load->view('masyarakat/izin_media_reklame.php', $data);
 			
 		}else{

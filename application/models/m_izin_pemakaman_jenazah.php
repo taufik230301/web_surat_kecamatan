@@ -28,6 +28,31 @@ class M_izin_pemakaman_jenazah extends CI_Model
         return $hasil;
     }
 
+    public function count_surat_izin_pemakaman_jenazah_wait_confirmed_by_id_user($id_user)
+    {
+        $hasil=$this->db->query("SELECT COUNT(id_izin_pemakaman_jenazah) as total_surat FROM izin_pemakaman_jenazah JOIN user_detail ON user_detail.id_user_detail = izin_pemakaman_jenazah.id_user WHERE id_status_verifikasi_surat=1 AND id_user_detail='$id_user'");
+        return $hasil;
+    }
+
+    public function count_surat_izin_pemakaman_jenazah_confirmed_by_id_user($id_user)
+    {
+        $hasil=$this->db->query("SELECT COUNT(id_izin_pemakaman_jenazah) as total_surat FROM izin_pemakaman_jenazah JOIN user_detail ON user_detail.id_user_detail = izin_pemakaman_jenazah.id_user WHERE id_status_verifikasi_surat=2 AND id_user_detail='$id_user'");
+        return $hasil;
+    }
+
+
+    public function count_surat_izin_pemakaman_jenazah_not_confirmed_by_id_user($id_user)
+    {
+        $hasil=$this->db->query("SELECT COUNT(id_izin_pemakaman_jenazah) as total_surat FROM izin_pemakaman_jenazah JOIN user_detail ON user_detail.id_user_detail = izin_pemakaman_jenazah.id_user WHERE id_status_verifikasi_surat=3 AND id_user_detail='$id_user'");
+        return $hasil;
+    }
+
+    public function count_surat_izin_pemakaman_jenazah_by_id_user($id_user)
+    {
+        $hasil=$this->db->query("SELECT COUNT(id_izin_pemakaman_jenazah) as total_surat FROM izin_pemakaman_jenazah JOIN user_detail ON user_detail.id_user_detail = izin_pemakaman_jenazah.id_user WHERE id_user_detail='$id_user'");
+        return $hasil;
+    }
+
     public function read_all_pemakaman_jenazah()
     {
         $hasil=$this->db->query("SELECT * FROM izin_pemakaman_jenazah JOIN user_detail ON user_detail.id_user_detail = izin_pemakaman_jenazah.id_user");

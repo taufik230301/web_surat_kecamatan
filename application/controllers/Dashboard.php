@@ -74,6 +74,18 @@ class Dashboard extends CI_Controller {
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 3) {
 
 			$data['masyarakat_data'] = $this->m_user->read_all_masyarakat_by_id_user($this->session->userdata('id_user'))->row_array();
+			$data['izin_domisili'] = $this->m_izin_domisili->count_surat_izin_domisili_by_id_user($this->session->userdata('id_user'))->row_array();
+			$data['izin_domisili_not_confirmed'] = $this->m_izin_domisili->count_surat_izin_domisili_not_confirmed_by_id_user($this->session->userdata('id_user'))->row_array();
+			$data['izin_domisili_confirmed'] = $this->m_izin_domisili->count_surat_izin_domisili_confirmed_by_id_user($this->session->userdata('id_user'))->row_array();
+			$data['izin_domisili_wait_confirmed'] = $this->m_izin_domisili->count_surat_izin_domisili_wait_confirmed_by_id_user($this->session->userdata('id_user'))->row_array();
+			$data['izin_media_reklame'] = $this->m_izin_media_reklame->count_surat_izin_media_reklame_by_id_user($this->session->userdata('id_user'))->row_array();
+			$data['izin_media_reklame_wait_confirmed'] = $this->m_izin_media_reklame->count_surat_izin_media_reklame_wait_confirmed_by_id_user($this->session->userdata('id_user'))->row_array();
+			$data['izin_media_reklame_not_confirmed'] = $this->m_izin_media_reklame->count_surat_izin_media_reklame_not_confirmed_by_id_user($this->session->userdata('id_user'))->row_array();
+			$data['izin_media_reklame_confirmed'] = $this->m_izin_media_reklame->count_surat_izin_media_reklame_confirmed_by_id_user($this->session->userdata('id_user'))->row_array();
+			$data['izin_pemakaman_jenazah'] = $this->m_izin_pemakaman_jenazah->count_surat_izin_pemakaman_jenazah_by_id_user($this->session->userdata('id_user'))->row_array();
+			$data['izin_pemakaman_jenazah_wait_confirmed'] = $this->m_izin_pemakaman_jenazah->count_surat_izin_pemakaman_jenazah_wait_confirmed_by_id_user($this->session->userdata('id_user'))->row_array();
+			$data['izin_pemakaman_jenazah_not_confirmed'] = $this->m_izin_pemakaman_jenazah->count_surat_izin_pemakaman_jenazah_not_confirmed_by_id_user($this->session->userdata('id_user'))->row_array();
+			$data['izin_pemakaman_jenazah_confirmed'] = $this->m_izin_pemakaman_jenazah->count_surat_izin_pemakaman_jenazah_confirmed_by_id_user($this->session->userdata('id_user'))->row_array();
 
 			$this->load->view('masyarakat/dashboard.php', $data);
 			

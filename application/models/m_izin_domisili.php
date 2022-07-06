@@ -27,6 +27,30 @@ class M_izin_domisili extends CI_Model
         return $hasil;
     }
 
+    public function count_surat_izin_domisili_wait_confirmed_by_id_user($id_user)
+    {
+        $hasil=$this->db->query("SELECT COUNT(id_izin_domisili) as total_surat FROM izin_domisili JOIN user_detail ON user_detail.id_user_detail = izin_domisili.id_user WHERE id_status_verifikasi_surat= 1 AND id_user='$id_user'");
+        return $hasil;
+    }
+
+    public function count_surat_izin_domisili_confirmed_by_id_user($id_user)
+    {
+        $hasil=$this->db->query("SELECT COUNT(id_izin_domisili) as total_surat FROM izin_domisili JOIN user_detail ON user_detail.id_user_detail = izin_domisili.id_user WHERE id_status_verifikasi_surat= 2 AND id_user='$id_user'");
+        return $hasil;
+    }
+
+    public function count_surat_izin_domisili_not_confirmed_by_id_user($id_user)
+    {
+        $hasil=$this->db->query("SELECT COUNT(id_izin_domisili) as total_surat FROM izin_domisili JOIN user_detail ON user_detail.id_user_detail = izin_domisili.id_user WHERE id_status_verifikasi_surat= 3 AND id_user='$id_user'");
+        return $hasil;
+    }
+
+    public function count_surat_izin_domisili_by_id_user($id_user)
+    {
+        $hasil=$this->db->query("SELECT COUNT(id_izin_domisili) as total_surat FROM izin_domisili JOIN user_detail ON user_detail.id_user_detail = izin_domisili.id_user WHERE id_user='$id_user'");
+        return $hasil;
+    }
+
     public function read_surat_izin_domisili_by_id($id_izin_domisili)
     {
         $hasil=$this->db->query("SELECT * FROM izin_domisili JOIN user_detail ON user_detail.id_user_detail = izin_domisili.id_user WHERE izin_domisili.id_izin_domisili='$id_izin_domisili'");

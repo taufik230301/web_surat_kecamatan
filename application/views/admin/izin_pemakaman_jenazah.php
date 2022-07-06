@@ -288,7 +288,7 @@
                                             </td>
                                         </tr>
 
-                                        <!-- Modal Edit Masyarakat-->
+                                        Modal Edit Masyarakat
                                         <div class="modal fade"
                                             id="edit_izin_pemakaman_jenazah<?=$id_izin_pemakaman_jenazah?>"
                                             tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
