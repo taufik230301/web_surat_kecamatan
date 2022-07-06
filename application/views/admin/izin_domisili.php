@@ -28,8 +28,6 @@
     </script>
     <?php } ?>
 
-
-
     <?php if ($this->session->flashdata('error_foto_akta_usaha')){ ?>
     <script>
     swal({
@@ -401,7 +399,7 @@
                                             </div>
                                         </div>
 
-                                        <!-- Modal Tidak Setuju Izin Domisili Usaha -->
+                                        <!-- Modal Edit Izin Domisili Usaha -->
                                         <div class="modal fade" id="edit_izin_domisili<?= $id_izin_domisili ?>"
                                             tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog">

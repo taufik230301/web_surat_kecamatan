@@ -7,6 +7,7 @@ class Dashboard extends CI_Controller {
 	{
 		parent::__construct();
         $this->load->model('m_izin_domisili');
+		$this->load->model('m_user');
         $this->load->model('m_izin_media_reklame');
         $this->load->model('m_izin_pemakaman_jenazah');
 	}
@@ -56,6 +57,8 @@ class Dashboard extends CI_Controller {
 			$data['izin_pemakaman_jenazah_not_confirmed'] = $this->m_izin_pemakaman_jenazah->count_surat_izin_pemakaman_jenazah_not_confirmed()->row_array();
 			$data['izin_pemakaman_jenazah_confirmed'] = $this->m_izin_pemakaman_jenazah->count_surat_izin_pemakaman_jenazah_confirmed()->row_array();
 
+			
+
 		$this->load->view('kepala_kasi/dashboard.php', $data);
 
 	}else{
@@ -70,7 +73,9 @@ class Dashboard extends CI_Controller {
 	{
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 3) {
 
-			$this->load->view('masyarakat/dashboard.php');
+			$data['masyarakat_data'] = $this->m_user->read_all_masyarakat_by_id_user($this->session->userdata('id_user'))->row_array();
+
+			$this->load->view('masyarakat/dashboard.php', $data);
 			
 		}else{
 

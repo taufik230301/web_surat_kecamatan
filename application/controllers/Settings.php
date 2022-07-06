@@ -49,6 +49,7 @@ class Settings extends CI_Controller {
 
     public function view_masyarakat()
 	{
-		$this->load->view('masyarakat/settings.php');
+		$data['masyarakat_data'] = $this->m_user->read_all_masyarakat_by_id_user($this->session->userdata('id_user'))->row_array();
+		$this->load->view('masyarakat/settings.php', $data);
     }
 }

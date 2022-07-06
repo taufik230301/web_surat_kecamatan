@@ -108,4 +108,21 @@ class Masyarakat extends CI_Controller {
 			redirect('Masyarakat/view_admin');
 		}
 	}
+
+	public function acc_masyarakat_admin($id_status_verifikasi)
+	{
+		$id_user = $this->input->post('id_user');
+
+		$hasil = $this->m_user->verify_user($id_status_verifikasi, $id_user);
+
+		if($hasil==false){
+				$this->session->set_flashdata('eror_acc','eror_acc');
+				redirect('Masyarakat/view_admin');
+		}else{
+				$this->session->set_flashdata('acc','acc');
+				redirect('Masyarakat/view_admin');
+		}
+	}
+
+	
 }

@@ -8,6 +8,25 @@
 </head>
 
 <body id="page-top">
+    <?php if ($this->session->flashdata('eror_acc')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('acc')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Diverifikasi!",
+        text: "Status User Berhasil Diubah!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
 
     <?php if ($this->session->flashdata('input')){ ?>
     <script>
@@ -185,7 +204,8 @@
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <?php }?></td>
+                                                <?php }?>
+                                            </td>
 
                                             <td><?=$tanggal_registered?></td>
                                             <td>
@@ -206,8 +226,106 @@
                                                         </a>
                                                     </div>
                                                 </div>
+                                                <div class="table-responsive">
+                                                    <div class="table table-striped table-hover ">
+                                                        <a href="" class="btn btn-primary" data-toggle="modal"
+                                                            data-target="#setuju<?=$id_user?>">
+                                                            Setuju <i class="nav-icon fas fa-check"></i>
+                                                        </a>
+
+                                                    </div>
+                                                </div>
+                                                <div class="table-responsive">
+                                                    <div class="table table-striped table-hover ">
+                                                        <a href="" data-toggle="modal"
+                                                            data-target="#tidak_setuju<?=$id_user?>"
+                                                            class="btn btn-danger">Tolak <i class="fas fa-times"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
                                             </td>
                                         </tr>
+                                        <!-- Modal Setuju Masyarakat -->
+                                        <div class="modal fade" id="setuju<?= $id_user ?>" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Setujui Data
+                                                            Masyarakat
+                                                        </h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+
+                                                    <div class="modal-body">
+                                                        <form
+                                                            action="<?php echo base_url()?>Masyarakat/acc_masyarakat_admin/3"
+                                                            method="post" enctype="multipart/form-data">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <input type="hidden" name="id_user"
+                                                                        value="<?php echo $id_user?>" />
+
+                                                                    <p>Apakah kamu yakin ingin Menyetujui Izin Domisili
+                                                                        Usaha
+                                                                        ini?</i></b></p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger ripple"
+                                                                    data-dismiss="modal">Tidak</button>
+                                                                <button type="submit"
+                                                                    class="btn btn-success ripple save-category">Ya</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Modal Tidak Setuju Masyarakat -->
+                                        <div class="modal fade" id="tidak_setuju<?= $id_user ?>" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Tolak Data
+                                                            Masyarakat
+                                                        </h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+
+                                                    <div class="modal-body">
+                                                        <form
+                                                            action="<?php echo base_url()?>Masyarakat/acc_masyarakat_admin/4"
+                                                            method="post" enctype="multipart/form-data">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <input type="hidden" name="id_user"
+                                                                        value="<?php echo $id_user?>" />
+
+                                                                    <p>Apakah kamu yakin ingin Menolak Izin Domisili
+                                                                        Usaha
+                                                                        ini?</i></b></p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger ripple"
+                                                                    data-dismiss="modal">Tidak</button>
+                                                                <button type="submit"
+                                                                    class="btn btn-success ripple save-category">Ya</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <!-- Modal Edit Masyarakat-->
                                         <div class="modal fade" id="ubah_masyarakat<?=$id_user?>" tabindex="-1"
                                             aria-labelledby="exampleModalLabel" aria-hidden="true">

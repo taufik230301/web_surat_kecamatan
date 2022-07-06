@@ -74,12 +74,46 @@ class M_user extends CI_Model
              return false;
     }
 
+    public function completed_masyarakat($id_user, $username, $email, $password, $nama_lengkap, $no_kk, $no_ktp, $jenis_kelamin, $agama, $no_hp, $alamat, $tempat_lahir, $tanggal_lahir, $id_status_verifikasi)
+    {
+        $this->db->trans_start();
+
+        $this->db->query("UPDATE user SET username='$username', email='$email', password='$password' WHERE id_user = '$id_user'");
+        $this->db->query("UPDATE user_detail SET nama_lengkap='$nama_lengkap', no_kk='$no_kk', no_ktp='$no_ktp', jenis_kelamin='$jenis_kelamin', agama='$agama', no_hp='$no_hp', alamat='$alamat', tempat_lahir='$tempat_lahir', tanggal_lahir='$tanggal_lahir', id_status_verifikasi='$id_status_verifikasi' WHERE id_user_detail='$id_user'");
+ 
+        $this->db->trans_complete();
+         if($this->db->trans_status()==true)
+             return true;
+         else
+             return false;
+
+    }
+
     public function delete_masyarakat($id_user)
     {
         $this->db->trans_start();
 
         $this->db->query("DELETE FROM user WHERE id_user='$id_user'");
         $this->db->query("DELETE FROM user_detail WHERE id_user_detail='$id_user'");
+ 
+        $this->db->trans_complete();
+         if($this->db->trans_status()==true)
+             return true;
+         else
+             return false;
+    }
+
+    public function read_all_masyarakat_by_id_user($id_user)
+    {
+        $hasil=$this->db->query("SELECT * FROM user JOIN user_detail ON user.id_user = user_detail.id_user_detail WHERE id_user_level = 3 AND user.id_user='$id_user'");
+        return $hasil;
+    }
+
+    public function verify_user($id_status_verifikasi_surat, $id_user)
+    {
+        $this->db->trans_start();
+
+        $this->db->query("UPDATE user_detail SET id_status_verifikasi='$id_status_verifikasi_surat' WHERE id_user_detail='$id_user'");
  
         $this->db->trans_complete();
          if($this->db->trans_status()==true)

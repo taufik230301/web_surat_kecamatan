@@ -3,7 +3,7 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon rotate-n-15">
-        <img src="<?=base_url();?>assets/logo_camat.png" alt="">
+            <img src="<?=base_url();?>assets/logo_camat.png" alt="">
         </div>
         <div class="sidebar-brand-text mx-3">APP-AKCIB</div>
     </a>
@@ -18,7 +18,12 @@
             <span>Dashboard</span></a>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item" style="<?php if($masyarakat_data['id_status_verifikasi'] == 3){
+                            echo "";
+                         }else{
+                            echo "display:none;";
+                         }
+                         ?>">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
             aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-fw fa-wrench"></i>
@@ -27,9 +32,12 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Pengajuan</h6>
-                <a class="collapse-item" href="<?=base_url();?>Pengajuan/pengajuan_izin_domisili_masyarakat">Izin Domisili</a>
-                <a class="collapse-item" href="<?=base_url();?>Pengajuan/pengajuan_izin_media_reklame_masyarakat">Izin Media Reklame</a>
-                <a class="collapse-item" href="<?=base_url();?>Pengajuan/pengajuan_izin_pemakaman_jenazah_masyarakat">Izin Pemakaman</a>
+                <a class="collapse-item" href="<?=base_url();?>Pengajuan/pengajuan_izin_domisili_masyarakat">Izin
+                    Domisili</a>
+                <a class="collapse-item" href="<?=base_url();?>Pengajuan/pengajuan_izin_media_reklame_masyarakat">Izin
+                    Media Reklame</a>
+                <a class="collapse-item"
+                    href="<?=base_url();?>Pengajuan/pengajuan_izin_pemakaman_jenazah_masyarakat">Izin Pemakaman</a>
             </div>
         </div>
     </li>
@@ -60,6 +68,17 @@
         <a class="nav-link" href="<?=base_url();?>Settings/view_masyarakat">
             <i class="fas fa-fw fa-table"></i>
             <span>Settings</span></a>
+    </li>
+
+    <li class="nav-item" style="<?php if($masyarakat_data['id_status_verifikasi'] == 3){
+                            echo "display:none;";
+                         }else{
+                            echo "";
+                         }
+                         ?>">
+        <a class="nav-link" href="<?=base_url();?>Lengkapi_Data/view_masyarakat">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Lengkapi Data</span></a>
     </li>
 
     <!-- Divider -->

@@ -22,6 +22,16 @@
 
 <body>
 
+    <?php if($this->session->flashdata('success_log_out')){?>
+    <script>
+    swal({
+        title: "Success!",
+        text: "Anda Berhasil Log Out!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
     <?php if ($this->session->flashdata('input')){ ?>
     <script>
     swal({

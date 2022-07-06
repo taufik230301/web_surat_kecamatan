@@ -7,6 +7,7 @@ class Izin_Pemakaman_Jenazah extends CI_Controller {
 	{
 		parent::__construct();
         $this->load->model('m_izin_pemakaman_jenazah');
+		$this->load->model('m_user');
 	}
 
 
@@ -38,6 +39,7 @@ class Izin_Pemakaman_Jenazah extends CI_Controller {
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 3) {
 
 			$data['izin_pemakaman_jenazah'] = $this->m_izin_pemakaman_jenazah->read_all_pemakaman_jenazah_by_id($this->session->userdata('id_user'))->result_array();
+			$data['masyarakat_data'] = $this->m_user->read_all_masyarakat_by_id_user($this->session->userdata('id_user'))->row_array();
 			$this->load->view('masyarakat/izin_pemakaman_jenazah.php', $data);
 			
 		}else{
