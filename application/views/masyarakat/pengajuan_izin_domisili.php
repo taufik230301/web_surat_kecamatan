@@ -94,10 +94,7 @@
 
                     <form action="<?=base_url();?>Izin_Domisili/tambah_izin_domisili_masyarakat" method="POST"
                         enctype="multipart/form-data">
-                        <div class="form-group">
-                            <label for="nomor_surat">Nomor Surat</label>
-                            <input type="text" class="form-control" id="nomor_surat" name="nomor_surat" required>
-                        </div>
+                        
                         <div class="form-group">
                             <label for="nama_usaha">Nama Usaha</label>
                             <input type="text" class="form-control" id="nama_usaha" name="nama_usaha" required>

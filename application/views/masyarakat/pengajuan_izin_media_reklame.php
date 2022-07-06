@@ -92,11 +92,7 @@
                     <h1 class="h3 mb-2 text-gray-800">Pengajuan Izin Media Reklame</h1>
 
                     <form action="<?=base_url();?>Izin_Media_Reklame/tambah_izin_media_reklame" method="POST" enctype="multipart/form-data">
-                        <div class="form-group">
-                            <label for="nomor_surat">Nomor Surat</label>
-                            <input type="text" class="form-control" id="nomor_surat" name="nomor_surat" value=""
-                                required>
-                        </div>
+                        
                         <div class="form-group">
                             <label for="berlaku_awal">Berlaku Awal</label>
                             <input type="date" class="form-control" id="berlaku_awal" name="berlaku_awal" value=""

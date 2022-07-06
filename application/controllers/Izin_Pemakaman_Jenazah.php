@@ -55,7 +55,7 @@ class Izin_Pemakaman_Jenazah extends CI_Controller {
 
 	public function tambah_izin_pemakaman_jenazah()
 	{
-		$nomor_surat = $this->input->post('nomor_surat');
+		$nomor_surat = "-";
 		$tanggal_ditetapkan = $this->input->post('tanggal_ditetapkan');
 		$nama_alm = $this->input->post('nama_alm');
 		$umur_alm = $this->input->post('umur_alm');

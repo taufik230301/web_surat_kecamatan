@@ -49,7 +49,7 @@ class Izin_Media_Reklame extends CI_Controller {
 	
 	public function tambah_izin_media_reklame()
 	{
-		$nomor_surat = $this->input->post('nomor_surat');
+		$nomor_surat = "-";
 		$berlaku_awal = $this->input->post('berlaku_awal');
 		$berlaku_akhir = $this->input->post('berlaku_akhir');
 		$jenis_reklame = $this->input->post('jenis_reklame');

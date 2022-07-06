@@ -92,10 +92,7 @@
                     <h1 class="h3 mb-2 text-gray-800">Pengajuan Izin Pemakaman</h1>
                     <form action="<?=base_url();?>Izin_Pemakaman_Jenazah/tambah_izin_pemakaman_jenazah" method="POST"
                         enctype="multipart/form-data">
-                        <div class="form-group">
-                            <label for="nomor_surat">Nomor Surat</label>
-                            <input type="text" class="form-control" id="nomor_surat" name="nomor_surat" required>
-                        </div>
+                       
                         <div class="form-group">
                             <label for="tanggal_ditetapkan">Tanggal Ditetapkan</label>
                             <input type="date" class="form-control" id="tanggal_ditetapkan" name="tanggal_ditetapkan"

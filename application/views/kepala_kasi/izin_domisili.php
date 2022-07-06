@@ -31,9 +31,9 @@
 
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">Data Izin Domisili</h1>
-                    <a class="btn btn-primary" href="">
+                    <!-- <a class="btn btn-primary" href="">
                         Cetak Laporan <i class="fas fa-print"></i>
-                    </a>
+                    </a> -->
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4 mt-4">

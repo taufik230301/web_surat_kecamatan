@@ -76,7 +76,7 @@ class Izin_Domisili extends CI_Controller {
 	
 	public function tambah_izin_domisili_masyarakat()
 	{
-		$nomor_surat = $this->input->post('nomor_surat');
+		$nomor_surat = "-";
 		$nama_usaha = $this->input->post('nama_usaha');
 		$alamat_usaha = $this->input->post('alamat_usaha');
 		$kegiatan_usaha = $this->input->post('kegiatan_usaha');
