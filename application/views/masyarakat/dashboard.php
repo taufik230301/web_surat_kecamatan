@@ -155,6 +155,105 @@
                     </div>
                     <!-- Content Row -->
                     <!-- Content Row -->
+                    <div class="row">
+
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-5 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Syarat Surat Izin Domisili</div>
+                                            <div class="h6 mb-0 font-weight-bold text-gray-800">
+                                                1. Foto KTP
+                                            </div>
+                                            <div class="h6 mb-0 font-weight-bold text-gray-800">
+                                                2. Foto Akta Pendirian Perusahaan
+                                            </div>
+                                            <div class="h6 mb-0 font-weight-bold text-gray-800">
+                                                3. Foto Pengantar Lurah Tempat Usaha Beridiri
+                                            </div>
+                                            <div class="h6 mb-0 font-weight-bold text-gray-800">
+                                                4. Foto Bukti Lunas PBB Tahun Berjalan
+                                            </div>
+
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-5 col-md-6 mb-4">
+                            <div class="card border-left-warning shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Syarat Surat Izin Pemakaman Jenazah </div>
+                                            <div class="h6 mb-0 font-weight-bold text-gray-800">
+                                                1. Foto Surat Keterangan Laporan Kematian Dari RT & Lurah Setempat
+                                            </div>
+                                            <div class="h6 mb-0 font-weight-bold text-gray-800">
+                                                2. Foto Surat Keterangan Pemeriksaan Jenazah Dari Rumah Sakit Atau
+                                                Puskesmas
+                                            </div>
+                                            <div class="h6 mb-0 font-weight-bold text-gray-800">
+                                                3. Foto KK Almarhum / Almarhumah
+                                            </div>
+                                            <div class="h6 mb-0 font-weight-bold text-gray-800">
+                                                4. Foto Surat Rekomendasi Dari Dinas Perumahan Rakyat Dan Kawasan
+                                                Permukiman
+                                            </div>
+
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-5 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Syarat Surat Izin Penyediaan Media Reklame </div>
+                                            <div class="h6 mb-0 font-weight-bold text-gray-800">
+                                                1. Foto KTP Pemohon
+                                            </div>
+                                            <div class="h6 mb-0 font-weight-bold text-gray-800">
+                                                2. Foto Sketsa Lokasi Letak Rencana Penyelenggaraan Reklame
+                                            </div>
+                                            <div class="h6 mb-0 font-weight-bold text-gray-800">
+                                                3. Foto Desain Reklame
+                                            </div>
+                                            <div class="h6 mb-0 font-weight-bold text-gray-800">
+                                                4. Foto Bukti Lunas PBB Tahun Berjalan
+                                            </div>
+
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                    <!-- Content Row -->
 
 
                 </div>
