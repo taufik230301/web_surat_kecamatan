@@ -75,7 +75,8 @@ function tgl_indo($tanggal){
                                         src="https://myfiles.space/user_files/124457_b80c96004754aa79/1656860832_surat-izin-penyediaan-media-reklame/1656860832_surat-izin-penyediaan-media-reklame-1.jpeg"
                                         width="86" height="110"
                                         alt="Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Description: Lambang Kota Palembang"
-                                        style="margin-left:-30px; text-align: right; display: block; "></span>PEMERINTAH KOTA
+                                        style="margin-left:-30px; text-align: right; display: block; "></span>PEMERINTAH
+                                KOTA
                                 PALEMBANG&nbsp;&nbsp;
                             </h1>
                             <h3
@@ -537,7 +538,8 @@ function tgl_indo($tanggal){
                         <td colspan="4"
                             style="width:381.1pt; padding-right:1.4pt; padding-left:1.4pt; vertical-align:top;">
                             <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:9pt;"><span
-                                    style="font-family:Arial;"><?=$alamat?></span><span style="font-family:Arial;">&nbsp;&nbsp;</span><span
+                                    style="font-family:Arial;"><?=$alamat?></span><span
+                                    style="font-family:Arial;">&nbsp;&nbsp;</span><span
                                     style="font-family:Arial;">KELURAHAN BUKIT LAMA</span><span
                                     style="font-family:Arial;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                             </p>
@@ -897,7 +899,9 @@ function tgl_indo($tanggal){
                                     style="font-family:Arial;">Ditetapkan di Palembang</span></p>
                             <p style="margin-top:0pt; margin-bottom:0pt; font-size:9pt;"><span
                                     style="font-family:Arial;">pada tanggal,&nbsp;</span><span
-                                    style="font-family:Arial;">&nbsp;</span><strong><span style="font-family:Arial;"><?=tgl_indo($tanggal_ditetapkan)?></span></strong><span style="font-family:Arial;">&nbsp;</span></p>
+                                    style="font-family:Arial;">&nbsp;</span><strong><span
+                                        style="font-family:Arial;"><?=tgl_indo($tanggal_ditetapkan)?></span></strong><span
+                                    style="font-family:Arial;">&nbsp;</span></p>
                         </td>
                     </tr>
                     <tr style="height:8.5pt;">
@@ -914,32 +918,11 @@ function tgl_indo($tanggal){
                                 style="margin-top:0pt; margin-left:252pt; margin-bottom:0pt; text-align:center; font-size:10pt;">
                                 <strong><span style="font-family:Arial;">CAMAT SATU,</span></strong>
                             </p>
-                            <p
-                                style="margin-top:0pt; margin-left:252pt; margin-bottom:0pt; text-align:center; font-size:10pt;">
-                                <strong><span style="font-family:Arial;">&nbsp;</span></strong>
-                            </p>
-                            <p
-                                style="margin-top:0pt; margin-left:252pt; margin-bottom:0pt; text-align:center; font-size:10pt;">
-                                <strong><span style="font-family:Arial;">&nbsp;</span></strong>
-                            </p>
-                            <p
-                                style="margin-top:0pt; margin-left:252pt; margin-bottom:0pt; text-align:center; font-size:10pt;">
-                                <strong><span style="font-family:Arial;">&nbsp;</span></strong>
-                            </p>
+                            <img src="<?=base_url();?>assets/sb_admin/img/ttd.jpeg" alt="" height="140"
+                            style="margin-top:0pt; margin-left:270pt; margin-bottom:0pt; text-align:center; font-size:10pt;">
                             <p style="margin-top:0pt; margin-bottom:0pt; font-size:26pt;"><strong><span
                                         style="font-family:'Arial Black'; color:#a6a6a6;">PATEN</span></strong></p>
-                            <p
-                                style="margin-top:0pt; margin-left:312.15pt; margin-bottom:0pt; text-align:justify; font-size:10pt;">
-                                <strong><span style="font-family:Arial;">RAKHMAN HIDAYAT PANE, S.STP.</span></strong>
-                            </p>
-                            <p
-                                style="margin-top:0pt; margin-left:312.15pt; margin-bottom:0pt; text-align:justify; font-size:10pt;">
-                                <span style="font-family:Arial;">Pembina</span>
-                            </p>
-                            <p
-                                style="margin-top:0pt; margin-left:312.15pt; margin-bottom:0pt; text-align:justify; font-size:10pt;">
-                                <span style="font-family:Arial;">NIP. 198306092001121003</span>
-                            </p>
+                            
                         </td>
                     </tr>
                     <tr style="height:8.5pt;">

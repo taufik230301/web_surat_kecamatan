@@ -659,30 +659,8 @@ function tgl_indo($tanggal){
                     <p style="margin-top:0pt; margin-left:252pt; margin-bottom:0pt; text-align:center; font-size:10pt;">
                         <span style="font-family:Arial;">CAMAT ILIR BARAT I,</span>
                     </p>
-                    <p style="margin-top:0pt; margin-left:252pt; margin-bottom:0pt; text-align:center; font-size:10pt;">
-                        <span style="font-family:Arial;">&nbsp;</span>
-                    </p>
-                    <p style="margin-top:0pt; margin-left:252pt; margin-bottom:0pt; text-align:center; font-size:10pt;">
-                        <span style="font-family:Arial;">&nbsp;</span>
-                    </p>
-                    <p style="margin-top:0pt; margin-left:252pt; margin-bottom:0pt; text-align:center; font-size:10pt;">
-                        <span style="font-family:Arial;">&nbsp;</span>
-                    </p>
-                    <p style="margin-top:0pt; margin-left:252pt; margin-bottom:0pt; text-align:center; font-size:10pt;">
-                        <span style="font-family:Arial;">&nbsp;</span>
-                    </p>
-                    <p
-                        style="margin-top:0pt; margin-left:338.8pt; margin-bottom:0pt; text-align:justify; font-size:10pt;">
-                        <strong><span style="font-family:Arial;">RAKHMAN HIDAYAT PANE, S.STP.</span></strong>
-                    </p>
-                    <p
-                        style="margin-top:0pt; margin-left:338.8pt; margin-bottom:0pt; text-align:justify; font-size:10pt;">
-                        <span style="font-family:Arial;">Pembina</span>
-                    </p>
-                    <p
-                        style="margin-top:0pt; margin-left:339.7pt; margin-bottom:0pt; text-align:justify; font-size:10pt;">
-                        <span style="font-family:Arial;">NIP. 198306092001121003</span>
-                    </p>
+                    <img src="<?=base_url();?>assets/sb_admin/img/ttd.jpeg" alt="" height="130" style="margin-top:0pt; margin-left:338.8pt; margin-bottom:0pt; text-align:justify; font-size:10pt;">
+                   
                 </td>
             </tr>
             <tr style="height:8.5pt;">
